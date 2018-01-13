@@ -8,84 +8,51 @@
 
     <div class="container">
         <div class="card mb-3">
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/Imagenes/Recursos/aviso.jpg" class="card-img-top" alt="Card image cap" />
+
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h5 class="card-title">Fechas de clubs nuevas</h5>
+                <p class="card-text">Para mas informacion preguntar en el área de información</p>
+                <p class="card-text"><small class="text-muted">lunes 5 de febrero</small></p>
             </div>
         </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-            <img class="card-img-bottom" src="..." alt="Card image cap">
-        </div>
-
-
-        <div class="card-columns">
-            <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title that wraps to a new line</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <div class="card-deck">
+            <div class="card  border-info mb-3">
+                <%-- <img class="card-img-top" src="../Imagenes/Recursos/aviso.jpg" alt="Card image cap">--%>
+                <div class="card-header"> <strong>Información general</strong></div>
+                <div class="card-body text-info">
+                    <h5 class="card-title ">Alumno</h5>
+                    <p class="card-text">Nombre:<strong>Juan Manolo</strong></p>
+                    <p class="card-text">Pelis:<strong>8</strong></p>
+                    <p class="card-text">Clubs:<strong>20</strong></p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Nivel 1</small>
                 </div>
             </div>
-            <div class="card p-3">
-                <blockquote class="blockquote mb-0 card-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    <footer class="blockquote-footer">
-                        <small class="text-muted">Someone famous in <cite title="Source Title">Source Title</cite>
-                        </small>
-                    </footer>
-                </blockquote>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <div class="card  border-success mb-3">
+                <%-- <img class="card-img-top" src="..." alt="Card image cap">--%>
+                <div class="card-header"><strong> Reservaciones</strong></div>
+                <div class="card-body text-success">
+                    <h5 class="card-title">Próximas</h5>
+                    <p class="card-text"> <strong> 12 Enero,12:00 am</strong> <small class="">Película</small></p>
+                    <p class="card-text"> <strong> 13 Enero,15:00 pm</strong> <small class="">Reservación</small></p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Ver horarios</small>
                 </div>
             </div>
-            <div class="card bg-primary text-white text-center p-3">
-                <blockquote class="blockquote mb-0">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-                    <footer class="blockquote-footer">
-                        <small>Someone famous in <cite title="Source Title">Source Title</cite>
-                        </small>
-                    </footer>
-                </blockquote>
-            </div>
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <div class="card  border-danger mb-3">
+             <%--   <img class="card-img-top" src="..." alt="Card image cap">--%>
+                <div class="card-header"><strong>Avisos</strong></div>
+                <div class="card-body text-danger">
+                    <h5 class="card-title">Importante</h5>
+                    <p class="card-text">Cancelaciones:<strong>1</strong></p>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card-img" src="..." alt="Card image">
-            </div>
-            <div class="card p-3 text-right">
-                <blockquote class="blockquote mb-0">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    <footer class="blockquote-footer">
-                        <small class="text-muted">Someone famous in <cite title="Source Title">Source Title</cite>
-                        </small>
-                    </footer>
-                </blockquote>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <div class="card-footer">
+                    <small class="text-muted">Ver Secretaria</small>
                 </div>
             </div>
         </div>
     </div>
-
 </asp:Content>

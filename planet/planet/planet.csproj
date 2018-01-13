@@ -152,6 +152,7 @@
     </Content>
     <Content Include="Imagenes\logo.png" />
     <Content Include="Imagenes\logo_plan.png" />
+    <Content Include="Imagenes\Recursos\aviso.jpg" />
     <Content Include="Imagenes\Roles\alumno.png" />
     <Content Include="Masters\Alumno\alumno.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
