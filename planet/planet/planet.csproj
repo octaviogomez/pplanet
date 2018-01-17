@@ -137,7 +137,6 @@
     <Folder Include="Controles\Alumno\" />
     <Folder Include="Controles\Secretaria\" />
     <Folder Include="Paginas\Admin\" />
-    <Folder Include="Paginas\Secretaria\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
@@ -161,8 +160,10 @@
     <Content Include="Masters\Alumno\alumno.Master" />
     <Content Include="Masters\Admin\Admin.Master" />
     <Content Include="Masters\Secretaria\Secretaria.Master" />
+    <None Include="Properties\PublishProfiles\ingles.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Paginas\Alumno\Default.aspx" />
+    <Content Include="Paginas\Secretaria\Default.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -266,6 +267,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Paginas\Alumno\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
