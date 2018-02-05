@@ -162,8 +162,23 @@
     <Content Include="Masters\Secretaria\Secretaria.Master" />
     <None Include="Properties\PublishProfiles\ingles.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Paginas\Alumno\Buzon.aspx" />
+    <Content Include="Paginas\Alumno\Clubs.aspx" />
     <Content Include="Paginas\Alumno\Default.aspx" />
+    <Content Include="Paginas\Alumno\Horarios.aspx" />
+    <Content Include="Paginas\Alumno\Multimedia.aspx" />
+    <Content Include="Paginas\Alumno\Perfil.aspx" />
+    <Content Include="Paginas\Alumno\Reservaciones.aspx" />
+    <Content Include="Paginas\Secretaria\AdminAlumnos.aspx" />
+    <Content Include="Paginas\Secretaria\AdminClubs.aspx" />
+    <Content Include="Paginas\Secretaria\AdminReservaciones.aspx" />
+    <Content Include="Paginas\Secretaria\Avisos.aspx" />
+    <Content Include="Paginas\Secretaria\Clubs.aspx" />
     <Content Include="Paginas\Secretaria\Default.aspx" />
+    <Content Include="Paginas\Secretaria\Horarios.aspx" />
+    <Content Include="Paginas\Secretaria\Multimedia.aspx" />
+    <Content Include="Paginas\Secretaria\Perfil.aspx" />
+    <Content Include="Paginas\Secretaria\Reservaciones.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -262,6 +277,20 @@
     <Compile Include="Masters\Secretaria\Secretaria.Master.designer.cs">
       <DependentUpon>Secretaria.Master</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Alumno\Buzon.aspx.cs">
+      <DependentUpon>Buzon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Alumno\Buzon.aspx.designer.cs">
+      <DependentUpon>Buzon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Alumno\Clubs.aspx.cs">
+      <DependentUpon>Clubs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Alumno\Clubs.aspx.designer.cs">
+      <DependentUpon>Clubs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Alumno\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -269,12 +298,103 @@
     <Compile Include="Paginas\Alumno\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Alumno\Horarios.aspx.cs">
+      <DependentUpon>Horarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Alumno\Horarios.aspx.designer.cs">
+      <DependentUpon>Horarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Alumno\Multimedia.aspx.cs">
+      <DependentUpon>Multimedia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Alumno\Multimedia.aspx.designer.cs">
+      <DependentUpon>Multimedia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Alumno\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Alumno\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Alumno\Reservaciones.aspx.cs">
+      <DependentUpon>Reservaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Alumno\Reservaciones.aspx.designer.cs">
+      <DependentUpon>Reservaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\AdminAlumnos.aspx.cs">
+      <DependentUpon>AdminAlumnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\AdminAlumnos.aspx.designer.cs">
+      <DependentUpon>AdminAlumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\AdminClubs.aspx.cs">
+      <DependentUpon>AdminClubs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\AdminClubs.aspx.designer.cs">
+      <DependentUpon>AdminClubs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\AdminReservaciones.aspx.cs">
+      <DependentUpon>AdminReservaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\AdminReservaciones.aspx.designer.cs">
+      <DependentUpon>AdminReservaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Avisos.aspx.cs">
+      <DependentUpon>Avisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Avisos.aspx.designer.cs">
+      <DependentUpon>Avisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Clubs.aspx.cs">
+      <DependentUpon>Clubs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Clubs.aspx.designer.cs">
+      <DependentUpon>Clubs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Secretaria\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Paginas\Secretaria\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Horarios.aspx.cs">
+      <DependentUpon>Horarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Horarios.aspx.designer.cs">
+      <DependentUpon>Horarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Multimedia.aspx.cs">
+      <DependentUpon>Multimedia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Multimedia.aspx.designer.cs">
+      <DependentUpon>Multimedia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Reservaciones.aspx.cs">
+      <DependentUpon>Reservaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Reservaciones.aspx.designer.cs">
+      <DependentUpon>Reservaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
