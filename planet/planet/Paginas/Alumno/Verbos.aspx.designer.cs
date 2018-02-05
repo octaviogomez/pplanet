@@ -11,7 +11,7 @@ namespace planet.Paginas.Alumno
 {
 
 
-    public partial class Multimedia
+    public partial class Verbos
     {
     }
 }

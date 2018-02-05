@@ -5,14 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace planet.Masters.alumno
+namespace planet.Paginas.Alumno
 {
-    public partial class alumno : System.Web.UI.MasterPage
+    public partial class Verbos : System.Web.UI.Page
     {
-        public string nombre;
         protected void Page_Load(object sender, EventArgs e)
         {
-            nombre = "Karla";
+
         }
     }
 }

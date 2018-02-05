@@ -136,6 +136,8 @@
     <Folder Include="Controles\Admin\" />
     <Folder Include="Controles\Alumno\" />
     <Folder Include="Controles\Secretaria\" />
+    <Folder Include="Multimedia\Audios\" />
+    <Folder Include="Multimedia\Verbos\" />
     <Folder Include="Paginas\Admin\" />
   </ItemGroup>
   <ItemGroup>
@@ -162,13 +164,16 @@
     <Content Include="Masters\Secretaria\Secretaria.Master" />
     <None Include="Properties\PublishProfiles\ingles.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Paginas\Alumno\Audios.aspx" />
     <Content Include="Paginas\Alumno\Buzon.aspx" />
     <Content Include="Paginas\Alumno\Clubs.aspx" />
+    <Content Include="Paginas\Alumno\ConsultaC.aspx" />
+    <Content Include="Paginas\Alumno\ConsultaR.aspx" />
     <Content Include="Paginas\Alumno\Default.aspx" />
     <Content Include="Paginas\Alumno\Horarios.aspx" />
-    <Content Include="Paginas\Alumno\Multimedia.aspx" />
     <Content Include="Paginas\Alumno\Perfil.aspx" />
     <Content Include="Paginas\Alumno\Reservaciones.aspx" />
+    <Content Include="Paginas\Alumno\Verbos.aspx" />
     <Content Include="Paginas\Secretaria\AdminAlumnos.aspx" />
     <Content Include="Paginas\Secretaria\AdminClubs.aspx" />
     <Content Include="Paginas\Secretaria\AdminReservaciones.aspx" />
@@ -277,6 +282,13 @@
     <Compile Include="Masters\Secretaria\Secretaria.Master.designer.cs">
       <DependentUpon>Secretaria.Master</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Alumno\Audios.aspx.cs">
+      <DependentUpon>Audios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Alumno\Audios.aspx.designer.cs">
+      <DependentUpon>Audios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Alumno\Buzon.aspx.cs">
       <DependentUpon>Buzon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -290,6 +302,20 @@
     </Compile>
     <Compile Include="Paginas\Alumno\Clubs.aspx.designer.cs">
       <DependentUpon>Clubs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Alumno\ConsultaC.aspx.cs">
+      <DependentUpon>ConsultaC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Alumno\ConsultaC.aspx.designer.cs">
+      <DependentUpon>ConsultaC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Alumno\ConsultaR.aspx.cs">
+      <DependentUpon>ConsultaR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Alumno\ConsultaR.aspx.designer.cs">
+      <DependentUpon>ConsultaR.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Alumno\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -305,13 +331,6 @@
     <Compile Include="Paginas\Alumno\Horarios.aspx.designer.cs">
       <DependentUpon>Horarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Paginas\Alumno\Multimedia.aspx.cs">
-      <DependentUpon>Multimedia.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Paginas\Alumno\Multimedia.aspx.designer.cs">
-      <DependentUpon>Multimedia.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Paginas\Alumno\Perfil.aspx.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -325,6 +344,13 @@
     </Compile>
     <Compile Include="Paginas\Alumno\Reservaciones.aspx.designer.cs">
       <DependentUpon>Reservaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Alumno\Verbos.aspx.cs">
+      <DependentUpon>Verbos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Alumno\Verbos.aspx.designer.cs">
+      <DependentUpon>Verbos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Secretaria\AdminAlumnos.aspx.cs">
       <DependentUpon>AdminAlumnos.aspx</DependentUpon>

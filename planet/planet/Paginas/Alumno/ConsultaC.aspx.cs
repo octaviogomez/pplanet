@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace planet.Paginas.Alumno
 {
-    public partial class Multimedia : System.Web.UI.Page
+    public partial class ConsultaC : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

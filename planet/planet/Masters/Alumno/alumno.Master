@@ -42,17 +42,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="../../Paginas/Alumno/Default.aspx">Inicio<span class="sr-only">(current)</span></a>
                         </li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reservaciones
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Ver espacios</a>
-                                <a class="dropdown-item" href="#">Consulta</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Historial</a>
+                                <a class="dropdown-item" href="../../Paginas/Alumno/Reservaciones.aspx">Agendar reservación</a>
+                                          <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="../../Paginas/Alumno/ConsultaR.aspx">Consulta</a>
                             </div>
                         </li>
 
@@ -60,34 +59,30 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clubs
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Ver Clubs</a>
-                                <a class="dropdown-item" href="#">Consulta</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Historial</a>
+                                <a class="dropdown-item" href="../../Paginas/Alumno/Clubs.aspx">Agendar club</a>
+                                  <div class="dropdown-divider"></div>
+                                <a class="dropdown-item"  href="../../Paginas/Alumno/ConsultaC.aspx">Consulta</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownnn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recursos
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Audios</a>
-                                <a class="dropdown-item" href="#">Verbos</a>
-
+                                <a class="dropdown-item" href="../../Paginas/Alumno/Audios.aspx">Audios</a>
+                                <a class="dropdown-item" href="../../Paginas/Alumno/Verbos.aspx">Verbos</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Horarios</a>
-                        </li>
-
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="#">Datos personales</a>
+                            <a class="nav-link" href="../../Paginas/Alumno/Horarios.aspx">Horarios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Modificación</a>
+                            <a class="nav-link" href="../../Paginas/Alumno/Perfil.aspx">Perfil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Salir</a>
+                            <a  class="nav-link" href="../../Paginas/Alumno/Buzon.aspx">Buzón de sugerencias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../Default.aspx">Salir</a>
                         </li>
                     </ul>
                 </div>
@@ -99,11 +94,8 @@
             <%-- controles :v --%>
         </asp:ContentPlaceHolder>
     </form>
-    <footer class="page-footer">
+    <footer >
         <div class="row">
-
-
-
 
                 <div class="col-md-2 align-self-center d-flex justify-content-center">
                     <asp:Image ID="ImageFooter" runat="server" ImageUrl="~/Imagenes/logo.png" CssClass="img-fluid" alt="Responsive image" Height="135px" Width="145px" />
