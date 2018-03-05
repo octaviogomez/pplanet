@@ -11,11 +11,10 @@ namespace Core.View
     public interface IAlumno
     {
         void Mensaje(string Mensaje, int tipo);
-        //Inicio de sesion
+
         CAlumno UsuarioLogeado { set; get; }
         CAlumno UsuarioActulizar { set; get; }
         DataSet UsuariosDt { set; get; }
-
 
     }
 }

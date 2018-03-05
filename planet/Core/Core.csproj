@@ -41,13 +41,43 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\CAlumno.cs" />
+    <Compile Include="Model\CBuzonSugerencias.cs" />
+    <Compile Include="Model\CCat_TipoCitas.cs" />
+    <Compile Include="Model\CCitas.cs" />
+    <Compile Include="Model\CClubs.cs" />
     <Compile Include="Model\CCombo.cs" />
+    <Compile Include="Model\CListaEspera.cs" />
+    <Compile Include="Model\CMensajes.cs" />
+    <Compile Include="Model\CProfesor.cs" />
+    <Compile Include="Model\CRegistroCitas.cs" />
+    <Compile Include="Model\CRegistroClubs.cs" />
+    <Compile Include="Model\CSecretaria.cs" />
     <Compile Include="Model\ManagerBD.cs" />
     <Compile Include="Presenter\WAlumno.cs" />
+    <Compile Include="Presenter\WBuzonSugerencias.cs" />
+    <Compile Include="Presenter\WCat_TipoCitas.cs" />
+    <Compile Include="Presenter\WCitas.cs" />
+    <Compile Include="Presenter\WClubs.cs" />
     <Compile Include="Presenter\WCombo.cs" />
+    <Compile Include="Presenter\WListaEspera.cs" />
+    <Compile Include="Presenter\WMensajes.cs" />
+    <Compile Include="Presenter\WProfesor.cs" />
+    <Compile Include="Presenter\WRegistroCitas.cs" />
+    <Compile Include="Presenter\WRegistroClubs.cs" />
+    <Compile Include="Presenter\WSecretaria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\IAlumno.cs" />
+    <Compile Include="View\IBuzonSugerencias.cs" />
+    <Compile Include="View\ICat_TipoCitas.cs" />
+    <Compile Include="View\ICitas.cs" />
+    <Compile Include="View\Iclubs.cs" />
     <Compile Include="View\ICombo.cs" />
+    <Compile Include="View\IListaEspera.cs" />
+    <Compile Include="View\IMensajes.cs" />
+    <Compile Include="View\IProfesor.cs" />
+    <Compile Include="View\IRegistroCitas.cs" />
+    <Compile Include="View\IRegistroClubs.cs" />
+    <Compile Include="View\ISecretaria.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
