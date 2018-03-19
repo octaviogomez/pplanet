@@ -26,7 +26,7 @@ namespace Core.Model
 
         public ManagerBD()
         {
-            strCadenaConexion = ConfigurationManager.ConnectionStrings["Hospital"].ConnectionString;
+            strCadenaConexion = ConfigurationManager.ConnectionStrings["ingles"].ConnectionString;
 
         }
 
@@ -148,8 +148,14 @@ namespace Core.Model
                         sqlTransaction.Commit();
                     }
 
-                    if (intRegistrosAfectados > 0 )// //https://msdn.microsoft.com/es-es/library/system.data.sqlclient.sqlcommand.executenonquery(v=vs.100).aspx
+                    if (intRegistrosAfectados > 0)
+                    {
                         bolRegisterData = true;
+                    }
+                    //https://technet.microsoft.com/en-us/library/ms190778(v=sql.105).aspx    0 es correcto 
+                    // //https://msdn.microsoft.com/es-es/library/system.data.sqlclient.sqlcommand.executenonquery(v=vs.100).aspx
+                    ///http://www.elguille.info/net/ADONET/cuando_usar_ExecuteNonQuery_o_ExecuteScalar.htm
+
                 }
             }
             catch (Exception exExcepcion1)

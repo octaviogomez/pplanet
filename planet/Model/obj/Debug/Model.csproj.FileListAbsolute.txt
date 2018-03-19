@@ -1,0 +1,10 @@
+C:\Users\octav\Desktop\ingles\planet\Model\bin\Debug\Model.dll.config
+C:\Users\octav\Desktop\ingles\planet\Model\bin\Debug\Model.dll
+C:\Users\octav\Desktop\ingles\planet\Model\bin\Debug\Model.pdb
+C:\Users\octav\Desktop\ingles\planet\Model\bin\Debug\EntityFramework.dll
+C:\Users\octav\Desktop\ingles\planet\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\octav\Desktop\ingles\planet\Model\bin\Debug\EntityFramework.xml
+C:\Users\octav\Desktop\ingles\planet\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\octav\Desktop\ingles\planet\Model\obj\Debug\Model.dll
+C:\Users\octav\Desktop\ingles\planet\Model\obj\Debug\Model.pdb
+C:\Users\octav\Desktop\ingles\planet\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

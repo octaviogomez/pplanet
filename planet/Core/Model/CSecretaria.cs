@@ -19,6 +19,23 @@ namespace Core.Model
         public  CSecretaria() {
             objManagerBD = new ManagerBD();
         }
+        #region Metodo de validación
+        public bool AutentificarSecretaria(int opcion, ref DataSet objDatos, CSecretaria objAlumno)
+        {
+            bool ExisteDatos = false;
+            List<SqlParameter> lstParametros = new List<SqlParameter>();
+            lstParametros.Add(new SqlParameter("@Op", SqlDbType.Int) { Value = opcion });
+            lstParametros.Add(new SqlParameter("@rol", SqlDbType.Int) { Value = objAlumno.rol });
+            lstParametros.Add(new SqlParameter("@clave", SqlDbType.VarChar) { Value = objAlumno.clave });
+            lstParametros.Add(new SqlParameter("@id", SqlDbType.VarChar) { Value = objAlumno.id });
+            objDatos = objManagerBD.GetData("PSecretaria", lstParametros.ToArray());
+            if (objDatos.Tables.Count > 0)
+                ExisteDatos = true;
+
+            return ExisteDatos;
+        }
+        #endregion
+
         #region Propiedades
         public int pk_secreatria { get; set; }
         public int rol { get; set; }

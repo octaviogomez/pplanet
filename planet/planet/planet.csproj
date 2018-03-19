@@ -134,11 +134,10 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controles\Admin\" />
-    <Folder Include="Controles\Alumno\" />
-    <Folder Include="Controles\Secretaria\" />
     <Folder Include="Multimedia\Audios\" />
     <Folder Include="Multimedia\Verbos\" />
     <Folder Include="Paginas\Admin\" />
+    <Folder Include="Paginas\Maestro\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
@@ -146,7 +145,18 @@
     <Content Include="Content\app.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\gijgo.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Controles\Alumno\AvisoGeneral.ascx" />
+    <Content Include="Controles\Alumno\InforAvisos.ascx" />
+    <Content Include="Controles\Alumno\InforGeneral.ascx" />
+    <Content Include="Controles\Alumno\InforReservaciones.ascx" />
+    <Content Include="Controles\Secretaria\Default\AlumnoClubs.ascx" />
+    <Content Include="Controles\Secretaria\Default\AlumnoReservacion.ascx" />
+    <Content Include="Controles\Secretaria\Reservaciones\ContreolReservarReservacion.ascx" />
+    <Content Include="Controles\Secretaria\Reservaciones\ControlAdminCitas.ascx" />
+    <Content Include="Controles\Secretaria\Reservaciones\ControlCrearCita.ascx" />
+    <Content Include="Controles\Sesion\login.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -172,7 +182,9 @@
     <Content Include="Paginas\Alumno\Default.aspx" />
     <Content Include="Paginas\Alumno\Horarios.aspx" />
     <Content Include="Paginas\Alumno\Perfil.aspx" />
-    <Content Include="Paginas\Alumno\Reservaciones.aspx" />
+    <Content Include="Paginas\Secretaria\Reservaciones\AdministrarCitas.aspx" />
+    <Content Include="Paginas\Secretaria\Reservaciones\AgendarReservacion.aspx" />
+    <Content Include="Paginas\Secretaria\Reservaciones\CrearResercacion.aspx" />
     <Content Include="Paginas\Alumno\Verbos.aspx" />
     <Content Include="Paginas\Secretaria\AdminAlumnos.aspx" />
     <Content Include="Paginas\Secretaria\AdminClubs.aspx" />
@@ -183,11 +195,11 @@
     <Content Include="Paginas\Secretaria\Horarios.aspx" />
     <Content Include="Paginas\Secretaria\Multimedia.aspx" />
     <Content Include="Paginas\Secretaria\Perfil.aspx" />
-    <Content Include="Paginas\Secretaria\Reservaciones.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\gijgo.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
@@ -219,6 +231,7 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Sesion.aspx" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -226,7 +239,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Site.Mobile.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -250,6 +262,76 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Alumno\AvisoGeneral.ascx.cs">
+      <DependentUpon>AvisoGeneral.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Alumno\AvisoGeneral.ascx.designer.cs">
+      <DependentUpon>AvisoGeneral.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Alumno\InforAvisos.ascx.cs">
+      <DependentUpon>InforAvisos.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Alumno\InforAvisos.ascx.designer.cs">
+      <DependentUpon>InforAvisos.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Alumno\InforGeneral.ascx.cs">
+      <DependentUpon>InforGeneral.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Alumno\InforGeneral.ascx.designer.cs">
+      <DependentUpon>InforGeneral.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Alumno\InforReservaciones.ascx.cs">
+      <DependentUpon>InforReservaciones.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Alumno\InforReservaciones.ascx.designer.cs">
+      <DependentUpon>InforReservaciones.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Default\AlumnoClubs.ascx.cs">
+      <DependentUpon>AlumnoClubs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Default\AlumnoClubs.ascx.designer.cs">
+      <DependentUpon>AlumnoClubs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Default\AlumnoReservacion.ascx.cs">
+      <DependentUpon>AlumnoReservacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Default\AlumnoReservacion.ascx.designer.cs">
+      <DependentUpon>AlumnoReservacion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Reservaciones\ContreolReservarReservacion.ascx.cs">
+      <DependentUpon>ContreolReservarReservacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Reservaciones\ContreolReservarReservacion.ascx.designer.cs">
+      <DependentUpon>ContreolReservarReservacion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Reservaciones\ControlAdminCitas.ascx.cs">
+      <DependentUpon>ControlAdminCitas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Reservaciones\ControlAdminCitas.ascx.designer.cs">
+      <DependentUpon>ControlAdminCitas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Reservaciones\ControlCrearCita.ascx.cs">
+      <DependentUpon>ControlCrearCita.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Reservaciones\ControlCrearCita.ascx.designer.cs">
+      <DependentUpon>ControlCrearCita.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Sesion\login.ascx.cs">
+      <DependentUpon>login.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Sesion\login.ascx.designer.cs">
+      <DependentUpon>login.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -338,12 +420,26 @@
     <Compile Include="Paginas\Alumno\Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Paginas\Alumno\Reservaciones.aspx.cs">
-      <DependentUpon>Reservaciones.aspx</DependentUpon>
+    <Compile Include="Paginas\Secretaria\Reservaciones\AdministrarCitas.aspx.cs">
+      <DependentUpon>AdministrarCitas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Paginas\Alumno\Reservaciones.aspx.designer.cs">
-      <DependentUpon>Reservaciones.aspx</DependentUpon>
+    <Compile Include="Paginas\Secretaria\Reservaciones\AdministrarCitas.aspx.designer.cs">
+      <DependentUpon>AdministrarCitas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Reservaciones\AgendarReservacion.aspx.cs">
+      <DependentUpon>AgendarReservacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Reservaciones\AgendarReservacion.aspx.designer.cs">
+      <DependentUpon>AgendarReservacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Reservaciones\CrearResercacion.aspx.cs">
+      <DependentUpon>CrearResercacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Reservaciones\CrearResercacion.aspx.designer.cs">
+      <DependentUpon>CrearResercacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Alumno\Verbos.aspx.cs">
       <DependentUpon>Verbos.aspx</DependentUpon>
@@ -415,27 +511,20 @@
     <Compile Include="Paginas\Secretaria\Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Paginas\Secretaria\Reservaciones.aspx.cs">
-      <DependentUpon>Reservaciones.aspx</DependentUpon>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sesion.aspx.cs">
+      <DependentUpon>Sesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Paginas\Secretaria\Reservaciones.aspx.designer.cs">
-      <DependentUpon>Reservaciones.aspx</DependentUpon>
+    <Compile Include="Sesion.aspx.designer.cs">
+      <DependentUpon>Sesion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Site.Mobile.Master.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.Mobile.Master.designer.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
@@ -445,7 +534,12 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{d9dfc237-ab8a-45f6-b8c7-79399a4fc7d9}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

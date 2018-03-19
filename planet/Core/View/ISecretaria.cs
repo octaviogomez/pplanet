@@ -11,11 +11,11 @@ namespace Core.View
 {
     public interface ISecretaria
     {
-        void Mensaje(string Mensaje, int tipo);
+        void MensajeSecretaria(string Mensaje, int tipo);
 
-        CSecretaria UsuarioLogeado { set; get; }
-        CSecretaria UsuarioActulizar { set; get; }
-        DataSet UsuariosDt { set; get; }
+        CSecretaria ObjSecretaria { set; get; }
+        CSecretaria ObjSecretariaAux { set; get; }
+        DataSet SecretariaDt { set; get; }
 
     }
 }

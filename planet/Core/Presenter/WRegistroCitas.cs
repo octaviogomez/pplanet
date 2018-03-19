@@ -33,5 +33,26 @@ namespace Core.Presenter
             }
             return ConexcionAvierta;
         }
+        public void ListadoDeCitas(CRegistroCitas objCita, int opcion)
+        {
+            DataSet dtsDatos = new DataSet();
+            CRegistroCitas objaux = new CRegistroCitas();
+            bool BolRegistro = false;
+            if (ExisteConexion())
+            {
+                BolRegistro = objaux.ListarCitas(opcion, objCita, ref dtsDatos);
+
+                if (BolRegistro == true)
+                {
+                    ViewRegistroCitas.ListadoDt = dtsDatos;
+                    ViewRegistroCitas.Mensaje("Listado correcto", 1);
+                }
+                else
+                {
+                    ViewRegistroCitas.Mensaje("Error no se pudieron listas ", 2);
+                }
+            }
+        }
+
     }
 }

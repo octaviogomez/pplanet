@@ -105,32 +105,26 @@ TipoCitas (oral escrito review)
 EstadoReservacion (cancelado acrivo,retardo)
 	pk_estadoReservacion
 	descripcion
-
 EstadoGenerico(activo,cancelado)
 	pk_estadoGenerico
 	descripcion
-
 BuzonSugerencias
 	pk_buzonSugerencia
 	fk_alumno
 	fecha
 	hora
 	descripcion
-
-
 Mensaje
 	pk_mensaje
 	fk_alumno
 	fecha
 	hora
 	descripcion
-
 ListaEspera
 	pk_listaEspera
 	fk_alumno
 	fecha
 	hora
-
 Roles
 	pk_rol
 	descripcion
@@ -139,6 +133,7 @@ TipoClub  (peli,coversacion,cafe)
 	pk_tipoClub
 	descripcion
 	valor
+
 
 NivelIngles
 	pk_nivelIngles
@@ -153,6 +148,10 @@ cat_estatusPago
 	pk_estatusPago
 	descripcion
 
+cat_Lecciones
+	pk_lecciones
+	descripcion	
+	
 
 
 LogsRegistro

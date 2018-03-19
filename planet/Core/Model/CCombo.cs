@@ -22,15 +22,13 @@ namespace Core.Model
 
         public string Id { get; set; }
         public string Descripcion { get; set; }
-        public bool ObtenerCatalogo(int opcion,ref DataSet objDatos, string ClaveCCT = null) {
+        public bool ObtenerCatalogo(int opcion,ref DataSet objDatos, string ClaveCCT ) {
             bool ExisteDatos = false;
             List<SqlParameter> lstParametros = new List<SqlParameter>();
             lstParametros.Add(new SqlParameter("@Op", SqlDbType.Int) { Value = opcion });
-            objDatos = objManagerBD.GetData("PConsulta", lstParametros.ToArray());
+            objDatos = objManagerBD.GetData(ClaveCCT, lstParametros.ToArray());
             if (objDatos.Tables.Count > 0)
-            {
                 ExisteDatos = true;
-            }
             return ExisteDatos;
         }
 

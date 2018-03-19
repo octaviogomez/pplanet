@@ -20,6 +20,23 @@ namespace Core.Model
             objManagerBD = new ManagerBD();
         }
 
+     
+        #region Metodo de valicacion
+        public bool AutentificarAlumno(int opcion, ref DataSet objDatos, CAlumno objAlumno)
+        {
+            bool ExisteDatos = false;
+            List<SqlParameter> lstParametros = new List<SqlParameter>();
+            lstParametros.Add(new SqlParameter("@Op", SqlDbType.Int) { Value = opcion });
+            lstParametros.Add(new SqlParameter("@rol", SqlDbType.Int) { Value = objAlumno.rol });
+            lstParametros.Add(new SqlParameter("@clave", SqlDbType.VarChar) { Value = objAlumno.clave });
+            lstParametros.Add(new SqlParameter("@id", SqlDbType.Int) { Value = objAlumno.id });
+            objDatos = objManagerBD.GetData("Alumno", lstParametros.ToArray());
+            if (objDatos.Tables.Count > 0)
+                ExisteDatos = true;
+
+            return ExisteDatos;
+        }
+        #endregion
         #region Variables
         public int pk_alumno { get; set; }
 
@@ -60,8 +77,8 @@ namespace Core.Model
         public int noClubs { get; set; }
 
         public int noPelis { get; set; }
+        public string FechaNacimiento { get; set; }
 
-   
 
         #endregion
     }

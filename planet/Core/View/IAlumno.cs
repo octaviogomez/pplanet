@@ -10,7 +10,7 @@ namespace Core.View
 {
     public interface IAlumno
     {
-        void Mensaje(string Mensaje, int tipo);
+        void MensajeAlumno(string Mensaje, int tipo);
 
         CAlumno UsuarioLogeado { set; get; }
         CAlumno UsuarioActulizar { set; get; }

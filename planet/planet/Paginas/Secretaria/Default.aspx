@@ -1,55 +1,66 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Secretaria/Secretaria.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="planet.Paginas.Secretaria.Default" %>
+
+<%@ Register Src="~/Controles/Secretaria/Default/AlumnoReservacion.ascx" TagPrefix="uc1" TagName="AlumnoReservacion" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="container">
-        <div class="card mb-3">
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/Imagenes/Recursos/aviso.jpg" class="card-img-top" alt="Card image cap" />
+    <div class="container">
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 
-            <div class="card-body">
-                <h5 class="card-title">Fechas de clubs nuevas</h5>
-                <p class="card-text">Para mas informacion preguntar en el área de información</p>
-                <p class="card-text"><small class="text-muted">lunes 5 de febrero</small></p>
-            </div>
-        </div>
-        <div class="card-deck">
-            <div class="card  border-info mb-3">
-                <%-- <img class="card-img-top" src="../Imagenes/Recursos/aviso.jpg" alt="Card image cap">--%>
-                <div class="card-header"> <strong>Información general</strong></div>
-                <div class="card-body text-info">
-                    <h5 class="card-title ">Alumno</h5>
-                    <p class="card-text">Nombre:<strong>Juan Manolo</strong></p>
-                    <p class="card-text">Pelis:<strong>8</strong></p>
-                    <p class="card-text">Clubs:<strong>20</strong></p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Nivel 1</small>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Fluid jumbotron</h1>
+                    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
                 </div>
             </div>
-            <div class="card  border-success mb-3">
-                <%-- <img class="card-img-top" src="..." alt="Card image cap">--%>
-                <div class="card-header"><strong> Reservaciones</strong></div>
-                <div class="card-body text-success">
-                    <h5 class="card-title">Próximas</h5>
-                    <p class="card-text"> <strong> 12 Enero,12:00 am</strong> <small class="">Película</small></p>
-                    <p class="card-text"> <strong> 13 Enero,15:00 pm</strong> <small class="">Reservación</small></p>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#PanelPrincipal" role="tab" aria-controls="v-pills-home" aria-selected="true">Panel princial</a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#Reservaciones" role="tab" aria-controls="v-pills-profile" aria-selected="false">Reservaciones</a>
+                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#Clubs" role="tab" aria-controls="v-pills-messages" aria-selected="false">Clubs</a>
+                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Lista de espera</a>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">Ver horarios</small>
-                </div>
-            </div>
-            <div class="card  border-danger mb-3">
-             <%--   <img class="card-img-top" src="..." alt="Card image cap">--%>
-                <div class="card-header"><strong>Avisos</strong></div>
-                <div class="card-body text-danger">
-                    <h5 class="card-title">Importante</h5>
-                    <p class="card-text">Cancelaciones:<strong>1</strong></p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Ver Secretaria</small>
+                <div class="col-md-10">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="PanelPrincipal" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        </div>
+                        <div class="tab-pane fade" id="Reservaciones" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <uc1:AlumnoReservacion runat="server" ID="AlumnoReservacion" />
+                        </div>
+                        <div class="tab-pane fade" id="Clubs" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <script type="text/javascript"> 
+
+
+
+    </script>
 </asp:Content>

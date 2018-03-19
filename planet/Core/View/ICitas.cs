@@ -13,7 +13,7 @@ namespace Core.View
         void Mensaje(string Mensaje, int tipo);
 
         CCitas ObjetoCitas{ set; get; }
-        CClubs ObjetoCitasAux { set; get; }
+        CCitas ObjetoCitasAux { set; get; }
         DataSet ListadoDt { set; get; }
         DataSet ListadoEsp { set; get; }
     }
