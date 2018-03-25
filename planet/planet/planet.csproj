@@ -155,6 +155,7 @@
     <Content Include="Controles\Secretaria\Default\AlumnoReservacion.ascx" />
     <Content Include="Controles\Secretaria\Reservaciones\ContreolReservarReservacion.ascx" />
     <Content Include="Controles\Secretaria\Reservaciones\ControlAdminCitas.ascx" />
+    <Content Include="Controles\Secretaria\Reservaciones\ControlConsultaCancelacion.ascx" />
     <Content Include="Controles\Secretaria\Reservaciones\ControlCrearCita.ascx" />
     <Content Include="Controles\Sesion\login.ascx" />
     <Content Include="Default.aspx" />
@@ -182,13 +183,13 @@
     <Content Include="Paginas\Alumno\Default.aspx" />
     <Content Include="Paginas\Alumno\Horarios.aspx" />
     <Content Include="Paginas\Alumno\Perfil.aspx" />
+    <Content Include="Paginas\Secretaria\Ejemplo.aspx" />
     <Content Include="Paginas\Secretaria\Reservaciones\AdministrarCitas.aspx" />
     <Content Include="Paginas\Secretaria\Reservaciones\AgendarReservacion.aspx" />
+    <Content Include="Paginas\Secretaria\Reservaciones\ConsultaCitas.aspx" />
     <Content Include="Paginas\Secretaria\Reservaciones\CrearResercacion.aspx" />
     <Content Include="Paginas\Alumno\Verbos.aspx" />
     <Content Include="Paginas\Secretaria\AdminAlumnos.aspx" />
-    <Content Include="Paginas\Secretaria\AdminClubs.aspx" />
-    <Content Include="Paginas\Secretaria\AdminReservaciones.aspx" />
     <Content Include="Paginas\Secretaria\Avisos.aspx" />
     <Content Include="Paginas\Secretaria\Clubs.aspx" />
     <Content Include="Paginas\Secretaria\Default.aspx" />
@@ -319,6 +320,13 @@
     <Compile Include="Controles\Secretaria\Reservaciones\ControlAdminCitas.ascx.designer.cs">
       <DependentUpon>ControlAdminCitas.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controles\Secretaria\Reservaciones\ControlConsultaCancelacion.ascx.cs">
+      <DependentUpon>ControlConsultaCancelacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Reservaciones\ControlConsultaCancelacion.ascx.designer.cs">
+      <DependentUpon>ControlConsultaCancelacion.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controles\Secretaria\Reservaciones\ControlCrearCita.ascx.cs">
       <DependentUpon>ControlCrearCita.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -420,6 +428,13 @@
     <Compile Include="Paginas\Alumno\Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Secretaria\Ejemplo.aspx.cs">
+      <DependentUpon>Ejemplo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Ejemplo.aspx.designer.cs">
+      <DependentUpon>Ejemplo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Secretaria\Reservaciones\AdministrarCitas.aspx.cs">
       <DependentUpon>AdministrarCitas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -433,6 +448,13 @@
     </Compile>
     <Compile Include="Paginas\Secretaria\Reservaciones\AgendarReservacion.aspx.designer.cs">
       <DependentUpon>AgendarReservacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Reservaciones\ConsultaCitas.aspx.cs">
+      <DependentUpon>ConsultaCitas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Reservaciones\ConsultaCitas.aspx.designer.cs">
+      <DependentUpon>ConsultaCitas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Secretaria\Reservaciones\CrearResercacion.aspx.cs">
       <DependentUpon>CrearResercacion.aspx</DependentUpon>
@@ -454,20 +476,6 @@
     </Compile>
     <Compile Include="Paginas\Secretaria\AdminAlumnos.aspx.designer.cs">
       <DependentUpon>AdminAlumnos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Paginas\Secretaria\AdminClubs.aspx.cs">
-      <DependentUpon>AdminClubs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Paginas\Secretaria\AdminClubs.aspx.designer.cs">
-      <DependentUpon>AdminClubs.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Paginas\Secretaria\AdminReservaciones.aspx.cs">
-      <DependentUpon>AdminReservaciones.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Paginas\Secretaria\AdminReservaciones.aspx.designer.cs">
-      <DependentUpon>AdminReservaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Secretaria\Avisos.aspx.cs">
       <DependentUpon>Avisos.aspx</DependentUpon>

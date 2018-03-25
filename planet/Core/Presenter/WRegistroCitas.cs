@@ -54,5 +54,47 @@ namespace Core.Presenter
             }
         }
 
+        public void RegistroCita(CRegistroCitas objCita, int opcion)
+        {
+            DataSet dtsDatos = new DataSet();
+            CRegistroCitas objaux = new CRegistroCitas();
+            bool BolRegistro = false;
+            if (ExisteConexion())
+            {
+                
+                BolRegistro = objaux.InsertarReservacion(opcion, objCita); 
+                if (BolRegistro == true)
+                {
+                    
+                      ViewRegistroCitas.Mensaje("Correcto", 4); 
+                  
+                }
+                else
+                {
+                    ViewRegistroCitas.Mensaje("Error", 5);
+                }
+            }
+        }
+        public void FaltasDeAlumno(CRegistroCitas objCita, int opcion)
+        {
+            DataSet dtsDatos = new DataSet();
+            CRegistroCitas objaux = new CRegistroCitas();
+            bool BolRegistro = false;
+            if (ExisteConexion())
+            {
+                BolRegistro = objaux.ListarCitas(opcion, objCita, ref dtsDatos);
+
+                if (BolRegistro == true)
+                {
+                   // ViewRegistroCitas.ListadoDt = dtsDatos;
+
+                    ViewRegistroCitas.Mensaje(dtsDatos.Tables[0].Rows[0][0].ToString(),5);
+                }
+                else
+                {
+                    ViewRegistroCitas.Mensaje("Error no se pudo obtener faltas", 6);
+                }
+            }
+        }
     }
 }

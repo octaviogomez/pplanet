@@ -17,7 +17,7 @@ namespace Core.Model
     {
         public string ProcedimientoGeneral = "PCitas";
         ManagerBD objManagerBD;
-        public const int NoAlumno = 6;
+        public  int NoAlumno = 6;
         public CCitas()
         {
             objManagerBD = new ManagerBD();

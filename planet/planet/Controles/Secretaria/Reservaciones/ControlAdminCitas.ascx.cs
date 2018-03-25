@@ -131,11 +131,15 @@ namespace planet.Controles.Secretaria.Reservaciones
         #endregion
 
         #region Evento Boton
-        protected void ButtonCrear_Click(object sender, EventArgs e)
+        protected void ButtonCrear_Click(object sender, EventArgs e)// Ver citas con el boton
         {
             WCitas.ListadoDeCitas(ObjetoCitasAux, 3);
         }
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void TextBoxFecha_TextChanged(object sender, EventArgs e)// citas automatico
+        {
+            WCitas.ListadoDeCitas(ObjetoCitasAux, 3);
+        }
+        protected void Button1_Click(object sender, EventArgs e)//eliminar una cita
         {
             WCitas.EliminarCita(4, ObjetoCitas);
             Response.Redirect(Request.RawUrl);
@@ -153,6 +157,6 @@ namespace planet.Controles.Secretaria.Reservaciones
             FilaSeleccionada.Dispose();
         }
 
-     
+      
     }
 }

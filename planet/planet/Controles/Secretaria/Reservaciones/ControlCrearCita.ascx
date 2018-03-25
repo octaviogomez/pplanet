@@ -18,11 +18,11 @@
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="TextBoxFecha">Fecha</label>
-                    <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" required="Se necesita una fecha" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" required="Se necesita una fecha" CssClass="form-control" requiered="" AutoPostBack="True" OnTextChanged="TextBoxFecha_TextChanged"></asp:TextBox>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="DropDownListHorarios">Horarios</label>
-                    <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Fecha" required="Se necesita una fecha"></asp:DropDownList>
+                    <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Fecha" required="Se necesita una fecha"   ></asp:DropDownList>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="TextBoxNoProfesores">Número de profesores</label>

@@ -20,7 +20,11 @@ namespace planet.Controles.Secretaria.Reservaciones
 
         WRegistroCitas wRegistroCitas;
         CRegistroCitas cRegistroCitas;
-
+        public GridViewRow FilaSeleccionada
+        {
+            get;
+            private set;
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             Wcombo = new WCombo(this);//Hacer uso de metodos del combo
@@ -31,9 +35,11 @@ namespace planet.Controles.Secretaria.Reservaciones
 
             if (!IsPostBack)
             {
+               
+
                 LlenadoComboGenerico(DropDownListTipoCita, 3, "ListadoCatalogos");
                 LlenadoComboGenerico(DropDownListTipoLeccion, 4, "ListadoCatalogos");
-                wRegistroCitas.ListadoDeCitas(ObjRegistroRegistroCitas, 1);
+                wRegistroCitas.ListadoDeCitas(cRegistroCitas, 1);
             }
 
         }
@@ -62,7 +68,7 @@ namespace planet.Controles.Secretaria.Reservaciones
 
             set
             {
-                if (value!=null)
+                if (value != null)
                 {
                     GridViewCitas.DataSource = value;
                     GridViewCitas.DataBind();
@@ -78,21 +84,34 @@ namespace planet.Controles.Secretaria.Reservaciones
 
             set
             {
-               ;
+                ;
             }
-        }
+        }   
         public CRegistroCitas ObjRegistroCitasAux
         {
             get
             {
-                return null;
+                CRegistroCitas obj = new CRegistroCitas();
+                try
+                {
+                    obj.fk_cita = Convert.ToInt32(TextBoxIdCita.Text);
+                    obj.fk_alumno = Convert.ToInt32(TextBoxIdAlumno.Text);
+                    obj.fk_tipoCitas = Convert.ToInt32(DropDownListTipoCita.SelectedValue);
+                    obj.fk_lecciones = Convert.ToInt32(DropDownListTipoLeccion.SelectedValue);
+                }
+                catch (Exception e)
+                {
+                    obj = null;
+                   
+                }
+                return obj;
             }
 
             set
             {
-                
+
             }
-        }
+        } // objeto que encapsula las propiedades de la cita para poder generar el registro
         public CRegistroCitas ObjRegistroRegistroCitas
         {
             get
@@ -100,12 +119,12 @@ namespace planet.Controles.Secretaria.Reservaciones
                 CRegistroCitas obj = new CRegistroCitas();
                 try
                 {
-                    //obj.fecha = DateTime.Now.ToShortDateString();
-                    obj.fecha = (TextBoxFecha.Text!="")? "2018/03/19":TextBoxFecha.Text;
+
+                    obj.fecha = TextBoxFecha.Text;
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    obj.fecha = "2000/01/01";
+                    obj.fecha = DateTime.Now.ToShortDateString();
 
                 }
 
@@ -114,12 +133,12 @@ namespace planet.Controles.Secretaria.Reservaciones
 
             set
             {
-                
+
             }
-        }
+        }   // objeto que encapsula las propiedades para hacer un listado
         public void Mensaje(string Mensaje, int tipo)
         {
-          
+
         }
         #endregion
         #region Metodos Combo
@@ -135,6 +154,61 @@ namespace planet.Controles.Secretaria.Reservaciones
             }
         }
         #endregion
-      
+
+        #region Eventos 
+        protected void ButtonBuscarFecha_Click(object sender, EventArgs e)//buscar fechar con el boton
+        {
+            wRegistroCitas.ListadoDeCitas(ObjRegistroRegistroCitas, 2);
+        }
+        protected void TextBoxFecha_TextChanged(object sender, EventArgs e)//buscar fechas sin boton
+        {
+            wRegistroCitas.ListadoDeCitas(ObjRegistroRegistroCitas, 2);
+        }
+
+        protected void GridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+            string codigo = "";
+   
+            FilaSeleccionada = (GridViewRow)(((LinkButton)e.CommandSource).NamingContainer);
+
+            if (e.CommandName == "seleccion")
+            {
+                codigo = (((Label)FilaSeleccionada.FindControl("LabelId")).Text);
+                TextBoxIdCita.Text = codigo;
+                TextBoxIdCita.CssClass = "form-control is-valid";
+            }
+        
+
+            FilaSeleccionada.Dispose();
+        }
+
+
+        protected void ButtonCrear_Click(object sender, EventArgs e)
+        {
+
+            //Verificar las faltas
+            /*
+             El alumno tiene 6 creditos
+             los cuales estan repartidos de la siguiente manera
+             1 falta =3
+             1 cancelacion =2
+            6 es el limite
+             */
+
+            //   wRegistroCitas.ListadoDeCitas(ObjRegistroCitasAux, 3);
+
+
+            //  wRegistroCitas.RegistroCita(ObjRegistroCitasAux, 3);
+
+            //   Response.Redirect(Request.RawUrl);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>    $('#ModalAlumnoFaltas').modal('show');</script>", false);
+
+        }
+
+
+        #endregion
+
+
     }
 }

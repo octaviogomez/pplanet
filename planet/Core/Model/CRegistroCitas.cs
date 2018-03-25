@@ -50,6 +50,20 @@ namespace Core.Model
             return ExisteDatos;
 
         }
-
+        public bool InsertarReservacion(int opcion, CRegistroCitas obj) //Metodogenerico de altas bajas y modificacion
+        {
+            List<SqlParameter> lstParametros = new List<SqlParameter>();
+            lstParametros.Add(new SqlParameter("@Op", SqlDbType.Int) { Value = opcion });
+            lstParametros.Add(new SqlParameter("@fk_cita", SqlDbType.Int) { Value = obj.fk_cita });
+            lstParametros.Add(new SqlParameter("@fk_alumno", SqlDbType.Int) { Value = obj.fk_alumno });
+            lstParametros.Add(new SqlParameter("@fk_tipoCitas", SqlDbType.Int) { Value = obj.fk_tipoCitas });
+            lstParametros.Add(new SqlParameter("@fk_lecciones", SqlDbType.Int) { Value = obj.fk_lecciones });
+            objManagerBD = new ManagerBD();
+            if (objManagerBD.UpdateData(ProcedimientoGeneral, lstParametros.ToArray()))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

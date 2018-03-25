@@ -16,21 +16,16 @@ namespace planet.Controles.Secretaria.Reservaciones
     {
         WCombo Wcombo;
         List<CCombo> listaDatos = new List<CCombo>();
-        CCitas ObjCitas;//Objeto donde estara la informacion de logeo temporal
-        WCitas WCitas;//meotodo para poder ocupar los metodos de la wAlumno
+
+        CCitas ObjCitas;
+        WCitas WCitas;
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjCitas = new CCitas();
             WCitas = new WCitas(this);
-
-
             Wcombo = new WCombo(this);//Hacer uso de metodos del combo
-            if (!IsPostBack)
-            {
-                LlenadoComboGenerico(DropDownListHorarios, 2, "ListadoCatalogos");
-            }
         }
         #region ICombo
         public List<CCombo> LlenarCombo
@@ -59,12 +54,13 @@ namespace planet.Controles.Secretaria.Reservaciones
                     CitasReturn.fecha = TextBoxFecha.Text;//Fecha
                     CitasReturn.fk_hora = Convert.ToInt32(DropDownListHorarios.SelectedValue);//Fk del horario
                     CitasReturn.NoProfes = Convert.ToInt32(TextBoxNoProfesores.Text);//Sabemos el número de profesores
-                    CitasReturn.cupo = CitasReturn.NoProfes * CCitas.NoAlumno; // operacion matematica para calcular los espacios 
+                    CitasReturn.cupo = CitasReturn.NoAlumno * CitasReturn.NoProfes; // operacion matematica para calcular los espacios 
                     CitasReturn.id_registro = Convert.ToInt32(1);       /// opcional, reguistar quien registro la cita (quien secretaria lo hizo)
                 }
                 catch (Exception)
                 {
-                   
+                    CitasReturn = null;
+                    PanelAvisoError.Visible = true;
                 }
                 return CitasReturn;
             }
@@ -79,7 +75,17 @@ namespace planet.Controles.Secretaria.Reservaciones
         {
             get
             {
-                return null;
+                CCitas obj = new CCitas();
+                try
+                {
+                    obj.fecha = TextBoxFecha.Text;
+                }
+                catch (Exception)
+                {
+
+                    obj.fecha = "2000-01-01";
+                }
+                return obj;
             }
 
             set
@@ -131,8 +137,10 @@ namespace planet.Controles.Secretaria.Reservaciones
         }
         #endregion
         #region Metodos Combo
-        private void LlenadoComboGenerico(DropDownList Combo, int Opcion, string procedimiento)
+        private void LlenadoCombo(DropDownList Combo, int Opcion, string procedimiento)
         {
+            Combo.Items.Clear();// limpiamos combo
+
             Wcombo.ListarDatos(Opcion, procedimiento);/// se implementa el llenado de la interfaz
             if (listaDatos != null)
             {
@@ -157,6 +165,13 @@ namespace planet.Controles.Secretaria.Reservaciones
             }
         }
 
-      
+       
+
+        protected void TextBoxFecha_TextChanged(object sender, EventArgs e)
+        {
+            //  LlenadoCombo(DropDownListHorarios,2, "ListadoCatalogos");
+            //para usar este el listado debe de recirnir un objeto con la fecha 
+            LlenadoCombo(DropDownListHorarios, 2, "ListadoCatalogos");
+        }
     }
 }
