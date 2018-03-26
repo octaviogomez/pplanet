@@ -15,6 +15,13 @@ namespace planet.Controles.Secretaria.Reservaciones
 {
     public partial class ContreolReservarReservacion : System.Web.UI.UserControl, ICombo, IRegistroCitas
     {
+
+        /*
+         Tipos de mensajes para el metodo implementado
+          del 1 al 5:
+                        Se hace un registro de la cita
+               6 SE 
+             */
         WCombo Wcombo;
         List<CCombo> listaDatos = new List<CCombo>();
 
@@ -138,7 +145,23 @@ namespace planet.Controles.Secretaria.Reservaciones
         }   // objeto que encapsula las propiedades para hacer un listado
         public void Mensaje(string Mensaje, int tipo)
         {
+            switch (tipo)
+            {
+        
+                case 5:
+                    wRegistroCitas.RegistroCita(ObjRegistroCitasAux, 3);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>  $('#Notificacion').modal('show');</script>", false);
 
+
+                    break;
+                case 6:
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>    $('#ModalAlumnoFaltas').modal('show');</script>", false);
+
+                    break;
+
+                default:
+                    break;
+            }
         }
         #endregion
         #region Metodos Combo
@@ -186,29 +209,25 @@ namespace planet.Controles.Secretaria.Reservaciones
 
         protected void ButtonCrear_Click(object sender, EventArgs e)
         {
-
             //Verificar las faltas
             /*
              El alumno tiene 6 creditos
              los cuales estan repartidos de la siguiente manera
              1 falta =3
              1 cancelacion =2
-            6 es el limite
+             6 es el limite
              */
-
-            //   wRegistroCitas.ListadoDeCitas(ObjRegistroCitasAux, 3);
-
-
-            //  wRegistroCitas.RegistroCita(ObjRegistroCitasAux, 3);
-
-            //   Response.Redirect(Request.RawUrl);
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>    $('#ModalAlumnoFaltas').modal('show');</script>", false);
-
+             wRegistroCitas.FaltasDeAlumno(ObjRegistroCitasAux, 4);
+           
         }
+
 
 
         #endregion
 
-
+        protected void ButtonRegistrarAlumoFalta_Click(object sender, EventArgs e)
+        {
+            wRegistroCitas.RegistroCita(ObjRegistroCitasAux, 3);
+        }
     }
 }

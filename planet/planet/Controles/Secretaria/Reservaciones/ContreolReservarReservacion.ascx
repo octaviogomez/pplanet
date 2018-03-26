@@ -42,7 +42,7 @@
             <div class="form-row ">
                 <div class="col-md-4 mb-3">
                     <label for="TextBoxFecha">Fecha</label>
-                    <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" CssClass="form-control" OnTextChanged="TextBoxFecha_TextChanged" AutoPostBack="true" ></asp:TextBox>
+                    <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" CssClass="form-control" OnTextChanged="TextBoxFecha_TextChanged" AutoPostBack="true"></asp:TextBox>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="ButtonBuscarFecha"></label>
@@ -66,7 +66,7 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
 
-                            
+
                             <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado" />
                             <asp:BoundField Visible="true" DataField="Fecha" HeaderText="Fecha" />
                             <asp:BoundField Visible="true" DataField="Horario" HeaderText="Horario" />
@@ -87,7 +87,7 @@
 
                 <div class="col-md-3 mb-2">
                     <label for="TextBoxNoProfesores">Id Cita</label>
-                    <asp:TextBox ID="TextBoxIdCita" runat="server" CssClass="form-control" placeholder="Id cita" ValidationGroup="AceptarRegistro"  Enabled="false" required=""></asp:TextBox>
+                    <asp:TextBox ID="TextBoxIdCita" runat="server" CssClass="form-control" placeholder="Id cita" ValidationGroup="AceptarRegistro" Enabled="false" required=""></asp:TextBox>
 
                     <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Se necesita una cita" ValidationGroup="AceptarRegistro" ControlToValidate="TextBoxIdCita" CssClass="alert alert-danger form-control" role="alter"></asp:RequiredFieldValidator>--%>
                 </div>
@@ -115,29 +115,48 @@
                     <asp:Button ID="ButtonCrear" runat="server" Text="Registrar" class="btn btn-success btn-lg btn-block" ValidationGroup="AceptarRegistro" OnClick="ButtonCrear_Click" />
                 </div>
             </div>
-          
+
         </div>
     </div>
 </div>
-<br/>
+<br />
 
-
+<!-- Modal  de advertencia-->
 <div class="modal fade" id="ModalAlumnoFaltas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Eliminar reservación</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Advertencia</h5>
+
+            </div>
+            <div class="modal-body">
+                Este alumno tiene más de 6 puntos de inasistencia.
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <asp:Button ID="ButtonRegistrarAlumoFalta" runat="server" Text="Registrar " CssClass="btn btn-warning" OnClick="ButtonRegistrarAlumoFalta_Click" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de notificacion-->
+<div class="modal fade" id="Notificacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="examttlte">Modal title</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                Al eliminar la cita, todas las reservaciones agendadas seran eliminadas
+                Registro exitoso
             </div>
             <div class="modal-footer">
-                <asp:TextBox ID="TextBoxPkCita" runat="server" Visible="false" Enabled="false"></asp:TextBox>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <asp:Button ID="Button1" runat="server" Text="Eliminar " CssClass="btn btn-danger" />
+
+                <button type="button" class="btn btn-primary">Ok!</button>
             </div>
         </div>
     </div>

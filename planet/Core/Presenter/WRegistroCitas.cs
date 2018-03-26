@@ -86,13 +86,38 @@ namespace Core.Presenter
 
                 if (BolRegistro == true)
                 {
-                   // ViewRegistroCitas.ListadoDt = dtsDatos;
 
-                    ViewRegistroCitas.Mensaje(dtsDatos.Tables[0].Rows[0][0].ToString(),5);
+
+                    try
+                    {
+                        int value = Convert.ToInt32(dtsDatos.Tables[0].Rows[0][0].ToString());
+                        switch (value)
+                        {
+
+                            case 5:
+                                ViewRegistroCitas.Mensaje("5", 5);
+                                break;
+                            case 6:
+                                ViewRegistroCitas.Mensaje("6", 6);
+                                break;
+
+                            default:
+                                break;
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                        ViewRegistroCitas.Mensaje("Hay un error intente de nuevo", 7);
+                    }
+                 
+                    
+
+                
                 }
                 else
                 {
-                    ViewRegistroCitas.Mensaje("Error no se pudo obtener faltas", 6);
+                    ViewRegistroCitas.Mensaje("Hay un error intente de nuevo", 7);
                 }
             }
         }

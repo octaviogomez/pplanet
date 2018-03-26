@@ -41,7 +41,7 @@ namespace Core.Model
             bool ExisteDatos = false;
             lstParametros.Add(new SqlParameter("@Op", SqlDbType.Int) { Value = opcion });
             lstParametros.Add(new SqlParameter("@Fecha", SqlDbType.VarChar) { Value = obj.fecha });
-
+            lstParametros.Add(new SqlParameter("@fk_alumno", SqlDbType.Int) { Value = obj.fk_alumno });
             objDatos = objManagerBD.GetData(ProcedimientoGeneral, lstParametros.ToArray());
             if (objDatos.Tables.Count > 0)
             {
