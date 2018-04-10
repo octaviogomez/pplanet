@@ -18,9 +18,10 @@ namespace planet.Controles.Secretaria.Reservaciones
 
         /*
          Tipos de mensajes para el metodo implementado
-          del 1 al 5:
+          del  
+          5:
                         Se hace un registro de la cita
-               6 SE 
+               6 SE manda mensaje de error
              */
         WCombo Wcombo;
         List<CCombo> listaDatos = new List<CCombo>();
@@ -126,7 +127,6 @@ namespace planet.Controles.Secretaria.Reservaciones
                 CRegistroCitas obj = new CRegistroCitas();
                 try
                 {
-
                     obj.fecha = TextBoxFecha.Text;
                 }
                 catch (Exception e)
@@ -150,13 +150,15 @@ namespace planet.Controles.Secretaria.Reservaciones
         
                 case 5:
                     wRegistroCitas.RegistroCita(ObjRegistroCitasAux, 3);
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>  $('#Notificacion').modal('show');</script>", false);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script> $('#Notificacion').modal('show');</script>", false);
 
 
                     break;
                 case 6:
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>    $('#ModalAlumnoFaltas').modal('show');</script>", false);
-
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script> $('#ModalAlumnoFaltas').modal('show');</script>", false);
+                    break;
+                case 7:
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script> $('#NotificacionError').modal('show');</script>", false);
                     break;
 
                 default:
@@ -218,16 +220,16 @@ namespace planet.Controles.Secretaria.Reservaciones
              6 es el limite
              */
              wRegistroCitas.FaltasDeAlumno(ObjRegistroCitasAux, 4);
-           
+       
         }
-
-
-
-        #endregion
 
         protected void ButtonRegistrarAlumoFalta_Click(object sender, EventArgs e)
         {
             wRegistroCitas.RegistroCita(ObjRegistroCitasAux, 3);
         }
+
+        #endregion
+
+
     }
 }

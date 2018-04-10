@@ -56,7 +56,7 @@ namespace Core.Presenter
 
         public void RegistroCita(CRegistroCitas objCita, int opcion)
         {
-            DataSet dtsDatos = new DataSet();
+           
             CRegistroCitas objaux = new CRegistroCitas();
             bool BolRegistro = false;
             if (ExisteConexion())
@@ -66,12 +66,12 @@ namespace Core.Presenter
                 if (BolRegistro == true)
                 {
                     
-                      ViewRegistroCitas.Mensaje("Correcto", 4); 
+                      ViewRegistroCitas.Mensaje("Correcto", 10); 
                   
                 }
                 else
                 {
-                    ViewRegistroCitas.Mensaje("Error", 5);
+                    ViewRegistroCitas.Mensaje("Error", 11);
                 }
             }
         }

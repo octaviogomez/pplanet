@@ -60,9 +60,8 @@ namespace Core.Model
             lstParametros.Add(new SqlParameter("@fk_lecciones", SqlDbType.Int) { Value = obj.fk_lecciones });
             objManagerBD = new ManagerBD();
             if (objManagerBD.UpdateData(ProcedimientoGeneral, lstParametros.ToArray()))
-            {
                 return true;
-            }
+            
             return false;
         }
     }

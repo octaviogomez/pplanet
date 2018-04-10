@@ -155,8 +155,25 @@
                 Registro exitoso
             </div>
             <div class="modal-footer">
+                <asp:Button ID="Button1" runat="server" Text="Button" />
+                <button type="button" class="btn btn-primary" >Ok!</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-                <button type="button" class="btn btn-primary">Ok!</button>
+<!-- Modal de notificacion de algun error-->
+<div class="modal fade" id="NotificacionError" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" ></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body alert alert-warning">
+                Revise los datos!
             </div>
         </div>
     </div>
