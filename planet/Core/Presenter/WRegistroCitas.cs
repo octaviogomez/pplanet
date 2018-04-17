@@ -49,7 +49,7 @@ namespace Core.Presenter
                 }
                 else
                 {
-                    ViewRegistroCitas.Mensaje("Error no se pudieron listas ", 2);
+                    ViewRegistroCitas.Mensaje("Error no se pudieron listar ", 2);
                 }
             }
         }

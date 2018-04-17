@@ -14,11 +14,23 @@ namespace planet.Controles.Secretaria.Reservaciones
 {
     public partial class ControlConsultaCancelacion : System.Web.UI.UserControl,IRegistroCitas,ICombo
     {
-       
+
+        WCombo Wcombo;
+        List<CCombo> listaDatos = new List<CCombo>();
+
+        CRegistroCitas ObjRegistroCitas;
+        WRegistroCitas WRegistroCitas;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ObjRegistroCitas = new CRegistroCitas();
+            WRegistroCitas = new WRegistroCitas(this);
+            Wcombo = new WCombo(this);
+            if (!IsPostBack)
+            {
+                WRegistroCitas.ListadoDeCitas(ObjRegistroCitasAux,5);
+                LlenadoCombo(DropDownListHorarios, 2, "ListadoCatalogos");
+            }
         }
         #region IRegistroCitas
         public DataSet ListadoDt
@@ -30,7 +42,11 @@ namespace planet.Controles.Secretaria.Reservaciones
 
             set
             {
-
+                if (value!=null)
+                {
+                    GridViewReservacionCitas.DataSource = value;
+                    GridViewReservacionCitas.DataBind();
+                }
             }
         }
 
@@ -51,7 +67,10 @@ namespace planet.Controles.Secretaria.Reservaciones
         {
             get
             {
-                return null;
+                CRegistroCitas obj = new CRegistroCitas();
+                obj.fecha = "01/01/2000";
+                obj.fk_hora = 0;
+                return obj;
             }
 
             set
@@ -84,13 +103,59 @@ namespace planet.Controles.Secretaria.Reservaciones
         {
             get
             {
-                return null;
+                return listaDatos;
             }
-
             set
             {
-                
+                if (value != null)
+                { listaDatos = value; }
+
             }
+        }
+        #endregion
+        #region Metodos Combo
+        private void LlenadoCombo(DropDownList Combo, int Opcion, string procedimiento)
+        {
+            Combo.Items.Clear();// limpiamos combo
+
+            Wcombo.ListarDatos(Opcion, procedimiento);/// se implementa el llenado de la interfaz
+            if (listaDatos != null)
+            {
+                foreach (CCombo item in listaDatos)
+                {
+                    Combo.Items.Add(new System.Web.UI.WebControls.ListItem(item.Descripcion, item.Id.ToString()));
+                }
+            }
+        }
+        #endregion
+
+        #region Eventos de la tabla
+        protected void LinkButtonCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void LinkButtonFalta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void LinkButtonRetardo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void LinkButtonEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        #endregion
+        #region General events
+        protected void ButtonBuscarFecha_Click(object sender, EventArgs e)
+        {
+
         }
         #endregion
 

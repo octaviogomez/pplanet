@@ -38,39 +38,67 @@
                     <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" CssClass="form-control"></asp:TextBox>
                 </div>
 
-                  <div class="col-md-4 mb-3">
+                <div class="col-md-4 mb-3">
                     <label for="DropDownListHorarios">Horarios</label>
-                    <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Horario" required="Se necesita un horario"> </asp:DropDownList>
+                    <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Horario" required="Se necesita un horario"></asp:DropDownList>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="ButtonBuscarFecha"></label>
-                    <asp:Button ID="ButtonBuscarFecha" runat="server" Text="Buscar" class="btn btn-info btn-lg btn-block "  />
+                    <asp:Button ID="ButtonBuscarFecha" runat="server" Text="Buscar" class="btn btn-info btn-lg btn-block "  OnClick="ButtonBuscarFecha_Click"/>
                 </div>
             </div>
 
             <br />
             <asp:Panel ID="PanelListadoCitas" runat="server" Height="700px" ScrollBars="Vertical" CssClass="border border-primary">
                 <div class="table-responsive">
-                    <asp:GridView ID="GridViewCitas" runat="server" CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="false" O>
+                    <asp:GridView ID="GridViewReservacionCitas" runat="server" CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="false" O>
                         <Columns>
                             <asp:TemplateField ShowHeader="False" HeaderText="IdCita" Visible="false" ControlStyle-CssClass="">
                                 <ItemTemplate>
-                                    <asp:Label ID="LabelId" Visible="false" runat="server" Text='<%# Eval("Id")%>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField ShowHeader="False" HeaderText="Selecionar">
-                                <ItemTemplate>
-                                    <asp:LinkButton ID="LinkButtonSeleccionar" runat="server" CommandName="seleccion" CssClass="btn btn-outline-warning   btn-lg btn-block">Seleccionar</asp:LinkButton>
+                                    <asp:Label ID="LabelId" Visible="false" runat="server" Text='<%# Eval("pk_alumno")%>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
 
-                            
-                            <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado" />
+                            <asp:TemplateField ShowHeader="False" HeaderText="Cancelación">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="LinkButtonCancelar" runat="server" CommandName="Cancelar" CssClass="form-control btn btn-outline-danger" OnClick="LinkButtonCancelar_Click">
+                                         <span class="oi oi-ban"></span>
+                                    </asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+
+                            <asp:TemplateField ShowHeader="False" HeaderText="Falta">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="LinkButtonFalta" runat="server" CommandName="Cancelar" CssClass="form-control btn btn-outline-warning" OnClick="LinkButtonFalta_Click" >
+                                        <span class="oi oi-bell"></span>
+                                    </asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField ShowHeader="False" HeaderText="Retardo">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="LinkButtonRetardo" runat="server" CommandName="Cancelar" CssClass="form-control btn btn-outline-info" OnClick="LinkButtonRetardo_Click">
+                                        <span class="oi oi-clock"></span>
+                                    </asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+
+                            <asp:BoundField Visible="false" DataField="pk_alumno" HeaderText="pk_alumno" />
+                            <asp:BoundField Visible="true" DataField="Nombre" HeaderText="Nombre" />
+                            <asp:BoundField Visible="true" DataField="Nivel" HeaderText="Nivel" />
+                            <asp:BoundField Visible="true" DataField="Lecciones" HeaderText="Lecciones" />
+                            <asp:BoundField Visible="true" DataField="Tipo" HeaderText="Tipo" />
+                            <asp:BoundField Visible="true" DataField="Hora" HeaderText="Hora" />
                             <asp:BoundField Visible="true" DataField="Fecha" HeaderText="Fecha" />
-                            <asp:BoundField Visible="true" DataField="Horario" HeaderText="Horario" />
-                            <asp:BoundField Visible="true" DataField="No. Profes" HeaderText="No. Profes" />
-                            <asp:BoundField Visible="true" DataField="Espacios" HeaderText="Espacios" />
-                            <asp:BoundField Visible="true" DataField="No. Alumnos" HeaderText="No. Alumnos" />
+                            <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado" />
+                            <asp:TemplateField ShowHeader="False" HeaderText="Eliminar">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="LinkButtonEliminar" runat="server" CommandName="Eliminar" CssClass="form-control btn btn-outline-secondary" OnClick="LinkButtonEliminar_Click">
+                                        <span class="oi oi-trash"></span>
+                                    </asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+
+
                         </Columns>
                     </asp:GridView>
                 </div>
@@ -80,7 +108,7 @@
 
 
             <br />
-      
+
 
         </div>
     </div>
