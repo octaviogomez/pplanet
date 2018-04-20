@@ -68,7 +68,7 @@ namespace planet.Controles.Secretaria.Reservaciones
             get
             {
                 CRegistroCitas obj = new CRegistroCitas();
-                obj.fecha = "01/01/2000";
+                obj.fecha = DateTime.Now.ToShortDateString();
                 obj.fk_hora = 0;
                 return obj;
             }
@@ -83,9 +83,11 @@ namespace planet.Controles.Secretaria.Reservaciones
         {
             get
             {
-                return null;
+                CRegistroCitas obj = new CRegistroCitas();
+                obj.fecha = TextBoxFecha.Text;
+                obj.fk_hora = Convert.ToInt32(DropDownListHorarios.SelectedValue);
+                return obj;
             }
-
             set
             {
 
@@ -155,7 +157,7 @@ namespace planet.Controles.Secretaria.Reservaciones
         #region General events
         protected void ButtonBuscarFecha_Click(object sender, EventArgs e)
         {
-
+            WRegistroCitas.ListadoDeCitas(ObjRegistroCitasAux, 5);
         }
         #endregion
 
