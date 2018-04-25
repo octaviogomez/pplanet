@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Secretaria/Secretaria.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="planet.Paginas.Secretaria.Default" %>
 
-<%@ Register Src="~/Controles/Secretaria/Default/AlumnoReservacion.ascx" TagPrefix="uc1" TagName="AlumnoReservacion" %>
+<%@ Register Src="~/Controles/Secretaria/Reservaciones/ControlConsultaCancelacion.ascx" TagPrefix="uc1" TagName="ControlConsultaCancelacion" %>
+
+
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -11,12 +13,7 @@
             <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <h1 class="display-4">Fluid jumbotron</h1>
-                    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-                </div>
-            </div>
+           
 
             <div class="row">
                 <div class="col-md-2">
@@ -32,7 +29,7 @@
                         <div class="tab-pane fade show active" id="PanelPrincipal" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         </div>
                         <div class="tab-pane fade" id="Reservaciones" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                            <uc1:AlumnoReservacion runat="server" ID="AlumnoReservacion" />
+                            <uc1:ControlConsultaCancelacion runat="server" ID="ControlConsultaCancelacion" />
                         </div>
                         <div class="tab-pane fade" id="Clubs" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                         </div>

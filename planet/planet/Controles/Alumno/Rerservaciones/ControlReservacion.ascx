@@ -1,10 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ContreolReservarReservacion.ascx.cs" Inherits="planet.Controles.Secretaria.Reservaciones.ContreolReservarReservacion" %>
-<!-- Modal -->
-
-
-
-
-
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ControlReservacion.ascx.cs" Inherits="planet.Controles.Alumno.Rerservaciones.ControlReservacion" %>
 
 <div class="container">
     <div class="jumbotron jumbotron-fluid">
@@ -39,21 +33,26 @@
             <h5 class="card-title">Instrucciones</h5>
             <p class="card-text">Realice cuidadosamente el llenado.</p>
 
-            <div class="form-row ">
+        <div class="form-row ">
                 <div class="col-md-4 mb-3">
                     <label for="TextBoxFecha">Fecha</label>
-                    <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" CssClass="form-control" OnTextChanged="TextBoxFecha_TextChanged" AutoPostBack="true"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" CssClass="form-control"></asp:TextBox>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="DropDownListHorarios">Horarios</label>
+                    <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Horario" required="Se necesita un horario"></asp:DropDownList>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="ButtonBuscarFecha"></label>
-                    <asp:Button ID="ButtonBuscarFecha" runat="server" Text="Buscar" class="btn btn-info btn-lg btn-block " OnClick="ButtonBuscarFecha_Click" />
+                    <asp:Button ID="ButtonBuscarFecha" runat="server" Text="Buscar" class="btn btn-info btn-lg btn-block "  />
                 </div>
             </div>
 
             <br />
             <asp:Panel ID="PanelListadoCitas" runat="server" Height="350px" ScrollBars="Vertical" CssClass="border border-primary">
                 <div class="table-responsive">
-                    <asp:GridView ID="GridViewCitas" runat="server" CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="false" OnRowCommand="GridView_RowCommand">
+                    <asp:GridView ID="GridViewCitas" runat="server" CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="false" >
                         <Columns>
                             <asp:TemplateField ShowHeader="False" HeaderText="IdCita" Visible="false" ControlStyle-CssClass="">
                                 <ItemTemplate>
@@ -69,13 +68,10 @@
                             </asp:TemplateField>
 
 
-                            <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado"  />
+                            <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado" />
                             <asp:BoundField Visible="true" DataField="Fecha" HeaderText="Fecha" />
                             <asp:BoundField Visible="true" DataField="Horario" HeaderText="Horario" />
-                            <asp:BoundField Visible="true" DataField="No. Profes" HeaderText="No. Profes" />
-                            <asp:BoundField Visible="true" DataField="Indice" HeaderText="Indice" />
                             <asp:BoundField Visible="true" DataField="Espacios" HeaderText="Espacios" />
-                            <asp:BoundField Visible="true" DataField="No. Alumnos" HeaderText="No. Alumnos" />
                         </Columns>
                     </asp:GridView>
                 </div>
@@ -97,13 +93,6 @@
 
 
                 <div class="col-md-3 mb-2">
-                    <label for="TextBoxNoProfesores">Alumno</label>
-                    <asp:TextBox ID="TextBoxIdAlumno" runat="server" class="form-control" placeholder="Credencial de alumno" ValidationGroup="AceptarRegistro" TextMode="Number" required="Se necesita matricula" title="Ingrese una matrícula de alumno"></asp:TextBox>
-
-                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Sólo números" ValidationGroup="AceptarRegistro" ControlToValidate="TextBoxIdAlumno" CssClass="alert alert-danger form-control" role="alter"></asp:RequiredFieldValidator>--%>
-                </div>
-
-                <div class="col-md-3 mb-2">
                     <label for="DropDownListTipoCita">Tipo de cita</label>
                     <asp:DropDownList ID="DropDownListTipoCita" runat="server" class="form-control" placeholder="Fecha" ValidationGroup="AceptarRegistro"></asp:DropDownList>
                 </div>
@@ -115,7 +104,7 @@
                 </div>
                 <div class="col-md-3 mb-2">
                     <label for="ButtonCrear"></label>
-                    <asp:Button ID="ButtonCrear" runat="server" Text="Registrar" class="btn btn-success btn-lg btn-block" ValidationGroup="AceptarRegistro" OnClick="ButtonCrear_Click" />
+                    <asp:Button ID="ButtonCrear" runat="server" Text="Registrar" class="btn btn-success btn-lg btn-block" ValidationGroup="AceptarRegistro" />
                 </div>
             </div>
 
@@ -138,7 +127,7 @@
             <div class="modal-footer">
 
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <asp:Button ID="ButtonRegistrarAlumoFalta" runat="server" Text="Registrar " CssClass="btn btn-warning" OnClick="ButtonRegistrarAlumoFalta_Click" />
+                <asp:Button ID="ButtonRegistrarAlumoFalta" runat="server" Text="Registrar " CssClass="btn btn-warning"  />
             </div>
         </div>
     </div>
@@ -158,7 +147,7 @@
                 Registro exitoso
             </div>
             <div class="modal-footer">
-                <asp:Button ID="ButtonActualizarPagina" runat="server" Text="Ok!" CssClass="btn btn-success" OnClick="ButtonActualizarPagina_Click"/>
+                <asp:Button ID="ButtonActualizarPagina" runat="server" Text="Ok!" CssClass="btn btn-success"/>
          
             </div>
         </div>
@@ -181,3 +170,5 @@
         </div>
     </div>
 </div>
+<br />
+

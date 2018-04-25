@@ -21,6 +21,8 @@
                     <label for="TextBoxFecha">Fecha</label>
                     <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" CssClass="form-control" OnTextChanged="TextBoxFecha_TextChanged" AutoPostBack="true"></asp:TextBox>
                 </div>
+                 <div class="col-md-2 mb-1">
+                </div>
                 <div class="col-md-4 mb-3">
                     <label for="ButtonCrear"></label>
                     <asp:Button ID="ButtonCrear" runat="server" Text="Buscar" class="btn btn-success btn-lg btn-block" OnClick="ButtonCrear_Click" />
@@ -37,11 +39,13 @@
                         </asp:TemplateField>
                         <asp:TemplateField ShowHeader="False" HeaderText="Eliminar">
                             <ItemTemplate>
-                                <asp:LinkButton ID="LinkButtonEliminar" runat="server" CommandName="Eliminar" CssClass="form-control btn btn-outline-danger">Eliminar</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButtonEliminar" runat="server" CommandName="Eliminar" CssClass="form-control btn btn-outline-danger">
+                                    <span class="oi oi-trash"></span>
+                                </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
 
-                        <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado" />
+                        <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado"  />
                         <asp:BoundField Visible="true" DataField="Fecha" HeaderText="Fecha" />
                         <asp:BoundField Visible="true" DataField="Horario" HeaderText="Horario" />
                         <asp:BoundField Visible="true" DataField="Cupo" HeaderText="Cupo" ControlStyle-CssClass="" />

@@ -49,9 +49,9 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reservaciones
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="../../Paginas/Alumno/Reservaciones.aspx">Agendar reservación</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="../../Paginas/Alumno/ConsultaR.aspx">Consulta</a>
+                                <a class="dropdown-item"  href="../../Paginas/Alumno/Reservaciones/Agendar.aspx">Agendar</a>
+                                <a class="dropdown-item"  href="../../Paginas/Alumno/Reservaciones/Consulta.aspx">Consulta</a>
+                              
                             </div>
                         </li>
 

@@ -7,18 +7,18 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace planet.Paginas.Secretaria {
+namespace planet.Paginas.Alumno.Reservaciones {
     
     
-    public partial class Default {
+    public partial class Consulta {
         
         /// <summary>
-        /// Control ControlConsultaCancelacion.
+        /// Control ControlListarCancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::planet.Controles.Secretaria.Reservaciones.ControlConsultaCancelacion ControlConsultaCancelacion;
+        protected global::planet.Controles.Alumno.Rerservaciones.ControlListarCancelar ControlListarCancelar;
     }
 }

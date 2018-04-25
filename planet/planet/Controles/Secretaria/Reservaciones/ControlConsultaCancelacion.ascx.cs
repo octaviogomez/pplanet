@@ -21,6 +21,11 @@ namespace planet.Controles.Secretaria.Reservaciones
         CRegistroCitas ObjRegistroCitas;
         WRegistroCitas WRegistroCitas;
 
+        public GridViewRow FilaSeleccionada
+        {
+            get;
+            private set;
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             ObjRegistroCitas = new CRegistroCitas();
@@ -159,6 +164,39 @@ namespace planet.Controles.Secretaria.Reservaciones
         {
             WRegistroCitas.ListadoDeCitas(ObjRegistroCitasAux, 5);
         }
+        protected void GridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+            string codigo = "";
+
+            FilaSeleccionada = (GridViewRow)(((LinkButton)e.CommandSource).NamingContainer);
+
+            codigo = (((Label)FilaSeleccionada.FindControl("LabelId")).Text);
+
+            if (e.CommandName == "Cancelar")
+            {
+                //modal de verificacion
+
+            }
+            if (e.CommandName == "Falta")
+            {
+
+                //modal de verificacion
+            }
+            if (e.CommandName == "Retardo")
+            {
+                //modal de verificacion
+
+            }
+            if (e.CommandName == "Eliminar")
+            {
+                //modal de verificacion
+            }
+
+
+            FilaSeleccionada.Dispose();
+        }
+
         #endregion
 
     }

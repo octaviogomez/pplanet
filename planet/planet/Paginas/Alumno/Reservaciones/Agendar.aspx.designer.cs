@@ -7,18 +7,18 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace planet.Paginas.Secretaria {
+namespace planet.Paginas.Alumno.Reservaciones {
     
     
-    public partial class Ejemplo {
+    public partial class Agendar {
         
         /// <summary>
-        /// Control as.
+        /// Control ControlReservacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm @as;
+        protected global::planet.Controles.Alumno.Rerservaciones.ControlReservacion ControlReservacion;
     }
 }

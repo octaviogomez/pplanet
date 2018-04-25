@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace planet.Controles.Secretaria.Reservaciones {
+namespace planet.Controles.Alumno.Rerservaciones {
     
     
-    public partial class ContreolReservarReservacion {
+    public partial class ControlReservacion {
         
         /// <summary>
         /// Control PanelAvisoError.
@@ -49,6 +49,15 @@ namespace planet.Controles.Secretaria.Reservaciones {
         protected global::System.Web.UI.WebControls.TextBox TextBoxFecha;
         
         /// <summary>
+        /// Control DropDownListHorarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListHorarios;
+        
+        /// <summary>
         /// Control ButtonBuscarFecha.
         /// </summary>
         /// <remarks>
@@ -83,15 +92,6 @@ namespace planet.Controles.Secretaria.Reservaciones {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxIdCita;
-        
-        /// <summary>
-        /// Control TextBoxIdAlumno.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxIdAlumno;
         
         /// <summary>
         /// Control DropDownListTipoCita.

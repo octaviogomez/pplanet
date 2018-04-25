@@ -80,6 +80,32 @@ namespace planet.Controles.Secretaria.Reservaciones
                 {
                     GridViewCitas.DataSource = value;
                     GridViewCitas.DataBind();
+
+
+                //   
+
+                    try
+                    {
+
+
+                        string texto = "";
+                        int x = 0;
+                        foreach (DataRow row in value.Tables[0].Rows)
+                        {
+                            texto = Convert.ToString(row["Estado"]);
+                            if (texto=="Activo")
+                            {
+                                GridViewCitas.Rows[x].Cells[2].BackColor = System.Drawing.Color.Azure;
+                            }
+                            x++;
+                        }
+
+                    }
+                    catch (Exception)
+                    {
+
+                   
+                    }
                 }
             }
         }
@@ -226,6 +252,10 @@ namespace planet.Controles.Secretaria.Reservaciones
         protected void ButtonRegistrarAlumoFalta_Click(object sender, EventArgs e)
         {
             wRegistroCitas.RegistroCita(ObjRegistroCitasAux, 3);
+        }
+        protected void ButtonActualizarPagina_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(Request.RawUrl);
         }
 
         #endregion

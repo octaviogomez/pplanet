@@ -25,12 +25,11 @@ namespace planet.Controles.Secretaria.Reservaciones
         {
             ObjCitas = new CCitas();
             WCitas = new WCitas(this);
-       
+
 
             if (!IsPostBack)
             {
                 WCitas.ListadoDeCitas(ObjetoCitasAux, 2);//Listado generico de citas, solo muestra las del dia de hoy 
-               
             }
 
         }

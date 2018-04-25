@@ -1,4 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ControlConsultaCancelacion.ascx.cs" Inherits="planet.Controles.Secretaria.Reservaciones.ControlConsultaCancelacion" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ControlListarCancelar.ascx.cs" Inherits="planet.Controles.Alumno.Rerservaciones.ControlListarCancelar" %>
+
 <div class="container">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -83,14 +84,13 @@
                             </asp:TemplateField>
 
                             <asp:BoundField Visible="false" DataField="pk_alumno" HeaderText="pk_alumno" />
-                       
-                            <asp:BoundField Visible="true" DataField="Nombre" HeaderText="Nombre" ItemStyle-Font-Bold="true"/>
+                            <asp:BoundField Visible="true" DataField="Nombre" HeaderText="Nombre" />
                             <asp:BoundField Visible="true" DataField="Nivel" HeaderText="Nivel" />
                             <asp:BoundField Visible="true" DataField="Lecciones" HeaderText="Lecciones" />
                             <asp:BoundField Visible="true" DataField="Tipo" HeaderText="Tipo" />
                             <asp:BoundField Visible="true" DataField="Hora" HeaderText="Hora" />
                             <asp:BoundField Visible="true" DataField="Fecha" HeaderText="Fecha" />
-                            <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado" ItemStyle-ForeColor="#00cc00" />
+                            <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado" />
                             <asp:TemplateField ShowHeader="False" HeaderText="Eliminar">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="LinkButtonEliminar" runat="server" CommandName="Eliminar" CssClass="form-control btn btn-outline-secondary" OnClick="LinkButtonEliminar_Click">

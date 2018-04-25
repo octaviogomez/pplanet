@@ -134,9 +134,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controles\Admin\" />
+    <Folder Include="Controles\Alumno\Clubs\" />
     <Folder Include="Multimedia\Audios\" />
     <Folder Include="Multimedia\Verbos\" />
     <Folder Include="Paginas\Admin\" />
+    <Folder Include="Paginas\Alumno\Club\" />
     <Folder Include="Paginas\Maestro\" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +153,8 @@
     <Content Include="Controles\Alumno\InforAvisos.ascx" />
     <Content Include="Controles\Alumno\InforGeneral.ascx" />
     <Content Include="Controles\Alumno\InforReservaciones.ascx" />
+    <Content Include="Controles\Alumno\Rerservaciones\ControlListarCancelar.ascx" />
+    <Content Include="Controles\Alumno\Rerservaciones\ControlReservacion.ascx" />
     <Content Include="Controles\Secretaria\Default\AlumnoClubs.ascx" />
     <Content Include="Controles\Secretaria\Default\AlumnoReservacion.ascx" />
     <Content Include="Controles\Secretaria\Reservaciones\ContreolReservarReservacion.ascx" />
@@ -3110,18 +3114,16 @@
     <Content Include="Paginas\Alumno\Audios.aspx" />
     <Content Include="Paginas\Alumno\Buzon.aspx" />
     <Content Include="Paginas\Alumno\Clubs.aspx" />
-    <Content Include="Paginas\Alumno\ConsultaC.aspx" />
-    <Content Include="Paginas\Alumno\ConsultaR.aspx" />
     <Content Include="Paginas\Alumno\Default.aspx" />
     <Content Include="Paginas\Alumno\Horarios.aspx" />
     <Content Include="Paginas\Alumno\Perfil.aspx" />
-    <Content Include="Paginas\Secretaria\Ejemplo.aspx" />
+    <Content Include="Paginas\Alumno\Reservaciones\Agendar.aspx" />
+    <Content Include="Paginas\Alumno\Reservaciones\Consulta.aspx" />
     <Content Include="Paginas\Secretaria\Reservaciones\AdministrarCitas.aspx" />
     <Content Include="Paginas\Secretaria\Reservaciones\AgendarReservacion.aspx" />
     <Content Include="Paginas\Secretaria\Reservaciones\ConsultaCitas.aspx" />
     <Content Include="Paginas\Secretaria\Reservaciones\CrearResercacion.aspx" />
     <Content Include="Paginas\Alumno\Verbos.aspx" />
-    <Content Include="Paginas\Secretaria\AdminAlumnos.aspx" />
     <Content Include="Paginas\Secretaria\Avisos.aspx" />
     <Content Include="Paginas\Secretaria\Clubs.aspx" />
     <Content Include="Paginas\Secretaria\Default.aspx" />
@@ -3223,6 +3225,20 @@
     </Compile>
     <Compile Include="Controles\Alumno\InforReservaciones.ascx.designer.cs">
       <DependentUpon>InforReservaciones.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Alumno\Rerservaciones\ControlListarCancelar.ascx.cs">
+      <DependentUpon>ControlListarCancelar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Alumno\Rerservaciones\ControlListarCancelar.ascx.designer.cs">
+      <DependentUpon>ControlListarCancelar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Alumno\Rerservaciones\ControlReservacion.ascx.cs">
+      <DependentUpon>ControlReservacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Alumno\Rerservaciones\ControlReservacion.ascx.designer.cs">
+      <DependentUpon>ControlReservacion.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controles\Secretaria\Default\AlumnoClubs.ascx.cs">
       <DependentUpon>AlumnoClubs.ascx</DependentUpon>
@@ -3332,20 +3348,6 @@
     <Compile Include="Paginas\Alumno\Clubs.aspx.designer.cs">
       <DependentUpon>Clubs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Paginas\Alumno\ConsultaC.aspx.cs">
-      <DependentUpon>ConsultaC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Paginas\Alumno\ConsultaC.aspx.designer.cs">
-      <DependentUpon>ConsultaC.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Paginas\Alumno\ConsultaR.aspx.cs">
-      <DependentUpon>ConsultaR.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Paginas\Alumno\ConsultaR.aspx.designer.cs">
-      <DependentUpon>ConsultaR.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Paginas\Alumno\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3367,12 +3369,19 @@
     <Compile Include="Paginas\Alumno\Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Paginas\Secretaria\Ejemplo.aspx.cs">
-      <DependentUpon>Ejemplo.aspx</DependentUpon>
+    <Compile Include="Paginas\Alumno\Reservaciones\Agendar.aspx.cs">
+      <DependentUpon>Agendar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Paginas\Secretaria\Ejemplo.aspx.designer.cs">
-      <DependentUpon>Ejemplo.aspx</DependentUpon>
+    <Compile Include="Paginas\Alumno\Reservaciones\Agendar.aspx.designer.cs">
+      <DependentUpon>Agendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Alumno\Reservaciones\Consulta.aspx.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Alumno\Reservaciones\Consulta.aspx.designer.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Secretaria\Reservaciones\AdministrarCitas.aspx.cs">
       <DependentUpon>AdministrarCitas.aspx</DependentUpon>
@@ -3408,13 +3417,6 @@
     </Compile>
     <Compile Include="Paginas\Alumno\Verbos.aspx.designer.cs">
       <DependentUpon>Verbos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Paginas\Secretaria\AdminAlumnos.aspx.cs">
-      <DependentUpon>AdminAlumnos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Paginas\Secretaria\AdminAlumnos.aspx.designer.cs">
-      <DependentUpon>AdminAlumnos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Secretaria\Avisos.aspx.cs">
       <DependentUpon>Avisos.aspx</DependentUpon>

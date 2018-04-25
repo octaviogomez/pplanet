@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace planet.Paginas.Secretaria
+namespace planet.Paginas.Alumno.Reservaciones
 {
-    public partial class AdminAlumnos : System.Web.UI.Page
+    public partial class Agendar : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
