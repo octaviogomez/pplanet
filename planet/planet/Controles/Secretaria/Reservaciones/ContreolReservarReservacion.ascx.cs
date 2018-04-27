@@ -47,6 +47,7 @@ namespace planet.Controles.Secretaria.Reservaciones
 
                 LlenadoComboGenerico(DropDownListTipoCita, 3, "ListadoCatalogos");
                 LlenadoComboGenerico(DropDownListTipoLeccion, 4, "ListadoCatalogos");
+                LlenadoComboGenerico(DropDownListHorarios, 2, "ListadoCatalogos");
                 wRegistroCitas.ListadoDeCitas(cRegistroCitas, 1);
             }
 
@@ -81,30 +82,30 @@ namespace planet.Controles.Secretaria.Reservaciones
                     GridViewCitas.DataSource = value;
                     GridViewCitas.DataBind();
 
-
-                //   
-
                     try
                     {
 
 
-                        string texto = "";
+                        int? Espacios =null;
+                        int? Alumno = null;
                         int x = 0;
                         foreach (DataRow row in value.Tables[0].Rows)
                         {
-                            texto = Convert.ToString(row["Estado"]);
-                            if (texto=="Activo")
-                            {
-                                GridViewCitas.Rows[x].Cells[2].BackColor = System.Drawing.Color.Azure;
-                            }
+                            Espacios = (int?)Convert.ToInt32(row[6]);
+                            Alumno = (int?)Convert.ToInt32(row[7]);
+
+                            if (Espacios <= 0 || Espacios == null)
+                                GridViewCitas.Rows[x].Cells[7].CssClass = "alert alert-danger";
+                            if (Alumno >= 6 )
+                                GridViewCitas.Rows[x].Cells[8].CssClass = "alert alert-warning";
+
                             x++;
                         }
-
                     }
                     catch (Exception)
                     {
 
-                   
+
                     }
                 }
             }
@@ -220,14 +221,32 @@ namespace planet.Controles.Secretaria.Reservaciones
         {
 
             string codigo = "";
-   
             FilaSeleccionada = (GridViewRow)(((LinkButton)e.CommandSource).NamingContainer);
+
+            foreach (GridViewRow row in GridViewCitas.Rows)//Se realiza un recorrido de la tabla
+            {
+                for (int i = 1; i <= FilaSeleccionada.Cells.Count - 1; i++) //se hace un recorrido de 1 al tamaño de las columnas 
+                {
+                    GridViewCitas.Rows[row.RowIndex].Cells[i].CssClass = ""; // row.RowIndex obtiene el indice de la fila
+                    if (FilaSeleccionada.RowIndex== row.RowIndex)            // si al recorrer la tabla coincide con el seleccionado se marca 
+                        GridViewCitas.Rows[FilaSeleccionada.RowIndex].Cells[i].CssClass = "alert alert-info";//FilaSeleccionada.RowIndex -> es el indice (posision) del elemento seleccionado
+                }
+            }
+
+
+         
+
+
+
+
 
             if (e.CommandName == "seleccion")
             {
                 codigo = (((Label)FilaSeleccionada.FindControl("LabelId")).Text);
                 TextBoxIdCita.Text = codigo;
                 TextBoxIdCita.CssClass = "form-control is-valid";
+
+       
             }
         
 
@@ -245,7 +264,14 @@ namespace planet.Controles.Secretaria.Reservaciones
              1 cancelacion =2
              6 es el limite
              */
-             wRegistroCitas.FaltasDeAlumno(ObjRegistroCitasAux, 4);
+            if (TextBoxIdCita.Text!=null && TextBoxIdCita.Text != "")
+            {
+                wRegistroCitas.FaltasDeAlumno(ObjRegistroCitasAux, 4);
+            }
+            else {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script> $('#NotificacionError').modal('show');</script>", false);
+            }
+            
        
         }
 

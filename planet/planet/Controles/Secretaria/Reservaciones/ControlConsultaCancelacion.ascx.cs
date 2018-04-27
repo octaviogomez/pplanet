@@ -164,6 +164,10 @@ namespace planet.Controles.Secretaria.Reservaciones
         {
             WRegistroCitas.ListadoDeCitas(ObjRegistroCitasAux, 5);
         }
+        protected void DropDownListHorarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            WRegistroCitas.ListadoDeCitas(ObjRegistroRegistroCitas, 6);
+        }
         protected void GridView_RowCommand(object sender, GridViewCommandEventArgs e)
         {
 
@@ -199,5 +203,6 @@ namespace planet.Controles.Secretaria.Reservaciones
 
         #endregion
 
+      
     }
 }

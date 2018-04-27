@@ -49,6 +49,15 @@ namespace planet.Controles.Secretaria.Reservaciones {
         protected global::System.Web.UI.WebControls.TextBox TextBoxFecha;
         
         /// <summary>
+        /// Control DropDownListHorarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListHorarios;
+        
+        /// <summary>
         /// Control ButtonBuscarFecha.
         /// </summary>
         /// <remarks>

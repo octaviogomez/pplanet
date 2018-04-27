@@ -40,7 +40,7 @@
 
                 <div class="col-md-4 mb-3">
                     <label for="DropDownListHorarios">Horarios</label>
-                    <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Horario" required="Se necesita un horario"></asp:DropDownList>
+                    <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Horario" required="Se necesita un horario" AutoPostBack="true" OnSelectedIndexChanged="DropDownListHorarios_SelectedIndexChanged"></asp:DropDownList>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="ButtonBuscarFecha"></label>
