@@ -45,6 +45,7 @@ namespace Core.Model
             lstParametros.Add(new SqlParameter("@Fecha", SqlDbType.Date) { Value = obj.fecha });
             lstParametros.Add(new SqlParameter("@fk_alumno", SqlDbType.Int) { Value = obj.fk_alumno });
             lstParametros.Add(new SqlParameter("@fk_hora", SqlDbType.Int) { Value = obj.fk_hora });
+            lstParametros.Add(new SqlParameter("@estadoReservacion", SqlDbType.Int) { Value = obj.estadoReservacion });
             objDatos = objManagerBD.GetData(ProcedimientoGeneral, lstParametros.ToArray());
             if (objDatos.Tables.Count > 0)
             {
@@ -61,10 +62,23 @@ namespace Core.Model
             lstParametros.Add(new SqlParameter("@fk_alumno", SqlDbType.Int) { Value = obj.fk_alumno });
             lstParametros.Add(new SqlParameter("@fk_tipoCitas", SqlDbType.Int) { Value = obj.fk_tipoCitas });
             lstParametros.Add(new SqlParameter("@fk_lecciones", SqlDbType.Int) { Value = obj.fk_lecciones });
+            lstParametros.Add(new SqlParameter("@estadoReservacion", SqlDbType.Int) { Value = obj.estadoReservacion });
             objManagerBD = new ManagerBD();
             if (objManagerBD.UpdateData(ProcedimientoGeneral, lstParametros.ToArray()))
                 return true;
             
+            return false;
+        }
+        public bool ModificarEstado(int opcion, CRegistroCitas obj) //Metodogenerico de altas bajas y modificacion
+        {
+            List<SqlParameter> lstParametros = new List<SqlParameter>();
+            lstParametros.Add(new SqlParameter("@Op", SqlDbType.Int) { Value = opcion });
+            lstParametros.Add(new SqlParameter("@pk_registroCita", SqlDbType.Int) { Value = obj.pk_registroCita });
+            lstParametros.Add(new SqlParameter("@estadoReservacion", SqlDbType.Int) { Value = obj.estadoReservacion });
+            objManagerBD = new ManagerBD();
+            if (objManagerBD.UpdateData(ProcedimientoGeneral, lstParametros.ToArray()))
+                return true;
+
             return false;
         }
     }

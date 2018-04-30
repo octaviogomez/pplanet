@@ -41,16 +41,16 @@
 
             <div class="form-row ">
                 <div class="col-md-4 mb-3">
-                    <label for="TextBoxFecha">Fecha</label>
+                  <strong><label for="TextBoxFecha">Fecha</label></strong>  
                     <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" CssClass="form-control" OnTextChanged="TextBoxFecha_TextChanged" AutoPostBack="true"></asp:TextBox>
                 </div>
                  <div class="col-md-4 mb-3">
-                       <label for="DropDownListHorarios">Horarios</label>
+                       <strong> <label for="DropDownListHorarios">Horarios</label></strong>
                     <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Horario" required="Se necesita un horario"></asp:DropDownList>
                  </div>
                 <div class="col-md-4 mb-3">
-                    <label for="ButtonBuscarFecha"></label>
-                    <asp:Button ID="ButtonBuscarFecha" runat="server" Text="Buscar" class="btn btn-info btn-lg btn-block " OnClick="ButtonBuscarFecha_Click" />
+                    <strong> <label for="ButtonBuscarFecha"></label></strong>
+                    <asp:Button ID="ButtonBuscarFecha" runat="server" Text="Buscar" class="btn btn-info btn-lg btn-block " OnClick="ButtonBuscarFecha_Click" ValidateRequestMode="Disabled"/>
                 </div>
             </div>
 
@@ -101,18 +101,18 @@
 
 
                 <div class="col-md-4 mb-3">
-                    <label for="TextBoxNoProfesores">Alumno</label>
+                  <strong><label for="TextBoxNoProfesores">Alumno</label></strong> 
                     <asp:TextBox ID="TextBoxIdAlumno" runat="server" class="form-control" placeholder="Credencial de alumno" ValidationGroup="AceptarRegistro" TextMode="Number" required="Se necesita matricula" title="Ingrese una matrícula de alumno"></asp:TextBox>
 
                     <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Sólo números" ValidationGroup="AceptarRegistro" ControlToValidate="TextBoxIdAlumno" CssClass="alert alert-danger form-control" role="alter"></asp:RequiredFieldValidator>--%>
                 </div>
 
                 <div class="col-md-4 mb-3">
-                    <label for="DropDownListTipoCita">Tipo de cita</label>
+                 <strong><label for="DropDownListTipoCita">Tipo de cita</label></strong>   
                     <asp:DropDownList ID="DropDownListTipoCita" runat="server" class="form-control" placeholder="Fecha" ValidationGroup="AceptarRegistro"></asp:DropDownList>
                 </div>
                  <div class="col-md-4 mb-3">
-                    <label for="DropDownListTipoLeccion">Lección</label>
+                    <strong><label for="DropDownListTipoLeccion">Lección</label></strong>
                     <asp:DropDownList ID="DropDownListTipoLeccion" runat="server" class="form-control" placeholder="Fecha" ValidationGroup="AceptarRegistro"></asp:DropDownList>
                 </div>
                 <div class="col-md-4 mb-3">

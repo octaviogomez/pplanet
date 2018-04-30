@@ -278,6 +278,7 @@ namespace planet.Controles.Secretaria.Reservaciones
         protected void ButtonRegistrarAlumoFalta_Click(object sender, EventArgs e)
         {
             wRegistroCitas.RegistroCita(ObjRegistroCitasAux, 3);
+            Response.Redirect(Request.RawUrl);
         }
         protected void ButtonActualizarPagina_Click(object sender, EventArgs e)
         {

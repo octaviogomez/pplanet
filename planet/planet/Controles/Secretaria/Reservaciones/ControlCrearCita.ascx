@@ -17,15 +17,18 @@
             <p class="card-text">Realice cuidadosamente el llenado.</p>
             <div class="form-row">
                 <div class="col-md-4 mb-3">
-                    <label for="TextBoxFecha">Fecha</label>
+                    <strong>
+                        <label for="TextBoxFecha">Fecha</label></strong>
                     <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" required="Se necesita una fecha" CssClass="form-control" requiered="" AutoPostBack="True" OnTextChanged="TextBoxFecha_TextChanged"></asp:TextBox>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label for="DropDownListHorarios">Horarios</label>
-                    <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Fecha" required="Se necesita una fecha"   ></asp:DropDownList>
+                    <strong>
+                        <label for="DropDownListHorarios">Horarios</label></strong>
+                    <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Fecha" required="Se necesita una fecha"></asp:DropDownList>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label for="TextBoxNoProfesores">Número de profesores</label>
+                    <strong>
+                        <label for="TextBoxNoProfesores">Número de profesores</label></strong>
                     <asp:TextBox ID="TextBoxNoProfesores" runat="server" class="form-control" placeholder="Número de profesores" required="Solo números" TextMode="Number" min="1"></asp:TextBox>
                 </div>
             </div>
@@ -36,7 +39,7 @@
                     <label for="ButtonCrear"></label>
                     <asp:Button ID="ButtonCrear" runat="server" Text="Crear" OnClick="ButtonCrear_Click" class="btn btn-success btn-lg btn-block" />
                 </div>
-                 <div class="col-md-4 mb-3">
+                <div class="col-md-4 mb-3">
                 </div>
             </div>
 

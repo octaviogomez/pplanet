@@ -58,6 +58,15 @@ namespace planet.Controles.Secretaria.Reservaciones {
         protected global::System.Web.UI.WebControls.DropDownList DropDownListHorarios;
         
         /// <summary>
+        /// Control DropDownListEstados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListEstados;
+        
+        /// <summary>
         /// Control ButtonBuscarFecha.
         /// </summary>
         /// <remarks>
@@ -83,5 +92,32 @@ namespace planet.Controles.Secretaria.Reservaciones {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridViewReservacionCitas;
+        
+        /// <summary>
+        /// Control LabelNombreAlumno.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelNombreAlumno;
+        
+        /// <summary>
+        /// Control TextBoxPkReservacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPkReservacion;
+        
+        /// <summary>
+        /// Control ButtonEliminarCita.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonEliminarCita;
     }
 }

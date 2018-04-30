@@ -33,16 +33,24 @@
             <p class="card-text">Realice cuidadosamente el llenado.</p>
 
             <div class="form-row ">
-                <div class="col-md-4 mb-3">
-                    <label for="TextBoxFecha">Fecha</label>
-                    <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" CssClass="form-control"></asp:TextBox>
+                <div class="col-md-3 -3">
+                     <strong><label for="TextBoxFecha">Fecha</label></strong>
+                    <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" CssClass="form-control" AutoPostBack="true" OnTextChanged="TextBoxFecha_TextChanged"></asp:TextBox>
                 </div>
 
-                <div class="col-md-4 mb-3">
-                    <label for="DropDownListHorarios">Horarios</label>
-                    <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Horario" required="Se necesita un horario" AutoPostBack="true" OnSelectedIndexChanged="DropDownListHorarios_SelectedIndexChanged"></asp:DropDownList>
+                <div class="col-md-3 mb-3">
+                    <strong><label for="DropDownListHorarios" >Horarios</label></strong>
+                    <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Horario" required="Se necesita un horario" AutoPostBack="true" OnSelectedIndexChanged="DropDownListHorarios_SelectedIndexChanged">
+                       
+                    </asp:DropDownList>
                 </div>
-                <div class="col-md-4 mb-3">
+                   <div class="col-md-3 mb-3">
+                    <strong><label for="DropDownListEstados" >Estado</label></strong>
+                    <asp:DropDownList ID="DropDownListEstados" runat="server" class="form-control" placeholder="Estado" required="Se necesita un estado" AutoPostBack="true" OnSelectedIndexChanged="DropDownListEstados_SelectedIndexChanged">
+                       
+                    </asp:DropDownList>
+                </div>
+                <div class="col-md-3 mb-3">
                     <label for="ButtonBuscarFecha"></label>
                     <asp:Button ID="ButtonBuscarFecha" runat="server" Text="Buscar" class="btn btn-info btn-lg btn-block "  OnClick="ButtonBuscarFecha_Click"/>
                 </div>
@@ -61,7 +69,7 @@
 
                             <asp:TemplateField ShowHeader="False" HeaderText="Cancelación">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="LinkButtonCancelar" runat="server" CommandName="Cancelar" CssClass="form-control btn btn-outline-danger" OnClick="LinkButtonCancelar_Click">
+                                    <asp:LinkButton ID="LinkButtonCancelar" runat="server" CommandName="Cancelar" CssClass="form-control btn btn-outline-danger">
                                          <span class="oi oi-ban"></span>
                                     </asp:LinkButton>
                                 </ItemTemplate>
@@ -69,14 +77,14 @@
 
                             <asp:TemplateField ShowHeader="False" HeaderText="Falta">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="LinkButtonFalta" runat="server" CommandName="Falta" CssClass="form-control btn btn-outline-warning" OnClick="LinkButtonFalta_Click" >
+                                    <asp:LinkButton ID="LinkButtonFalta" runat="server" CommandName="Falta" CssClass="form-control btn btn-outline-warning" >
                                         <span class="oi oi-bell"></span>
                                     </asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField ShowHeader="False" HeaderText="Retardo">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="LinkButtonRetardo" runat="server" CommandName="Retardo" CssClass="form-control btn btn-outline-info" OnClick="LinkButtonRetardo_Click">
+                                    <asp:LinkButton ID="LinkButtonRetardo" runat="server" CommandName="Retardo" CssClass="form-control btn btn-outline-info" >
                                         <span class="oi oi-clock"></span>
                                     </asp:LinkButton>
                                 </ItemTemplate>
@@ -90,10 +98,10 @@
                             <asp:BoundField Visible="true" DataField="Tipo" HeaderText="Tipo" />
                             <asp:BoundField Visible="true" DataField="Hora" HeaderText="Hora" />
                             <asp:BoundField Visible="true" DataField="Fecha" HeaderText="Fecha" />
-                            <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado" ItemStyle-ForeColor="#00cc00" />
+                            <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado"/>
                             <asp:TemplateField ShowHeader="False" HeaderText="Eliminar">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="LinkButtonEliminar" runat="server" CommandName="Eliminar" CssClass="form-control btn btn-outline-secondary" OnClick="LinkButtonEliminar_Click">
+                                    <asp:LinkButton ID="LinkButtonEliminar" runat="server" CommandName="Eliminar" CssClass="form-control btn btn-outline-secondary" >
                                         <span class="oi oi-trash"></span>
                                     </asp:LinkButton>
                                 </ItemTemplate>
@@ -116,3 +124,25 @@
 </div>
 <br />
 
+<!-- Modal -->
+<div class="modal fade" id="ModalEliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar reservación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Esta seguro de eliminar la reservación para <strong><asp:Label ID="LabelNombreAlumno" runat="server" Text=" "></asp:Label></strong>
+                
+            </div>
+            <div class="modal-footer">
+                <asp:TextBox ID="TextBoxPkReservacion" runat="server" Visible="false" Enabled="false"></asp:TextBox>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <asp:Button ID="ButtonEliminarCita" runat="server" Text="Eliminar " CssClass="btn btn-danger"  OnClick="ButtonEliminarCita_Click"/>
+            </div>
+        </div>
+    </div>
+</div>

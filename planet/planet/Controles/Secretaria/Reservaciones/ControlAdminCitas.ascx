@@ -18,7 +18,7 @@
 
             <div class="form-row">
                 <div class="col-md-4 mb-3">
-                    <label for="TextBoxFecha">Fecha</label>
+                   <strong> <label for="TextBoxFecha">Fecha</label></strong>
                     <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" CssClass="form-control" OnTextChanged="TextBoxFecha_TextChanged" AutoPostBack="true"></asp:TextBox>
                 </div>
                  <div class="col-md-2 mb-1">
@@ -28,7 +28,7 @@
                     <asp:Button ID="ButtonCrear" runat="server" Text="Buscar" class="btn btn-success btn-lg btn-block" OnClick="ButtonCrear_Click" />
                 </div>
             </div>
-            <div class="table-responsive">
+            <div class="table-responsive border border-primary">
                 <asp:GridView ID="GridViewCitas" runat="server" OnRowCommand="GridView_RowCommand" CssClass="table table-striped table-bordered table-hover " AutoGenerateColumns="false">
                     <Columns>
 

@@ -121,5 +121,26 @@ namespace Core.Presenter
                 }
             }
         }
+        public void CambioEstadoReservacion(CRegistroCitas objCita, int opcion)
+        {
+
+            CRegistroCitas objaux = new CRegistroCitas();
+            bool BolRegistro = false;
+            if (ExisteConexion())
+            {
+
+                BolRegistro = objaux.ModificarEstado(opcion, objCita);
+                if (BolRegistro == true)
+                {
+
+                    ViewRegistroCitas.Mensaje("Correcto", 10);
+
+                }
+                else
+                {
+                    ViewRegistroCitas.Mensaje("Error", 11);
+                }
+            }
+        }
     }
 }
