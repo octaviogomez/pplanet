@@ -13,12 +13,12 @@ namespace planet.Paginas.Secretaria {
     public partial class Default {
         
         /// <summary>
-        /// Control ControlConsultaCancelacion.
+        /// Control AlumnoReservacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::planet.Controles.Secretaria.Reservaciones.ControlConsultaCancelacion ControlConsultaCancelacion;
+        protected global::planet.Controles.Secretaria.Default.AlumnoReservacion AlumnoReservacion;
     }
 }

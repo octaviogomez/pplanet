@@ -135,18 +135,19 @@
     <Folder Include="App_Data\" />
     <Folder Include="Controles\Admin\" />
     <Folder Include="Controles\Alumno\Clubs\" />
+    <Folder Include="Controles\Secretaria\Clubs\" />
     <Folder Include="Multimedia\Audios\" />
     <Folder Include="Multimedia\Verbos\" />
     <Folder Include="Paginas\Admin\" />
     <Folder Include="Paginas\Alumno\Club\" />
     <Folder Include="Paginas\Maestro\" />
+    <Folder Include="Paginas\Secretaria\Clubs\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
-    <Content Include="Contact.aspx" />
     <Content Include="Content\app.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\estilos.css" />
     <Content Include="Content\gijgo.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Controles\Alumno\AvisoGeneral.ascx" />
@@ -155,6 +156,9 @@
     <Content Include="Controles\Alumno\InforReservaciones.ascx" />
     <Content Include="Controles\Alumno\Rerservaciones\ControlListarCancelar.ascx" />
     <Content Include="Controles\Alumno\Rerservaciones\ControlReservacion.ascx" />
+    <Content Include="Controles\Secretaria\Alumno\ContAltaAlumno.ascx" />
+    <Content Include="Controles\Secretaria\Alumno\ContConsultaAlumno.ascx" />
+    <Content Include="Controles\Secretaria\Alumno\ContPerfil.ascx" />
     <Content Include="Controles\Secretaria\Default\AlumnoClubs.ascx" />
     <Content Include="Controles\Secretaria\Default\AlumnoReservacion.ascx" />
     <Content Include="Controles\Secretaria\Reservaciones\ContreolReservarReservacion.ascx" />
@@ -3110,6 +3114,7 @@
     <Content Include="Iconos\icon\webp\zoom-out-8x.webp" />
     <Content Include="Iconos\icon\webp\zoom-out.webp" />
     <None Include="Properties\PublishProfiles\ingles.pubxml" />
+    <None Include="Properties\PublishProfiles\pplanet.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Paginas\Alumno\Audios.aspx" />
     <Content Include="Paginas\Alumno\Buzon.aspx" />
@@ -3119,13 +3124,15 @@
     <Content Include="Paginas\Alumno\Perfil.aspx" />
     <Content Include="Paginas\Alumno\Reservaciones\Agendar.aspx" />
     <Content Include="Paginas\Alumno\Reservaciones\Consulta.aspx" />
+    <Content Include="Paginas\Secretaria\Alumnos\AltaAlumno.aspx" />
+    <Content Include="Paginas\Secretaria\Alumnos\ConsultaAlumno.aspx" />
+    <Content Include="Paginas\Secretaria\Alumnos\Perfil.aspx" />
     <Content Include="Paginas\Secretaria\Reservaciones\AdministrarCitas.aspx" />
     <Content Include="Paginas\Secretaria\Reservaciones\AgendarReservacion.aspx" />
     <Content Include="Paginas\Secretaria\Reservaciones\ConsultaCitas.aspx" />
     <Content Include="Paginas\Secretaria\Reservaciones\CrearResercacion.aspx" />
     <Content Include="Paginas\Alumno\Verbos.aspx" />
     <Content Include="Paginas\Secretaria\Avisos.aspx" />
-    <Content Include="Paginas\Secretaria\Clubs.aspx" />
     <Content Include="Paginas\Secretaria\Default.aspx" />
     <Content Include="Paginas\Secretaria\Horarios.aspx" />
     <Content Include="Paginas\Secretaria\Multimedia.aspx" />
@@ -3183,21 +3190,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Controles\Alumno\AvisoGeneral.ascx.cs">
       <DependentUpon>AvisoGeneral.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3239,6 +3232,27 @@
     </Compile>
     <Compile Include="Controles\Alumno\Rerservaciones\ControlReservacion.ascx.designer.cs">
       <DependentUpon>ControlReservacion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Alumno\ContAltaAlumno.ascx.cs">
+      <DependentUpon>ContAltaAlumno.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Alumno\ContAltaAlumno.ascx.designer.cs">
+      <DependentUpon>ContAltaAlumno.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Alumno\ContConsultaAlumno.ascx.cs">
+      <DependentUpon>ContConsultaAlumno.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Alumno\ContConsultaAlumno.ascx.designer.cs">
+      <DependentUpon>ContConsultaAlumno.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Alumno\ContPerfil.ascx.cs">
+      <DependentUpon>ContPerfil.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Alumno\ContPerfil.ascx.designer.cs">
+      <DependentUpon>ContPerfil.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controles\Secretaria\Default\AlumnoClubs.ascx.cs">
       <DependentUpon>AlumnoClubs.ascx</DependentUpon>
@@ -3383,6 +3397,27 @@
     <Compile Include="Paginas\Alumno\Reservaciones\Consulta.aspx.designer.cs">
       <DependentUpon>Consulta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Secretaria\Alumnos\AltaAlumno.aspx.cs">
+      <DependentUpon>AltaAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Alumnos\AltaAlumno.aspx.designer.cs">
+      <DependentUpon>AltaAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Alumnos\ConsultaAlumno.aspx.cs">
+      <DependentUpon>ConsultaAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Alumnos\ConsultaAlumno.aspx.designer.cs">
+      <DependentUpon>ConsultaAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Alumnos\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Alumnos\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Secretaria\Reservaciones\AdministrarCitas.aspx.cs">
       <DependentUpon>AdministrarCitas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3424,13 +3459,6 @@
     </Compile>
     <Compile Include="Paginas\Secretaria\Avisos.aspx.designer.cs">
       <DependentUpon>Avisos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Paginas\Secretaria\Clubs.aspx.cs">
-      <DependentUpon>Clubs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Paginas\Secretaria\Clubs.aspx.designer.cs">
-      <DependentUpon>Clubs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Secretaria\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -3504,7 +3532,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>22893</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:22893/</IISUrl>
+          <IISUrl>http://localhost:1552/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

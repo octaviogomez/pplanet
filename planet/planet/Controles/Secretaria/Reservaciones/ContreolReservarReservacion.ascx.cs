@@ -232,21 +232,11 @@ namespace planet.Controles.Secretaria.Reservaciones
                         GridViewCitas.Rows[FilaSeleccionada.RowIndex].Cells[i].CssClass = "alert alert-info";//FilaSeleccionada.RowIndex -> es el indice (posision) del elemento seleccionado
                 }
             }
-
-
-         
-
-
-
-
-
             if (e.CommandName == "seleccion")
             {
                 codigo = (((Label)FilaSeleccionada.FindControl("LabelId")).Text);
                 TextBoxIdCita.Text = codigo;
                 TextBoxIdCita.CssClass = "form-control is-valid";
-
-       
             }
         
 

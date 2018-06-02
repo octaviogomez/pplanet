@@ -42,17 +42,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="../../Paginas/Alumno/Default.aspx">Inicio<span class="sr-only">(current)</span></a>
                         </li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reservaciones
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Ver espacios</a>
-                                <a class="dropdown-item" href="#">Consulta</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Historial</a>
+                                <a class="dropdown-item"  href="../../Paginas/Alumno/Reservaciones/Agendar.aspx">Agendar</a>
+                                <a class="dropdown-item"  href="../../Paginas/Alumno/Reservaciones/Consulta.aspx">Consulta</a>
+                              
                             </div>
                         </li>
 
@@ -60,34 +59,30 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clubs
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Ver Clubs</a>
-                                <a class="dropdown-item" href="#">Consulta</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Historial</a>
+                                <a class="dropdown-item" href="../../Paginas/Alumno/Clubs.aspx">Agendar club</a>
+                                  <div class="dropdown-divider"></div>
+                                <a class="dropdown-item"  href="../../Paginas/Alumno/ConsultaC.aspx">Consulta</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownnn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recursos
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Audios</a>
-                                <a class="dropdown-item" href="#">Verbos</a>
-
+                                <a class="dropdown-item" href="../../Paginas/Alumno/Audios.aspx">Audios</a>
+                                <a class="dropdown-item" href="../../Paginas/Alumno/Verbos.aspx">Verbos</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Horarios</a>
-                        </li>
-
-
-                        <li class="nav-item">
-                            <a class="nav-link " href="#">Datos personales</a>
+                            <a class="nav-link" href="../../Paginas/Alumno/Horarios.aspx">Horarios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Modificación</a>
+                            <a class="nav-link" href="../../Paginas/Alumno/Perfil.aspx">Perfil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Salir</a>
+                            <a  class="nav-link" href="../../Paginas/Alumno/Buzon.aspx">Buzón de sugerencias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../Default.aspx">Salir</a>
                         </li>
                     </ul>
                 </div>
@@ -97,39 +92,128 @@
         <%-- Menu Final --%>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             <%-- controles :v --%>
+
+
+
         </asp:ContentPlaceHolder>
     </form>
-    <footer class="page-footer">
-        <div class="row">
+                      
+<!--Footer-->
+<footer class="page-footer font-small indigo pt-0" >
+    <!--Footer Links-->
+    <div class="container">
+        <!--Grid row-->
+        <div class="row pt-5 mb-3 text-center d-flex justify-content-center">
 
-
-
-
-                <div class="col-md-2 align-self-center d-flex justify-content-center">
-                    <asp:Image ID="ImageFooter" runat="server" ImageUrl="~/Imagenes/logo.png" CssClass="img-fluid" alt="Responsive image" Height="135px" Width="145px" />
-                </div>
-
-
-              <div class="col">
-                    <h4 class="">Instituto Planet English</h4>
-                    <p class="">©PLanet English.  Calle Ocampo # 100. Col. Centro, Hidalgo, México C.P. 4350, Teléfono: 01(775) 6565454.</p>
-                </div>
-                   <div class="col-md-3">
-                    <h4 class="white-text">Enlaces</h4>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="http://www.planet.com/">Página oficial</a></li>
-                        <li><a class="grey-text text-lighten-3" href="http://201.116.38.19/conect_uptvxxi/default.asp">Faceboo</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#aviso">Aviso de privacidad</a></li>
-                    </ul>
-                </div>
-        </div>
-
-        <div class="footer-copyright">
-            <div class="container  d-flex justify-content-end">
-                © 2017 Planet<a class="grey-text text-lighten-4 right" href="/Desarroladores.aspx">   Webmaster Engima Code</a>
+            <!--Grid column-->
+            <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold">
+                    <a href="#!">Acerca de nosotos</a>
+                </h6>
             </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold">
+                    <a href="#!">Productos</a>
+                </h6>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold">
+                    <a href="#!">Anuncios</a>
+                </h6>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold">
+                    <a href="#!">Ayuda</a>
+                </h6>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold">
+                    <a href="#!">Contacto</a>
+                </h6>
+            </div>
+            <!--Grid column-->
+
         </div>
-    </footer>
+        <!--Grid row-->
+
+        <hr class="rgba-white-light" style="margin: 0 15%;">
+
+        <!--Grid row-->
+        <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+            <!--Grid column-->
+            <div class="col-md-8 col-12 mt-5">
+                <p style="line-height: 1.7rem">Nuestro propósito es hacer que la vida de nuestros alumnos, colaboradores y socios cambie de manera radical, ofreciéndoles la principal herramienta para su superación personal y profesional; el dominio del idioma inglés.</p>
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+        <!--Grid row-->
+        <div class="row pb-3">
+
+            <!--Grid column-->
+            <div class="col-md-12">
+
+                <div class="mb-5 flex-center">
+                    <!--Facebook-->
+                    <a class="fb-ic">
+                        <i class="fa fa-facebook fa-lg white-text mr-md-4"> </i>
+                    </a>
+                    <!--Twitter-->
+                    <a class="tw-ic">
+                        <i class="fa fa-twitter fa-lg white-text mr-md-4"> </i>
+                    </a>
+                    <!--Google +-->
+                    <a class="gplus-ic">
+                        <i class="fa fa-google-plus fa-lg white-text mr-md-4"> </i>
+                    </a>
+                    <!--Linkedin-->
+                    <a class="li-ic">
+                        <i class="fa fa-linkedin fa-lg white-text mr-md-4"> </i>
+                    </a>
+                    <!--Instagram-->
+                    <a class="ins-ic">
+                        <i class="fa fa-instagram fa-lg white-text mr-md-4"> </i>
+                    </a>
+                    <!--Pinterest-->
+                    <a class="pin-ic">
+                        <i class="fa fa-pinterest fa-lg white-text"> </i>
+                    </a>
+                </div>
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+
+    </div>
+    <!--/Footer Links-->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3 text-center">
+        © 2018 Copyright:
+        <a href="https://mdbootstrap.com/material-design-for-bootstrap/"> e-planetenglish.com </a>
+    </div>
+    <!--/Copyright-->
+
+</footer>
+<!--/Footer-->
     <script src="../../Scripts/jquery-3.2.1.min.js"></script>
     <script src="../../Scripts/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"></script>
     <script src="../../Scripts/bootstrap.min.js"></script>

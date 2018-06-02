@@ -1,5 +1,11 @@
-﻿body {
+﻿.negrita{
+    font-weight:bold;
 }
+
+label{
+    font-weight:bold;
+}
+
 #header-container {
     background-color:#080F53;
     color:white;
@@ -12,3 +18,11 @@ color:white;
 
 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.ocultar {
+    visibility:hidden;
+}
+.mostrar {
+    visibility:visible;
+}
+

@@ -6,6 +6,8 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/css-Calendario/bootstrap-datepicker.css" rel="stylesheet" />
+
     <title>Inicio</title>
 </head>
 
@@ -14,6 +16,17 @@
 <body>
     <form id="form1" runat="server">
     </form>
+
+
+    <div class="input-group date" data-provide="datepicker">
+    <input type="text" class="form-control">
+    <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th"></span>
+    </div>
+</div>
+    <script src="Scripts/Calendario/bootstrap-datepicker.min.js">
+        $(document).off('.datepicker.data-api');
+    </script>
     <script src="Scripts/jquery-3.2.1.min.js"></script>
     <script src="Scripts/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"></script>
     <script src="Scripts/bootstrap.min.js"></script>

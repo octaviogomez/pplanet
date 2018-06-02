@@ -78,14 +78,64 @@ namespace Core.Presenter
                 }
                 else
                 {
-                    ViewAlumno.MensajeAlumno("No Valido", 2);
+                    ViewAlumno.MensajeAlumno("Datos no validos", 2);
                 }
             }
             else
             {
-                ViewAlumno.MensajeAlumno("No hay conexion en red", 1);
+                ViewAlumno.MensajeAlumno("No hay conexión en red", 1);
             }
         }
         #endregion
+
+        #region Crud alumno
+
+        public void AltaAlumno(CAlumno objAlum, int opcion)
+        {
+            bool BolRegistro = false;
+            CAlumno objAlumno = new CAlumno();
+
+            if (ExisteConexion())
+            {
+                BolRegistro = objAlumno.CreateAlumno(opcion, objAlum);
+                if (BolRegistro == true)
+                {
+                    ViewAlumno.MensajeAlumno("Registo exitoso", 4);
+                }
+                else
+                {
+
+                    ViewAlumno.MensajeAlumno("No se pudo registrar el usuario, revise bien sus datos.", 4);
+                }
+            }
+            else {
+                ViewAlumno.MensajeAlumno("No hay conexión en red", 1);
+            }
+        }
+        #endregion
+
+        public void ListadoAlumno(CAlumno objCita, int opcion)
+        {
+            DataSet dtsDatos = new DataSet();
+            CAlumno objaux = new CAlumno();
+            bool BolRegistro = false;
+            if (ExisteConexion())
+            {
+                BolRegistro = objaux.ListarAlumno(opcion, objCita, ref dtsDatos);
+
+                if (BolRegistro == true)
+                {
+                     ViewAlumno.UsuariosDt = dtsDatos;
+                    ViewAlumno.MensajeAlumno("Listado correcto", 1);
+                }
+                else
+                {
+                    ViewAlumno.MensajeAlumno("Error no se pudieron listar ", 2);
+                }
+            }
+            else {
+
+            }
+        }
     }
 }
