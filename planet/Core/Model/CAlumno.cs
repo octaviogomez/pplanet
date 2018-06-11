@@ -39,8 +39,8 @@ namespace Core.Model
             lstParametros.Add(new SqlParameter("@sexo", SqlDbType.VarChar) { Value = obj.sexo });
             lstParametros.Add(new SqlParameter("@nivel", SqlDbType.VarChar) { Value = obj.nivel });
             lstParametros.Add(new SqlParameter("@direccion", SqlDbType.VarChar) { Value = obj.direccion });
-            lstParametros.Add(new SqlParameter("@FechaNacimiento", SqlDbType.VarChar) { Value = obj.FechaNacimiento });
-           // objManagerBD = new ManagerBD();
+            lstParametros.Add(new SqlParameter("@FechaNacimiento", SqlDbType.Date) { Value = obj.FechaNacimiento });
+           objManagerBD = new ManagerBD();
             if (objManagerBD.UpdateData(ProcedimientoGeneral, lstParametros.ToArray()))
                 return true;
             return false;
@@ -50,7 +50,7 @@ namespace Core.Model
             List<SqlParameter> lstParametros = new List<SqlParameter>();
             bool ExisteDatos = false;
             lstParametros.Add(new SqlParameter("@Op", SqlDbType.Int) { Value = opcion });
-
+            lstParametros.Add(new SqlParameter("@pk_alumno", SqlDbType.Int) { Value = obj.pk_alumno });
 
             objDatos = objManagerBD.GetData(ProcedimientoGeneral, lstParametros.ToArray());
             if (objDatos.Tables.Count > 0)

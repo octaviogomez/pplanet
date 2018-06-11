@@ -21,6 +21,7 @@ namespace planet.Controles.Secretaria.Alumno
         {
             ObjAlumno = new CAlumno();
             WAlumno = new WAlumno(this);
+         
         }
 
       
@@ -66,20 +67,20 @@ namespace planet.Controles.Secretaria.Alumno
                 CAlumno objAux = new CAlumno();
                 try
                 {
-                    objAux.id = Convert.ToInt32(TextBoxId.Text);
+                    objAux.id = (!string.IsNullOrWhiteSpace(TextBoxId.Text)) ? Convert.ToInt32(TextBoxId.Text):0;
                     objAux.clave = TextBoxPasswordDos.Text;
-                    objAux.correo = TextBoxCorreo.Text;
+                    objAux.correo = (!string.IsNullOrWhiteSpace(TextBoxCorreo.Text)) ? TextBoxCorreo.Text : "0";
                     objAux.nombre = TextBoxNombre.Text;
                     objAux.apellidos = TextBoxApellidos.Text;
                     objAux.estadoPago = (CheckBoxEstadoPago.Checked) ? 2 : 1;
-                    objAux.facebook = TextBoxFacebook.Text;
-                    objAux.telefono = TextBoxTelefono.Text;
-                    objAux.celular = TextBoxCelular.Text;
+                    objAux.facebook = (!string.IsNullOrWhiteSpace(TextBoxFacebook.Text)) ? TextBoxFacebook.Text : "0";
+                    objAux.telefono = (!string.IsNullOrWhiteSpace(TextBoxTelefono.Text)) ? TextBoxTelefono.Text : "0";
+                    objAux.celular = (!string.IsNullOrWhiteSpace(TextBoxCelular.Text)) ? TextBoxCelular.Text : "0";
                     objAux.sexo = RadioButtonListSexo.SelectedValue.ToUpper();
-                    objAux.direccion = TextBoxDireccion.Text;
-                    objAux.FechaNacimiento = TextBoxCumple.Text;
+                    objAux.direccion = (!string.IsNullOrWhiteSpace(TextBoxDireccion.Text)) ? TextBoxDireccion.Text : "0";
+                    objAux.FechaNacimiento = Convert.ToDateTime(TextBoxCumple.Text).ToShortDateString() ;
                 }
-                catch (Exception e) 
+                catch (Exception ex) 
                 {
                     MensajeAlumno("Revise que los datos sean los correctos",4);
                 }

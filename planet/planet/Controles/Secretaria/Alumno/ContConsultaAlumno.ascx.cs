@@ -101,6 +101,12 @@ namespace planet.Controles.Secretaria.Alumno
                 TextBoxPkAlumno.Text = codigo;
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$('#ModalEliminar').modal('show');</script>", false);
             }
+            if (e.CommandName == "Consultar")
+            {
+          
+                Response.Redirect("Perfil.aspx?id=" + codigo, true);//
+
+            }
 
 
             FilaSeleccionada.Dispose();
@@ -111,6 +117,7 @@ namespace planet.Controles.Secretaria.Alumno
             CAlumno ob = new CAlumno();
             ob.pk_alumno = Convert.ToInt32(TextBoxPkAlumno.Text);
             WAlumno.AltaAlumno(ob, 4);
+            WAlumno.ListadoAlumno(ObjAlumno, 3);
 
         }
     }

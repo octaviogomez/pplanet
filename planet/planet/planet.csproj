@@ -156,6 +156,7 @@
     <Content Include="Controles\Alumno\InforReservaciones.ascx" />
     <Content Include="Controles\Alumno\Rerservaciones\ControlListarCancelar.ascx" />
     <Content Include="Controles\Alumno\Rerservaciones\ControlReservacion.ascx" />
+    <Content Include="Controles\Horario.ascx" />
     <Content Include="Controles\Secretaria\Alumno\ContAltaAlumno.ascx" />
     <Content Include="Controles\Secretaria\Alumno\ContConsultaAlumno.ascx" />
     <Content Include="Controles\Secretaria\Alumno\ContPerfil.ascx" />
@@ -3232,6 +3233,13 @@
     </Compile>
     <Compile Include="Controles\Alumno\Rerservaciones\ControlReservacion.ascx.designer.cs">
       <DependentUpon>ControlReservacion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Horario.ascx.cs">
+      <DependentUpon>Horario.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Horario.ascx.designer.cs">
+      <DependentUpon>Horario.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controles\Secretaria\Alumno\ContAltaAlumno.ascx.cs">
       <DependentUpon>ContAltaAlumno.ascx</DependentUpon>
