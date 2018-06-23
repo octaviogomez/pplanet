@@ -76,6 +76,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -168,7 +169,6 @@
     <Content Include="Controles\Secretaria\Reservaciones\ControlCrearCita.ascx" />
     <Content Include="Controles\Sesion\login.ascx" />
     <Content Include="Default.aspx" />
-    <Content Include="Ejemplo.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -3115,6 +3115,8 @@
     <Content Include="Iconos\icon\webp\zoom-out-8x.webp" />
     <Content Include="Iconos\icon\webp\zoom-out.webp" />
     <None Include="Properties\PublishProfiles\ingles.pubxml" />
+    <None Include="Properties\PublishProfiles\planetenglish - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\planetenglish - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\pplanet.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Paginas\Alumno\Audios.aspx" />
@@ -3317,13 +3319,6 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Ejemplo.aspx.cs">
-      <DependentUpon>Ejemplo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Ejemplo.aspx.designer.cs">
-      <DependentUpon>Ejemplo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

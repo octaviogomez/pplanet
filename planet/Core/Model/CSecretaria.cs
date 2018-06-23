@@ -15,7 +15,7 @@ namespace Core.Model
     public class CSecretaria
     {
         ManagerBD objManagerBD;
-
+        private string procedimientoGeneral = "PSecretaria";
         public  CSecretaria() {
             objManagerBD = new ManagerBD();
         }
@@ -25,10 +25,10 @@ namespace Core.Model
             bool ExisteDatos = false;
             List<SqlParameter> lstParametros = new List<SqlParameter>();
             lstParametros.Add(new SqlParameter("@Op", SqlDbType.Int) { Value = opcion });
-            lstParametros.Add(new SqlParameter("@rol", SqlDbType.Int) { Value = objAlumno.rol });
+            lstParametros.Add(new SqlParameter("@pk_secreatria", SqlDbType.VarChar) { Value = objAlumno.pk_secreatria });
             lstParametros.Add(new SqlParameter("@clave", SqlDbType.VarChar) { Value = objAlumno.clave });
-            lstParametros.Add(new SqlParameter("@id", SqlDbType.VarChar) { Value = objAlumno.id });
-            objDatos = objManagerBD.GetData("PSecretaria", lstParametros.ToArray());
+            objManagerBD = new ManagerBD();
+            objDatos = objManagerBD.GetData(procedimientoGeneral, lstParametros.ToArray());
             if (objDatos.Tables.Count > 0)
                 ExisteDatos = true;
 

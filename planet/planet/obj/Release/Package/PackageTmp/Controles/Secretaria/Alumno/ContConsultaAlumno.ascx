@@ -21,7 +21,7 @@
             <div class="form-row ">
                 <div class="col-md-3 -3">
                 </div>
-
+                 <input id="buscar" type="text" class="form-control" placeholder="Escriba algo para filtrar" />
                 <div class="col-md-3 mb-3">
                 </div>
                 <div class="col-md-3 mb-3">
@@ -43,7 +43,13 @@
 
 
 
-
+                            <asp:TemplateField ShowHeader="False" HeaderText="Inf">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="LinkButtonConsultar" runat="server" CommandName="Consultar" CssClass="form-control btn btn-outline-info">
+                                        <span class="oi oi-person"></span>
+                                    </asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
 
 
                             <asp:BoundField Visible="false" DataField="Id" HeaderText="Id" />
@@ -57,23 +63,15 @@
                             <asp:BoundField Visible="true" DataField="Ingreso" HeaderText="Ingreso" />
 
 
-                            <asp:TemplateField ShowHeader="False" HeaderText="Consulta">
-                                <ItemTemplate>
-                                    <asp:LinkButton ID="LinkButtonConsultar" runat="server" CommandName="Consultar" CssClass="form-control btn btn-outline-info">
-                                        <span class="oi oi-person"></span>
-                                    </asp:LinkButton>
-                                </ItemTemplate>
-                            </asp:TemplateField>
 
-                            <asp:TemplateField ShowHeader="False" HeaderText="Modificacón">
+
+                            <asp:TemplateField ShowHeader="False" HeaderText="Modif">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="LinkButtonModificar" runat="server" CommandName="Consultar" CssClass="form-control btn btn-outline-warning">
                                         <span class="oi oi-wrench"></span>
                                     </asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>
-
-
 
                             <asp:TemplateField ShowHeader="False" HeaderText="Baja">
                                 <ItemTemplate>
@@ -111,7 +109,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                Esta seguro que desea dar de baja : <strong><asp:Label ID="LabelNombreAlumno" runat="server" Text=" "></asp:Label></strong>
+                Esta seguro que desea dar de baja : <strong>
+                    <asp:Label ID="LabelNombreAlumno" runat="server" Text=" "></asp:Label></strong>
 
             </div>
             <div class="modal-footer">
@@ -122,9 +121,38 @@
         </div>
     </div>
 </div>
+
+
+
 <script>
-
     (function () {
+        document.querySelector("#buscar").onkeyup = function () {
+            $TableFilter("#ContentPlaceHolder1_ContConsultaAlumno_GridViewReservacionCitas", this.value);
+           //this.vale es igual al valor ingresado
+        }
 
+        $TableFilter = function (id, value) {
+          
+            var rows = document.querySelectorAll(id + ' tbody tr');
+         
+            for (var i = 0; i < rows.length; i++) {
+                var showRow = false;
+
+                var row = rows[i];
+               
+                row.style.display = 'none';
+
+                for (var x = 0; x < row.childElementCount; x++) {
+                    if (row.children[x].textContent.toLowerCase().indexOf(value.toLowerCase().trim()) > -1) {
+                        showRow = true;
+                        break;
+                    }
+                }
+
+                if (showRow) {
+                    row.style.display = null;
+                }
+            }
+        }
     })();
 </script>

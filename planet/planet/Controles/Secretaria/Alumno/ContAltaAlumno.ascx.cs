@@ -112,7 +112,9 @@ namespace planet.Controles.Secretaria.Alumno
         }
         #endregion
 
-        protected void ButtonAgregar_Click(object sender, EventArgs e)
+    
+
+        protected void ButtonAgrega_Click(object sender, EventArgs e)
         {
             WAlumno.AltaAlumno(UsuarioActulizar, 2);
         }

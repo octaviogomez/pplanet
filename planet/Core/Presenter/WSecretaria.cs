@@ -33,6 +33,7 @@ namespace Core.Presenter
             }
             return ConexcionAvierta;
         }
+
         #region Metodo de logeo
         public void ValidarSecretaria(int opcion, CSecretaria SecretariaIngresado)
         {
@@ -65,6 +66,7 @@ namespace Core.Presenter
                     catch (Exception)
                     {
                         ViewSecretaria.ObjSecretaria = null;
+                        ViewSecretaria.MensajeSecretaria("No Valido", 2);
                     }
                 }
                 else

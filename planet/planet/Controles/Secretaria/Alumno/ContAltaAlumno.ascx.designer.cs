@@ -130,13 +130,13 @@ namespace planet.Controles.Secretaria.Alumno {
         protected global::System.Web.UI.WebControls.TextBox TextBoxCumple;
         
         /// <summary>
-        /// ButtonAgregar control.
+        /// ButtonAgrega control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAgregar;
+        protected global::System.Web.UI.WebControls.LinkButton ButtonAgrega;
         
         /// <summary>
         /// PanelCorrecto control.

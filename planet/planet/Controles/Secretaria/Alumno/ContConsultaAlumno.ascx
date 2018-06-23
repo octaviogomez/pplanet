@@ -21,7 +21,7 @@
             <div class="form-row ">
                 <div class="col-md-3 -3">
                 </div>
-
+                 <input id="buscar" type="text" class="form-control" placeholder="Escriba algo para filtrar" />
                 <div class="col-md-3 mb-3">
                 </div>
                 <div class="col-md-3 mb-3">
@@ -124,3 +124,35 @@
 
 
 
+<script>
+    (function () {
+        document.querySelector("#buscar").onkeyup = function () {
+            $TableFilter("#ContentPlaceHolder1_ContConsultaAlumno_GridViewReservacionCitas", this.value);
+           //this.vale es igual al valor ingresado
+        }
+
+        $TableFilter = function (id, value) {
+          
+            var rows = document.querySelectorAll(id + ' tbody tr');
+         
+            for (var i = 0; i < rows.length; i++) {
+                var showRow = false;
+
+                var row = rows[i];
+               
+                row.style.display = 'none';
+
+                for (var x = 0; x < row.childElementCount; x++) {
+                    if (row.children[x].textContent.toLowerCase().indexOf(value.toLowerCase().trim()) > -1) {
+                        showRow = true;
+                        break;
+                    }
+                }
+
+                if (showRow) {
+                    row.style.display = null;
+                }
+            }
+        }
+    })();
+</script>

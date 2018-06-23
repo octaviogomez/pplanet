@@ -21,7 +21,12 @@
 
                     <div class="col-4">
                         <br />
-                        <asp:Button ID="ButtonBuscar" runat="server" Text="Buscar" CssClass="btn btn-success btn-lg btn-block" />
+                        <asp:LinkButton ID="ButtonBusca" runat="server" CssClass="btn btn-success btn-lg btn-block"><span class="oi oi-zoom-in"></span> Buscar</asp:LinkButton>
+                       
+                    </div>
+                     <div class="col-4">
+                        <br />
+                         <asp:LinkButton ID="ButtonModifica" runat="server" CssClass="btn btn-warning btn-lg btn-block" ><span class="oi oi-pencil">Modificar</span></asp:LinkButton>  
                     </div>
                 </div>
 

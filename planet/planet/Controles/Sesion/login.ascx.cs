@@ -203,7 +203,7 @@ namespace planet.Controles.Sesion
                     WAlumnoVista.ValidarAlumno(1, UsuarioLogeado);
                     if (UsuarioLogeado != null)
                     {
-                        Session.Clear();// limpiamos la sesion
+                       
                         Session.Add("AlumnoSesion", objLoggerinfAlumno);//Creamos la variable de sesion en donde la podremos utlizar cuando nos mande a la master
                         Response.Redirect("/Paginas/Alumno/Default.aspx", true);// no direcciona a la pagina default de la master
                     }

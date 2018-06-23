@@ -83,7 +83,8 @@
                 <div class="form-group col-md-4">
                 </div>
                 <div class="form-group col-md-4">
-                    <asp:Button ID="ButtonAgregar" runat="server" Text="Agregar" CssClass="btn btn-success btn-lg btn-block" OnClick="ButtonAgregar_Click" />
+                    <asp:LinkButton ID="ButtonAgrega" runat="server" CssClass="btn btn-success btn-lg btn-block" OnClick="ButtonAgrega_Click"> <span class="oi oi-person"></span> Agregar</asp:LinkButton>
+
                 </div>
                 <div class="form-group col-md-4">
                 </div>

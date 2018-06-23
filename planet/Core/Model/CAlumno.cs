@@ -92,8 +92,9 @@ namespace Core.Model
             lstParametros.Add(new SqlParameter("@Op", SqlDbType.Int) { Value = opcion });
             lstParametros.Add(new SqlParameter("@rol", SqlDbType.Int) { Value = objAlumno.rol });
             lstParametros.Add(new SqlParameter("@clave", SqlDbType.VarChar) { Value = objAlumno.clave });
-            lstParametros.Add(new SqlParameter("@id", SqlDbType.Int) { Value = objAlumno.id });
+            lstParametros.Add(new SqlParameter("@pk_alumno", SqlDbType.Int) { Value = objAlumno.pk_alumno });
             objDatos = objManagerBD.GetData(ProcedimientoGeneral, lstParametros.ToArray());
+            objManagerBD = null;
             if (objDatos.Tables.Count > 0)
                 ExisteDatos = true;
 
