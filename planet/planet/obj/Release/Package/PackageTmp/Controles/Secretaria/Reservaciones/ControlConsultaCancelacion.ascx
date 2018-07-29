@@ -33,29 +33,35 @@
             <p class="card-text">Realice cuidadosamente el llenado.</p>
 
             <div class="form-row ">
-                <div class="col-md-3 -3">
-                     <strong><label for="TextBoxFecha">Fecha</label></strong>
+                <div class="col-12 col-md-3 mb-3">
+                    <strong>
+                        <label for="TextBoxFecha">Fecha</label></strong>
                     <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" CssClass="form-control" AutoPostBack="true" OnTextChanged="TextBoxFecha_TextChanged"></asp:TextBox>
                 </div>
 
-                <div class="col-md-3 mb-3">
-                    <strong><label for="DropDownListHorarios" >Horarios</label></strong>
+                <div class="col-12 col-md-3 mb-3">
+                    <strong>
+                        <label for="DropDownListHorarios">Horarios</label></strong>
                     <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Horario" required="Se necesita un horario" AutoPostBack="true" OnSelectedIndexChanged="DropDownListHorarios_SelectedIndexChanged">
-                       
                     </asp:DropDownList>
                 </div>
-                   <div class="col-md-3 mb-3">
-                    <strong><label for="DropDownListEstados" >Estado</label></strong>
+                <div class="col-12 col-md-3 mb-3">
+                    <strong>
+                        <label for="DropDownListEstados">Estado</label></strong>
                     <asp:DropDownList ID="DropDownListEstados" runat="server" class="form-control" placeholder="Estado" required="Se necesita un estado" AutoPostBack="true" OnSelectedIndexChanged="DropDownListEstados_SelectedIndexChanged">
-                       
                     </asp:DropDownList>
                 </div>
-                <div class="col-md-3 mb-3">
+                <div class="col-12 col-md-3 mb-3">
                     <label for="ButtonBuscarFecha"></label>
-                    <asp:Button ID="ButtonBuscarFecha" runat="server" Text="Buscar" class="btn btn-info btn-lg btn-block "  OnClick="ButtonBuscarFecha_Click"/>
+                    <asp:Button ID="ButtonBuscarFecha" runat="server" Text="Buscar" class="btn btn-info btn-lg btn-block " OnClick="ButtonBuscarFecha_Click" />
                 </div>
             </div>
 
+            <div class="form-row ">
+                <label for="buscar">Filtrado:</label>
+                <input id="buscar" type="text" class="form-control" placeholder="Escriba algo para filtrar" />
+
+            </div>
             <br />
             <asp:Panel ID="PanelListadoCitas" runat="server" Height="700px" ScrollBars="Vertical" CssClass="border border-primary">
                 <div class="table-responsive">
@@ -77,31 +83,31 @@
 
                             <asp:TemplateField ShowHeader="False" HeaderText="Falta">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="LinkButtonFalta" runat="server" CommandName="Falta" CssClass="form-control btn btn-outline-warning" >
+                                    <asp:LinkButton ID="LinkButtonFalta" runat="server" CommandName="Falta" CssClass="form-control btn btn-outline-warning">
                                         <span class="oi oi-bell"></span>
                                     </asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField ShowHeader="False" HeaderText="Retardo">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="LinkButtonRetardo" runat="server" CommandName="Retardo" CssClass="form-control btn btn-outline-info" >
+                                    <asp:LinkButton ID="LinkButtonRetardo" runat="server" CommandName="Retardo" CssClass="form-control btn btn-outline-info">
                                         <span class="oi oi-clock"></span>
                                     </asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>
 
                             <asp:BoundField Visible="false" DataField="pk_alumno" HeaderText="pk_alumno" />
-                       
-                            <asp:BoundField Visible="true" DataField="Nombre" HeaderText="Nombre" ItemStyle-Font-Bold="true"/>
+
+                            <asp:BoundField Visible="true" DataField="Nombre" HeaderText="Nombre" ItemStyle-Font-Bold="true" />
                             <asp:BoundField Visible="true" DataField="Nivel" HeaderText="Nivel" />
                             <asp:BoundField Visible="true" DataField="Lecciones" HeaderText="Lecciones" />
                             <asp:BoundField Visible="true" DataField="Tipo" HeaderText="Tipo" />
                             <asp:BoundField Visible="true" DataField="Hora" HeaderText="Hora" />
                             <asp:BoundField Visible="true" DataField="Fecha" HeaderText="Fecha" />
-                            <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado"/>
+                            <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado" />
                             <asp:TemplateField ShowHeader="False" HeaderText="Eliminar">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="LinkButtonEliminar" runat="server" CommandName="Eliminar" CssClass="form-control btn btn-outline-secondary" >
+                                    <asp:LinkButton ID="LinkButtonEliminar" runat="server" CommandName="Eliminar" CssClass="form-control btn btn-outline-secondary">
                                         <span class="oi oi-trash"></span>
                                     </asp:LinkButton>
                                 </ItemTemplate>
@@ -135,14 +141,48 @@
                 </button>
             </div>
             <div class="modal-body">
-                Esta seguro de eliminar la reservación para <strong><asp:Label ID="LabelNombreAlumno" runat="server" Text=" "></asp:Label></strong>
-                
+                Esta seguro de eliminar la reservación para <strong>
+                    <asp:Label ID="LabelNombreAlumno" runat="server" Text=" "></asp:Label></strong>
+
             </div>
             <div class="modal-footer">
                 <asp:TextBox ID="TextBoxPkReservacion" runat="server" Visible="false" Enabled="false"></asp:TextBox>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <asp:Button ID="ButtonEliminarCita" runat="server" Text="Eliminar " CssClass="btn btn-danger"  OnClick="ButtonEliminarCita_Click"/>
+                <asp:Button ID="ButtonEliminarCita" runat="server" Text="Eliminar " CssClass="btn btn-danger" OnClick="ButtonEliminarCita_Click" />
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    (function () {
+        document.querySelector("#buscar").onkeyup = function () {
+            $TableFilter("#ContentPlaceHolder1_ControlConsultaCancelacion_PanelListadoCitas", this.value);
+            //this.vale es igual al valor ingresado
+        }
+
+        $TableFilter = function (id, value) {
+
+            var rows = document.querySelectorAll(id + ' tbody tr');
+
+            for (var i = 0; i < rows.length; i++) {
+                var showRow = false;
+
+                var row = rows[i];
+
+                row.style.display = 'none';
+
+                for (var x = 0; x < row.childElementCount; x++) {
+                    if (row.children[x].textContent.toLowerCase().indexOf(value.toLowerCase().trim()) > -1) {
+                        showRow = true;
+                        break;
+                    }
+                }
+
+                if (showRow) {
+                    row.style.display = null;
+                }
+            }
+        }
+    })();
+</script>

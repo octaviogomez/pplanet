@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <header id="header-container" class="fondoColor posicionFoter">
+    <header id="header-container" class="">
         <div class="container">
             <div class="row">
 
@@ -58,13 +58,13 @@
 
                                             <div class="col m10 s10">
                                                 <br />
-                                                <asp:DropDownList ID="DropDownListRoles" runat="server" CssClass="form-control"></asp:DropDownList>
+                                                <asp:DropDownList ID="DropDownListRol" runat="server" CssClass="form-control"></asp:DropDownList>
                                                 <br />
                                             </div>
 
                                         </div>
                                         <div class="form-group my-2">
-                                            <asp:Button ID="ButtonSesion" runat="server" Text="Entrar" class="btn  btn-block fondoColor" OnClick="ButtonSesion_Click" />
+                                            <asp:Button ID="ButtonSesion" runat="server" Text="Entrar" class="btn  btn-block fondoColor" OnClick="Buttoniniciar_Click" />
                                         </div>
                                     </div>
                                 </div>
@@ -81,9 +81,9 @@
             </div>
         </div>
     </form>
-    <script>
 
-    </script>
+
+
 </body>
 
 

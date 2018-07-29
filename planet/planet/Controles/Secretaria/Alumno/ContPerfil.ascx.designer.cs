@@ -139,13 +139,13 @@ namespace planet.Controles.Secretaria.Alumno {
         protected global::System.Web.UI.WebControls.TextBox TextBoxCelular;
         
         /// <summary>
-        /// TextBoxNivel control.
+        /// DropDownListNivel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNivel;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListNivel;
         
         /// <summary>
         /// TextBoxClubs control.
@@ -191,5 +191,23 @@ namespace planet.Controles.Secretaria.Alumno {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxCumple;
+        
+        /// <summary>
+        /// ButtonGuardaModificar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonGuardaModificar;
+        
+        /// <summary>
+        /// ButtonCancelarGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonCancelarGuardar;
     }
 }

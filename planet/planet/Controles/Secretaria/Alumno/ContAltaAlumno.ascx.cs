@@ -68,7 +68,7 @@ namespace planet.Controles.Secretaria.Alumno
                 try
                 {
                     objAux.id = (!string.IsNullOrWhiteSpace(TextBoxId.Text)) ? Convert.ToInt32(TextBoxId.Text):0;
-                    objAux.clave = TextBoxPasswordDos.Text;
+                    objAux.clave = TextBoxPasswordUno.Text;
                     objAux.correo = (!string.IsNullOrWhiteSpace(TextBoxCorreo.Text)) ? TextBoxCorreo.Text : "0";
                     objAux.nombre = TextBoxNombre.Text;
                     objAux.apellidos = TextBoxApellidos.Text;

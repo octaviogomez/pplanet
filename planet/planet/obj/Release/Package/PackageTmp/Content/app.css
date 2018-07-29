@@ -29,3 +29,32 @@ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans 
 .w20 {
 width:20px;
 }
+
+.w50 {
+    
+width:70%;
+}
+
+body {
+    background-color: #e2e2e2;
+}
+.colorBlanco {
+    background-color: white;
+}
+.fondoColor {
+    background-color:#00618d;
+    color:white;
+}
+
+.colorBase {
+     background-color:#E9E6E6;
+}
+.letraBlanca{
+    color:white;
+}
+.linkAyuda {
+color:black;
+font-weight:bold;
+}
+
+

@@ -10,9 +10,9 @@
     <div class="container">
         <div class="card-body">
             <h5 class="card-title">Panel de inicio</h5>
-            <p class="card-text"> .</p>
+            <p class="card-text">.</p>
 
-           
+
 
             <div class="row">
                 <div class="col-md-2 border ">
@@ -26,23 +26,20 @@
                 <div class="col-md-10">
                     <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="PanelPrincipal" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                            <asp:Panel runat="server"  Height="450px" ScrollBars="Vertical" CssClass="border border-primary">
-
+                            <asp:Panel runat="server" Height="450px" ScrollBars="Vertical" CssClass="border border-primary">
                             </asp:Panel>
                         </div>
                         <div class="tab-pane fade" id="Reservaciones" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                                      <asp:Panel runat="server" Height="450px" ScrollBars="Vertical" CssClass="border border-primary">
-                                          <uc1:AlumnoReservacion runat="server" id="AlumnoReservacion" />
-                                      </asp:Panel>
+                            <asp:Panel runat="server" Height="450px" ScrollBars="Vertical" CssClass="border border-primary">
+                                <uc1:AlumnoReservacion runat="server" ID="AlumnoReservacion" />
+                            </asp:Panel>
                         </div>
                         <div class="tab-pane fade" id="Clubs" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                            <asp:Panel runat="server"  Height="450px" ScrollBars="Vertical" CssClass="border border-primary">
-
+                            <asp:Panel runat="server" Height="450px" ScrollBars="Vertical" CssClass="border border-primary">
                             </asp:Panel>
                         </div>
                         <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                            <asp:Panel runat="server"  Height="450px" ScrollBars="Vertical" CssClass="border border-primary">
-
+                            <asp:Panel runat="server" Height="450px" ScrollBars="Vertical" CssClass="border border-primary">
                             </asp:Panel>
                         </div>
                     </div>

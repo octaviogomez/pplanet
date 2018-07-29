@@ -160,6 +160,7 @@
     <Content Include="Controles\Horario.ascx" />
     <Content Include="Controles\Secretaria\Alumno\ContAltaAlumno.ascx" />
     <Content Include="Controles\Secretaria\Alumno\ContConsultaAlumno.ascx" />
+    <Content Include="Controles\Secretaria\Alumno\ContModificarAlumno.ascx" />
     <Content Include="Controles\Secretaria\Alumno\ContPerfil.ascx" />
     <Content Include="Controles\Secretaria\Default\AlumnoClubs.ascx" />
     <Content Include="Controles\Secretaria\Default\AlumnoReservacion.ascx" />
@@ -3127,8 +3128,10 @@
     <Content Include="Paginas\Alumno\Perfil.aspx" />
     <Content Include="Paginas\Alumno\Reservaciones\Agendar.aspx" />
     <Content Include="Paginas\Alumno\Reservaciones\Consulta.aspx" />
+    <Content Include="Paginas\Default.aspx" />
     <Content Include="Paginas\Secretaria\Alumnos\AltaAlumno.aspx" />
     <Content Include="Paginas\Secretaria\Alumnos\ConsultaAlumno.aspx" />
+    <Content Include="Paginas\Secretaria\Alumnos\Modificacion.aspx" />
     <Content Include="Paginas\Secretaria\Alumnos\Perfil.aspx" />
     <Content Include="Paginas\Secretaria\Reservaciones\AdministrarCitas.aspx" />
     <Content Include="Paginas\Secretaria\Reservaciones\AgendarReservacion.aspx" />
@@ -3256,6 +3259,13 @@
     </Compile>
     <Compile Include="Controles\Secretaria\Alumno\ContConsultaAlumno.ascx.designer.cs">
       <DependentUpon>ContConsultaAlumno.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Alumno\ContModificarAlumno.ascx.cs">
+      <DependentUpon>ContModificarAlumno.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Secretaria\Alumno\ContModificarAlumno.ascx.designer.cs">
+      <DependentUpon>ContModificarAlumno.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controles\Secretaria\Alumno\ContPerfil.ascx.cs">
       <DependentUpon>ContPerfil.ascx</DependentUpon>
@@ -3400,6 +3410,13 @@
     <Compile Include="Paginas\Alumno\Reservaciones\Consulta.aspx.designer.cs">
       <DependentUpon>Consulta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Secretaria\Alumnos\AltaAlumno.aspx.cs">
       <DependentUpon>AltaAlumno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3413,6 +3430,13 @@
     </Compile>
     <Compile Include="Paginas\Secretaria\Alumnos\ConsultaAlumno.aspx.designer.cs">
       <DependentUpon>ConsultaAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Alumnos\Modificacion.aspx.cs">
+      <DependentUpon>Modificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Secretaria\Alumnos\Modificacion.aspx.designer.cs">
+      <DependentUpon>Modificacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Secretaria\Alumnos\Perfil.aspx.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>

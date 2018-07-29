@@ -99,3 +99,5 @@ C:\Users\octav\Desktop\pplanet\planet\planet\bin\es\Microsoft.AspNet.FriendlyUrl
 C:\Users\octav\Desktop\pplanet\planet\planet\obj\Release\planet.csprojResolveAssemblyReference.cache
 C:\Users\octav\Desktop\pplanet\planet\planet\obj\Release\planet.dll
 C:\Users\octav\Desktop\pplanet\planet\planet\obj\Release\planet.pdb
+C:\Users\octav\Desktop\pplanet\planet\planet\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\octav\Desktop\pplanet\planet\planet\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml

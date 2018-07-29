@@ -9,9 +9,10 @@
             <h5 class="card-title">Instrucciones</h5>
             <p class="card-text">Realice cuidadosamente el llenado.</p>
             <div class="form-row">
+               
                 <div class="form-group col-md-2">
                     <label for="TextBoxId">id</label>
-                    <asp:TextBox ID="TextBoxId" TextMode="Number" runat="server" CssClass="form-control" min="1" ></asp:TextBox>
+                    <asp:TextBox ID="TextBoxId" TextMode="Number" runat="server" CssClass="form-control" min="1" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></asp:TextBox>
                     <small class="form-text text-muted">El Id puede ser opcional</small>
                 </div>
                 <div class="form-group col-md-5">
@@ -19,8 +20,6 @@
                     <asp:TextBox ID="TextBoxPasswordUno" TextMode="Password" runat="server" CssClass="form-control" min="1" required="" placeholder="Password"></asp:TextBox>
                 </div>
                 <div class="form-group col-md-5">
-                    <label for="TextBoxPasswordDos">Repetir password</label>
-                    <asp:TextBox ID="TextBoxPasswordDos" TextMode="Password" runat="server" CssClass="form-control"  min="1"  required="" placeholder="Repetir password"></asp:TextBox>
                 </div>
             </div>
             <div class="form-row">
@@ -31,11 +30,16 @@
                 <div class="form-group col-md-4">
                     <label for="TextBoxNombre">Nombre</label>
                     <asp:TextBox ID="TextBoxNombre" runat="server" CssClass="form-control" min="1" MaxLength="25" placeholder="Nombre" required="Se necesita un nombre"></asp:TextBox>
-                    
+                    <asp:RequiredFieldValidator ID="vldtxtNewName" runat="server"
+                        ControlToValidate="TextBoxNombre" ValidationGroup="alta"
+                        ErrorMessage="Se necesita un nombre" CssClass=" alert-warning" />
                 </div>
                 <div class="form-group col-md-4">
                     <label for="TextBoxApellidos">Apellidos</label>
                     <asp:TextBox ID="TextBoxApellidos" runat="server" CssClass="form-control" min="1" MaxLength="50" placeholder="Apellidos" required="Se necesita algun apellido"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorApellidos" runat="server"
+                        ControlToValidate="TextBoxApellidos" ValidationGroup="alta"
+                        ErrorMessage="Se necesita los apellidos" CssClass=" alert-warning" />
                 </div>
             </div>
             <div class="form-row">
@@ -47,15 +51,15 @@
                 </div>
                 <div class="form-group col-md-4">
                     <label for="TextBoxFacebook">Facebook</label>
-                    <asp:TextBox ID="TextBoxFacebook" runat="server" CssClass="form-control" min="5" MaxLength="40"  placeholder="Facebook"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxFacebook" runat="server" CssClass="form-control" min="5" MaxLength="40" placeholder="Facebook"></asp:TextBox>
                 </div>
                 <div class="form-group col-md-3">
                     <label for="TextBoxTelefono">Telefono</label>
-                    <asp:TextBox ID="TextBoxTelefono" runat="server" CssClass="form-control" min="1" MaxLength="50" TextMode="Phone"  placeholder="Telefono"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxTelefono" runat="server" CssClass="form-control" min="1" MaxLength="50" TextMode="Phone" placeholder="Telefono"></asp:TextBox>
                 </div>
                 <div class="form-group col-md-3">
                     <label for="TextBoxCelular">Celular</label>
-                    <asp:TextBox ID="TextBoxCelular" runat="server" CssClass="form-control" min="1" MaxLength="20" placeholder="Celular" ></asp:TextBox>
+                    <asp:TextBox ID="TextBoxCelular" runat="server" CssClass="form-control" min="1" MaxLength="20" placeholder="Celular"></asp:TextBox>
                 </div>
             </div>
             <div class="form-row">
@@ -69,7 +73,7 @@
                 <div class="form-group col-md-5">
 
                     <label for="TextBoxDireccion">Dirección</label>
-                    <asp:TextBox ID="TextBoxDireccion" runat="server" CssClass="form-control" min="1" MaxLength="99"  placeholder="21 de marzo #0174"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxDireccion" runat="server" CssClass="form-control" min="1" MaxLength="99" placeholder="21 de marzo #0174"></asp:TextBox>
                 </div>
                 <div class="form-group col-md-5">
                     <label for="TextBoxCumple">Fecha de nacimiento</label>
@@ -83,7 +87,7 @@
                 <div class="form-group col-md-4">
                 </div>
                 <div class="form-group col-md-4">
-                    <asp:LinkButton ID="ButtonAgrega" runat="server" CssClass="btn btn-success btn-lg btn-block" OnClick="ButtonAgrega_Click"> <span class="oi oi-person"></span> Agregar</asp:LinkButton>
+                    <asp:LinkButton ID="ButtonAgrega" runat="server" CssClass="btn btn-success btn-lg btn-block" OnClick="ButtonAgrega_Click" ValidationGroup="alta"> <span class="oi oi-person"></span> Agregar</asp:LinkButton>
 
                 </div>
                 <div class="form-group col-md-4">
@@ -96,14 +100,11 @@
 </div>
 
 
-
 <script>
-
     (function () {
-    
 
-        var a = $("#ContentPlaceHolder1_ContAltaAlumno_TextBoxPasswordUno").val();
-        var b = $("#ContentPlaceHolder1_ContAltaAlumno_TextBoxPasswordDos").val();
+        $('[data-toggle="tooltip"]').tooltip(); //activamos los tooltip
+
 
     })();
 </script>

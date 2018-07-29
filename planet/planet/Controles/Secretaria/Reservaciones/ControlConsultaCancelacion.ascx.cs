@@ -155,9 +155,17 @@ namespace planet.Controles.Secretaria.Reservaciones
             get
             {
                 CRegistroCitas obj = new CRegistroCitas();
-                obj.fecha = (TextBoxFecha.Text=="")? DateTime.Now.ToShortDateString() : TextBoxFecha.Text;
-                obj.fk_hora = Convert.ToInt32(DropDownListHorarios.SelectedValue);
-                obj.estadoReservacion = Convert.ToInt32(DropDownListEstados.SelectedValue.ToString());
+                try
+                {
+                    obj.fecha = (TextBoxFecha.Text == "") ? DateTime.Now.ToShortDateString() : TextBoxFecha.Text;
+                    obj.fk_hora = Convert.ToInt32(DropDownListHorarios.SelectedValue);
+                    obj.estadoReservacion = Convert.ToInt32(DropDownListEstados.SelectedValue.ToString());
+                }
+                catch (Exception)
+                {
+
+                    obj = null;
+                }
                 return obj;
             }
             set

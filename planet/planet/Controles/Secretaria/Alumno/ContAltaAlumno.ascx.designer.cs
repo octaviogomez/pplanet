@@ -31,15 +31,6 @@ namespace planet.Controles.Secretaria.Alumno {
         protected global::System.Web.UI.WebControls.TextBox TextBoxPasswordUno;
         
         /// <summary>
-        /// TextBoxPasswordDos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPasswordDos;
-        
-        /// <summary>
         /// TextBoxCorreo control.
         /// </summary>
         /// <remarks>
@@ -58,6 +49,15 @@ namespace planet.Controles.Secretaria.Alumno {
         protected global::System.Web.UI.WebControls.TextBox TextBoxNombre;
         
         /// <summary>
+        /// vldtxtNewName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator vldtxtNewName;
+        
+        /// <summary>
         /// TextBoxApellidos control.
         /// </summary>
         /// <remarks>
@@ -65,6 +65,15 @@ namespace planet.Controles.Secretaria.Alumno {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxApellidos;
+        
+        /// <summary>
+        /// RequiredFieldValidatorApellidos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorApellidos;
         
         /// <summary>
         /// CheckBoxEstadoPago control.

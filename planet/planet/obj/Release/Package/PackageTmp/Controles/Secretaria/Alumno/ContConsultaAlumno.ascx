@@ -13,10 +13,10 @@
 
 
     <div class="card">
-        <h5 class="card-header">Consulta de reservaciónes</h5>
+        <h5 class="card-header">Consulta de alumno</h5>
         <div class="card-body">
             <h5 class="card-title">Instrucciones</h5>
-            <p class="card-text">Realice cuidadosamente el llenado.</p>
+            <p class="card-text">Podrá ver los alumnos disponibles</p>
 
             <div class="form-row ">
                 <div class="col-md-3 -3">
@@ -67,7 +67,7 @@
 
                             <asp:TemplateField ShowHeader="False" HeaderText="Modif">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="LinkButtonModificar" runat="server" CommandName="Consultar" CssClass="form-control btn btn-outline-warning">
+                                    <asp:LinkButton ID="LinkButtonModificar" runat="server" CommandName="Modificar" CssClass="form-control btn btn-outline-warning">
                                         <span class="oi oi-wrench"></span>
                                     </asp:LinkButton>
                                 </ItemTemplate>
@@ -109,8 +109,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                Esta seguro que desea dar de baja : <strong>
-                    <asp:Label ID="LabelNombreAlumno" runat="server" Text=" "></asp:Label></strong>
+                Esta seguro que desea dar de baja : <strong><asp:Label ID="LabelNombreAlumno" runat="server" Text=" "></asp:Label></strong>
 
             </div>
             <div class="modal-footer">

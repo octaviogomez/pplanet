@@ -21,12 +21,12 @@
 
                     <div class="col-4">
                         <br />
-                        <asp:LinkButton ID="ButtonBusca" runat="server" CssClass="btn btn-success btn-lg btn-block"><span class="oi oi-zoom-in"></span> Buscar</asp:LinkButton>
+                        <asp:LinkButton ID="ButtonBusca" runat="server" CssClass="btn btn-success btn-lg btn-block" OnClick="ButtonBuscar_Click"><span class="oi oi-zoom-in"></span> Buscar</asp:LinkButton>
                        
                     </div>
                      <div class="col-4">
                         <br />
-                         <asp:LinkButton ID="ButtonModifica" runat="server" CssClass="btn btn-warning btn-lg btn-block" ><span class="oi oi-pencil">Modificar</span></asp:LinkButton>  
+                         <asp:LinkButton ID="ButtonModifica" runat="server" CssClass="btn btn-warning btn-lg btn-block"  OnClick="ButtonModifica_Click"><span class="oi oi-pencil">Modificar</span></asp:LinkButton>  
                     </div>
                 </div>
 
@@ -97,8 +97,14 @@
             <div class="form-row">
                 <div class="form-group col-md-2">
                     <label for="TextBoxCorreo">Nivel</label>
-                    <asp:TextBox ID="TextBoxNivel" TextMode="Email" runat="server" CssClass="form-control" placeholder="Nivel" Enabled="false"></asp:TextBox>
 
+                    <asp:DropDownList ID="DropDownListNivel" runat="server" Enabled="false"  CssClass="form-control" >
+                        <asp:ListItem Text="1" Value="1"> </asp:ListItem>
+                          <asp:ListItem Text="2" Value="2"> </asp:ListItem>
+                          <asp:ListItem Text="3" Value="3"> </asp:ListItem>
+                        <asp:ListItem Text="4" Value="4"> </asp:ListItem>
+                        <asp:ListItem Text="Finalizado" Value="5"> </asp:ListItem>
+                    </asp:DropDownList>
                 </div>
                 <div class="form-group col-md-2">
                     <label for="TextBoxNombre">Clubs</label>
@@ -141,8 +147,10 @@
                 <div class="form-group col-md-4">
                 </div>
                 <div class="form-group col-md-4">
+                    <asp:Button ID="ButtonGuardaModificar" runat="server" Text="Guardar" OnClick="ButtonGuardaModificar_Click" Visible="false" />
                 </div>
                 <div class="form-group col-md-4">
+                    <asp:Button ID="ButtonCancelarGuardar" runat="server" Text="Cancelar" />
                 </div>
             </div>
         </div>

@@ -88,7 +88,10 @@ namespace planet.Controles.Secretaria.Alumno
                         TextBoxTelefono.Text = value.Tables[0].Rows[0][12].ToString();
                         TextBoxCelular.Text = value.Tables[0].Rows[0][13].ToString();
                         RadioButtonListSexo.SelectedValue = value.Tables[0].Rows[0][14].ToString();
-                        TextBoxNivel.Text = value.Tables[0].Rows[0][16].ToString();
+                        DropDownListNivel.SelectedValue = value.Tables[0].Rows[0][16].ToString();
+
+                        DropDownListNivel.SelectedValue= value.Tables[0].Rows[0][16].ToString();
+
                         TextBoxDireccion.Text = value.Tables[0].Rows[0][17].ToString();
                         TextBoxClubs.Text = value.Tables[0].Rows[0][18].ToString();
                         TextBoxPelis.Text = value.Tables[0].Rows[0][19].ToString();
@@ -109,5 +112,39 @@ namespace planet.Controles.Secretaria.Alumno
             
         }
         #endregion
+
+        protected void ButtonBuscar_Click(object sender, EventArgs e)
+        {
+            
+                Response.Redirect("Perfil.aspx?id=" + TextBoxidBuscar.Text, true);//
+          
+        }
+
+        protected void ButtonModifica_Click(object sender, EventArgs e)
+        {
+            TextBoxId.Enabled = true;
+            TextBoxPassword.Enabled = true;
+            TextBoxAnioEgreso.Enabled = true;
+            TextBoxCorreo.Enabled = true;
+            TextBoxNombre.Enabled = true;
+            TextBoxApellidos.Enabled = true;
+            CheckBoxEstadoPago.Enabled = true;
+            TextBoxFacebook.Enabled = true;
+            TextBoxTelefono.Enabled = true;
+            TextBoxCelular.Enabled = true;
+            DropDownListNivel.Enabled = true;
+            TextBoxDireccion.Enabled = true;
+            TextBoxCumple.Enabled = true;
+
+            ButtonGuardaModificar.Visible = true;
+
+            TextBoxidBuscar.Enabled = false;
+            ButtonBusca.Enabled = false;
+        }
+
+        protected void ButtonGuardaModificar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

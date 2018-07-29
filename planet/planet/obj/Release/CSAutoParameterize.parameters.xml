@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="ingles-Web.config Connection String" description="ingles Connection String used in web.config by the application to access the database." defaultValue="Data Source=DESKTOP-1D89IG9; Initial Catalog=A_PlanetEnglish;User ID=SA;Password=4563;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\octav\\Desktop\\pplanet\\planet\\planet\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ingles']/@connectionString" />
-  </parameter>
-</parameters>

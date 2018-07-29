@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <header id="header-container" class="fondoColor posicionFoter">
+    <header id="header-container" class="">
         <div class="container">
             <div class="row">
 
@@ -81,9 +81,9 @@
             </div>
         </div>
     </form>
-    <script>
 
-    </script>
+
+
 </body>
 
 

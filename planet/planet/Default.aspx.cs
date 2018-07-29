@@ -108,7 +108,7 @@ namespace planet
                 try
                 {
                     objLoggerinfSecretaria.pk_secreatria = Convert.ToInt32(TextBoxNumeroDeControl.Text.Trim());
-                    objLoggerinfSecretaria.clave = TextBoxNumeroDeControl.Text.Trim();
+                    objLoggerinfSecretaria.clave = TextBoxContrasena.Text.Trim();
                 }
                 catch (Exception)
                 {

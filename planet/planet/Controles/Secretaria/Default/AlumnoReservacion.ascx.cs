@@ -15,6 +15,8 @@ namespace planet.Controles.Secretaria.Default
     public partial class AlumnoReservacion : System.Web.UI.UserControl, IRegistroCitas
     {
 
+
+
         WCombo Wcombo;
         List<CCombo> listaDatos = new List<CCombo>();
 
@@ -30,13 +32,8 @@ namespace planet.Controles.Secretaria.Default
         {
             ObjRegistroCitas = new CRegistroCitas();
             WRegistroCitas = new WRegistroCitas(this);
-      
-            if (!IsPostBack)
-            {
+            WRegistroCitas.ListadoDeCitas(ObjRegistroCitasAux, 9);
 
-               
-                WRegistroCitas.ListadoDeCitas(ObjRegistroCitasAux, 9);
-            }
         }
         #region IRegistroCitas
         public DataSet ListadoDt
@@ -137,9 +134,15 @@ namespace planet.Controles.Secretaria.Default
             get
             {
                 CRegistroCitas obj = new CRegistroCitas();
-                obj.fecha= DateTime.Now.ToShortDateString();
-                obj.fk_hora = DateTime.Now.Hour;
-    
+                //date.ToString("HH:mm:ss"); // for 24hr format
+                string vale = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
+
+                System.DateTime moment = new System.DateTime();
+                vale = moment.Hour.ToString();
+
+                obj.fk_hora = DateTime.Now.Hour-7;
+
                 return obj;
             }
 
@@ -154,7 +157,15 @@ namespace planet.Controles.Secretaria.Default
             get
             {
                 CRegistroCitas obj = new CRegistroCitas();
-    
+                try
+                {
+
+                }
+                catch (Exception)
+                {
+
+                    obj = null;
+                }
                 return obj;
             }
             set
@@ -168,8 +179,7 @@ namespace planet.Controles.Secretaria.Default
 
         }
         #endregion
-     
-
+       
         #region General events
         protected void GridView_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -206,27 +216,21 @@ namespace planet.Controles.Secretaria.Default
                 Response.Redirect(Request.RawUrl);
 
             }
-            if (e.CommandName == "Eliminar")
-            {
-                LabelNombreAlumno.Text = nombre;
-                TextBoxPkReservacion.Text = codigo;
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script>$('#ModalEliminar').modal('show');</script>", false);
-            }
-
+    
 
             FilaSeleccionada.Dispose();
         }
-       
+
+
+
 
         protected void ButtonEliminarCita_Click(object sender, EventArgs e)
         {
 
-            CRegistroCitas obj = new CRegistroCitas();
-            obj.pk_registroCita = Convert.ToInt32(TextBoxPkReservacion.Text);
-            WRegistroCitas.CambioEstadoReservacion(obj, 8);
-            Response.Redirect(Request.RawUrl);
+       
         }
         #endregion
+
 
     }
 }

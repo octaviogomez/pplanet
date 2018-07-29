@@ -82,6 +82,7 @@ C:\Users\octav\Desktop\pplanet\planet\planet\bin\Microsoft.AspNet.Web.Optimizati
 C:\Users\octav\Desktop\pplanet\planet\planet\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\octav\Desktop\pplanet\planet\planet\bin\Microsoft.ScriptManager.MSAjax.dll
 C:\Users\octav\Desktop\pplanet\planet\planet\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\octav\Desktop\pplanet\planet\planet\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\octav\Desktop\pplanet\planet\planet\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\octav\Desktop\pplanet\planet\planet\bin\Newtonsoft.Json.dll
 C:\Users\octav\Desktop\pplanet\planet\planet\bin\System.Web.Optimization.dll
@@ -93,6 +94,7 @@ C:\Users\octav\Desktop\pplanet\planet\planet\bin\Microsoft.AI.Web.xml
 C:\Users\octav\Desktop\pplanet\planet\planet\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\octav\Desktop\pplanet\planet\planet\bin\Microsoft.ApplicationInsights.xml
 C:\Users\octav\Desktop\pplanet\planet\planet\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\octav\Desktop\pplanet\planet\planet\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
 C:\Users\octav\Desktop\pplanet\planet\planet\bin\System.Web.Optimization.xml
 C:\Users\octav\Desktop\pplanet\planet\planet\bin\Antlr3.Runtime.pdb
 C:\Users\octav\Desktop\pplanet\planet\planet\bin\Newtonsoft.Json.xml
@@ -102,5 +104,3 @@ C:\Users\octav\Desktop\pplanet\planet\planet\bin\es\Microsoft.AspNet.FriendlyUrl
 C:\Users\octav\Desktop\pplanet\planet\planet\obj\Debug\planet.csprojResolveAssemblyReference.cache
 C:\Users\octav\Desktop\pplanet\planet\planet\obj\Debug\planet.dll
 C:\Users\octav\Desktop\pplanet\planet\planet\obj\Debug\planet.pdb
-C:\Users\octav\Desktop\pplanet\planet\planet\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\octav\Desktop\pplanet\planet\planet\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml

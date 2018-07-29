@@ -91,7 +91,7 @@ namespace planet.Controles.Secretaria.Alumno
             FilaSeleccionada = (GridViewRow)(((LinkButton)e.CommandSource).NamingContainer);
 
             codigo = (((Label)FilaSeleccionada.FindControl("LabelId")).Text);
-            nombre = FilaSeleccionada.Cells[4].Text+" "+ FilaSeleccionada.Cells[5].Text;
+            nombre = FilaSeleccionada.Cells[5].Text+" "+ FilaSeleccionada.Cells[6].Text;
 
           
            
@@ -105,6 +105,12 @@ namespace planet.Controles.Secretaria.Alumno
             {
           
                 Response.Redirect("Perfil.aspx?id=" + codigo, true);//
+
+            }
+            if (e.CommandName == "Modificar")
+            {
+
+                Response.Redirect("Perfil.aspx?id=" + codigo+"&modificar="+codigo, true);//
 
             }
 
