@@ -17,7 +17,6 @@ namespace planet.Controles.Secretaria.Reservaciones
         WCombo Wcombo;
         List<CCombo> listaDatos = new List<CCombo>();
 
-
         WCitas WCitas;
 
 
@@ -170,9 +169,6 @@ namespace planet.Controles.Secretaria.Reservaciones
                 TextBoxNoProfesores.Text = "";
             }
         }
-
-       
-
         protected void TextBoxFecha_TextChanged(object sender, EventArgs e)
         {
             //  LlenadoCombo(DropDownListHorarios,2, "ListadoCatalogos");
