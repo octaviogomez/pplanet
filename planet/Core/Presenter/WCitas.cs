@@ -33,6 +33,11 @@ namespace Core.Presenter
             }
             return ConexcionAvierta;
         }
+        /// <summary>
+        /// Metodo que CREA un reservación, e
+        /// </summary>
+        /// <param name="opcion"></param> Opcion el cual pertence el procedimiento almacenado
+        /// <param name="objCita"></param> // objeto el cual contiene datos como la fecha[mayor o igual], fk de horarios y números de cupos
         public void CrearCita(int opcion,CCitas objCita)
         {
             bool BolRegistro = false;
@@ -40,9 +45,9 @@ namespace Core.Presenter
             {
                 BolRegistro = objCita.CreacionCita(opcion, objCita);
                 if (BolRegistro == true)
-                    ViewCitas.Mensaje("Cita registrado", 1);
+                    ViewCitas.Mensaje("Reservación registrada!", 1);
                 else
-                    ViewCitas.Mensaje("Cita no reguistrado, cheque sus datos", 2);
+                    ViewCitas.Mensaje("Reservación no reguistrada, cheque sus datos", 2);
                 
             }
         }

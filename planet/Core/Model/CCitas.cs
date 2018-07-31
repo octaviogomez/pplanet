@@ -32,6 +32,12 @@ namespace Core.Model
         public int id_registro { get; set; }
         #endregion
 
+        /// <summary>
+        /// Creación de reservacion
+        /// </summary>
+        /// <param name="opcion"></param>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public bool CreacionCita(int opcion, CCitas obj)
         {
             List<SqlParameter> lstParametros = new List<SqlParameter>();
@@ -44,10 +50,18 @@ namespace Core.Model
             lstParametros.Add(new SqlParameter("@NoProfes", SqlDbType.Int) { Value = obj.NoProfes });
             lstParametros.Add(new SqlParameter("@id_registro", SqlDbType.Int) { Value = obj.id_registro });
             objManagerBD = new ManagerBD();
-            if (objManagerBD.UpdateData(ProcedimientoGeneral, lstParametros.ToArray()))
+            if (objManagerBD.Insert(ProcedimientoGeneral, lstParametros.ToArray()))
                 return true;
             return false;
         }
+
+        /// <summary>
+        /// Lista cualquier forma la entidad de Citas
+        /// </summary>
+        /// <param name="opcion"></param>
+        /// <param name="obj"></param>
+        /// <param name="objDatos"></param>
+        /// <returns></returns>
         public bool ListarCitas(int opcion, CCitas obj, ref DataSet objDatos) //Listar de cualquier forma
         {
             List<SqlParameter> lstParametros = new List<SqlParameter>();
@@ -68,6 +82,13 @@ namespace Core.Model
             return ExisteDatos;
 
         }
+
+        /// <summary>
+        /// Elimina una reseracion mediante tu Pk
+        /// </summary>
+        /// <param name="opcion"></param>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public bool EliminarCita(int opcion, CCitas obj)
         {
             List<SqlParameter> lstParametros = new List<SqlParameter>();

@@ -17,15 +17,17 @@ namespace planet.Controles.Secretaria.Reservaciones
         WCombo Wcombo;
         List<CCombo> listaDatos = new List<CCombo>();
 
-        CCitas ObjCitas;
+
         WCitas WCitas;
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ObjCitas = new CCitas();
-            WCitas = new WCitas(this);
-            Wcombo = new WCombo(this);//Hacer uso de metodos del combo
+           
+              
+                WCitas = new WCitas(this);
+                Wcombo = new WCombo(this);
+            
         }
         #region ICombo
         public List<CCombo> LlenarCombo
@@ -125,9 +127,11 @@ namespace planet.Controles.Secretaria.Reservaciones
             {
                 case 1:
                     PanelAvisoCorrecto.Visible = true;
+                    LabelMensaje.Text = Mensaje;
                     break;
                 case 2:
                     PanelAvisoError.Visible = true;
+                    LabelMensajeError.Text = Mensaje;
                     break;
                 default:
                     PanelAvisoCorrecto.Visible = false;
@@ -154,6 +158,8 @@ namespace planet.Controles.Secretaria.Reservaciones
 
         protected void ButtonCrear_Click(object sender, EventArgs e)
         {
+            PanelAvisoCorrecto.Visible = false;
+            PanelAvisoError.Visible = false;
             //Validaciones pendientes
             if (true)
             {

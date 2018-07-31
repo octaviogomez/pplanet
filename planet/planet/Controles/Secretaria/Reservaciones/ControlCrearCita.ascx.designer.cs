@@ -22,6 +22,15 @@ namespace planet.Controles.Secretaria.Reservaciones {
         protected global::System.Web.UI.WebControls.TextBox TextBoxFecha;
         
         /// <summary>
+        /// vTextBoxFecha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator vTextBoxFecha;
+        
+        /// <summary>
         /// DropDownListHorarios control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace planet.Controles.Secretaria.Reservaciones {
         protected global::System.Web.UI.WebControls.DropDownList DropDownListHorarios;
         
         /// <summary>
+        /// vDropDownListHorarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator vDropDownListHorarios;
+        
+        /// <summary>
         /// TextBoxNoProfesores control.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,15 @@ namespace planet.Controles.Secretaria.Reservaciones {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxNoProfesores;
+        
+        /// <summary>
+        /// vTextBoxNoProfesores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator vTextBoxNoProfesores;
         
         /// <summary>
         /// ButtonCrear control.
@@ -74,5 +101,14 @@ namespace planet.Controles.Secretaria.Reservaciones {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel PanelAvisoCorrecto;
+        
+        /// <summary>
+        /// LabelMensaje control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelMensaje;
     }
 }

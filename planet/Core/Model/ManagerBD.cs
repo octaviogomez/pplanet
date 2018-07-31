@@ -140,12 +140,17 @@ namespace Core.Model
                         sqlComman.Transaction = sqlTransaction;
                         sqlComman.CommandType = CommandType.StoredProcedure;
 
-                        if (sqlParameters != null)
-                            sqlComman.Parameters.AddRange(sqlParameters);
+                       
+                            if (sqlParameters != null)
+                            {
+                                sqlComman.Parameters.AddRange(sqlParameters);
+                            }
 
-              
-                        intRegistrosAfectados = sqlComman.ExecuteNonQuery();
-                        sqlTransaction.Commit();
+
+
+                            intRegistrosAfectados = sqlComman.ExecuteNonQuery();
+                            sqlTransaction.Commit();
+                      
                     }
 
                     if (intRegistrosAfectados > 0)
@@ -185,6 +190,94 @@ namespace Core.Model
 
             return bolRegisterData;
         }
+
+
+        /// <summary>
+        /// Autor: Octavio GR
+        /// Operaciones: Insertar
+        /// </summary>
+        /// <param name="spStoreProcedure">Nombre del Procedimiento Almacenado</param>
+        /// <param name="sqlParameters">Lista de parametros</param>
+        /// <returns>Verdadero -1: Datos Registrados</returns>
+        public bool Insert(string spStoreProcedure, SqlParameter[] sqlParameters)
+        {
+            SqlConnection sqlConexion = null;
+            SqlCommand sqlComman = null;
+            SqlTransaction sqlTransaction = null;
+            int intRegistrosAfectados = 0;
+            bool bolRegisterData = false;
+
+            try
+            {
+                sqlConexion = this.GetConnection();
+                using (sqlConexion)
+                {
+                    sqlTransaction = sqlConexion.BeginTransaction();
+                    sqlComman = new SqlCommand(spStoreProcedure, sqlConexion);
+                    using (sqlComman)
+                    {
+                        sqlComman.Transaction = sqlTransaction;
+                        sqlComman.CommandType = CommandType.StoredProcedure;
+
+                        try
+                        {
+                            if (sqlParameters != null)
+                            {
+                                sqlComman.Parameters.AddRange(sqlParameters);
+                            }
+
+
+
+                            intRegistrosAfectados = sqlComman.ExecuteNonQuery();
+                            sqlTransaction.Commit();
+                        }
+                        catch (Exception e)
+                        {
+                            intRegistrosAfectados = -1;
+
+                        }
+                    }
+
+                    if (intRegistrosAfectados >0 )
+                    {
+                        bolRegisterData = true;
+                    }
+                    //https://technet.microsoft.com/en-us/library/ms190778(v=sql.105).aspx    0 es correcto 
+                    // //https://msdn.microsoft.com/es-es/library/system.data.sqlclient.sqlcommand.executenonquery(v=vs.100).aspx
+                    ///http://www.elguille.info/net/ADONET/cuando_usar_ExecuteNonQuery_o_ExecuteScalar.htm
+                    ///https://stackoverflow.com/questions/8217200/is-set-nocount-off-necessary-in-a-stored-procedure
+
+                }
+            }
+            catch (Exception exExcepcion1)
+            {
+                try
+                {
+                    sqlTransaction.Rollback();
+                    //throw;
+                }
+                catch (Exception exExcepcion2)
+                {
+                    exExcepcion2.Message.ToString();
+                    //throw;
+                }
+
+                exExcepcion1.Message.ToString();
+            }
+            finally
+            {
+                if (sqlConexion != null)
+                {
+                    if (sqlConexion.State == ConnectionState.Open)
+                        sqlConexion.Close();
+                }
+            }
+
+
+            return bolRegisterData;
+        }
+
+
 
 
     }
