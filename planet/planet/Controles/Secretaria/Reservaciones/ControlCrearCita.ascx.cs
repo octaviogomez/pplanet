@@ -160,13 +160,16 @@ namespace planet.Controles.Secretaria.Reservaciones
             PanelAvisoCorrecto.Visible = false;
             PanelAvisoError.Visible = false;
             //Validaciones pendientes
-            if (true)
+            if (ObjetoCitas != null)
             {
                 WCitas.CrearCita(1, ObjetoCitas);
 
                 //Limpiamos cajas de texto
-                TextBoxFecha.Text = "";         
+                TextBoxFecha.Text = "";
                 TextBoxNoProfesores.Text = "";
+            }
+            else {
+                Mensaje("No ingreso datos con el formato correcto",2);
             }
         }
         protected void TextBoxFecha_TextChanged(object sender, EventArgs e)

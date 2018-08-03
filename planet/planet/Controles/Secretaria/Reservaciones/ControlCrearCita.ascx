@@ -30,20 +30,20 @@
                 <div class="col-md-4 mb-3">
                     <strong>
                         <label for="TextBoxFecha">Fecha</label></strong>
-                    <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" required="Se necesita una fecha" CssClass="form-control" requiered="" AutoPostBack="True" OnTextChanged="TextBoxFecha_TextChanged"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha"  CssClass="form-control" requiered="" AutoPostBack="True" OnTextChanged="TextBoxFecha_TextChanged" ></asp:TextBox>
                     <asp:RequiredFieldValidator ID="vTextBoxFecha" runat="server" ControlToValidate="TextBoxFecha" ValidationGroup="atla" ErrorMessage="Requerido" CssClass=" alert-warning " />
                 </div>
                 <div class="col-md-4 mb-3">
                     <strong>
                         <label for="DropDownListHorarios">Horarios</label></strong>
-                    <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Fecha" required="Se necesita una fecha"></asp:DropDownList>
+                    <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Fecha" ></asp:DropDownList>
                   <asp:RequiredFieldValidator ID="vDropDownListHorarios" runat="server" ControlToValidate="DropDownListHorarios" ValidationGroup="atla" ErrorMessage="Requerido" CssClass=" alert-warning " />
       
                       </div>
                 <div class="col-md-4 mb-3">
                     <strong>
                         <label for="TextBoxNoProfesores">Número de profesores</label></strong>
-                    <asp:TextBox ID="TextBoxNoProfesores" runat="server" class="form-control" placeholder="Número de profesores" required="Solo números" TextMode="Number" min="1"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxNoProfesores" runat="server" class="form-control" placeholder="Número de profesores"  TextMode="Number" min="1"></asp:TextBox>
                 
                      <asp:RequiredFieldValidator ID="vTextBoxNoProfesores" runat="server" ControlToValidate="TextBoxNoProfesores" ValidationGroup="atla" ErrorMessage="Requerido" CssClass=" alert-warning " />
       

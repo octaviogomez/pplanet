@@ -28,6 +28,8 @@ namespace planet.Controles.Secretaria.Reservaciones
 
         WRegistroCitas wRegistroCitas;
         CRegistroCitas cRegistroCitas;
+
+
         public GridViewRow FilaSeleccionada
         {
             get;

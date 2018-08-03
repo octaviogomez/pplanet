@@ -43,7 +43,7 @@ namespace Core.Presenter
             bool BolRegistro = false;
             if (ExisteConexion())
             {
-                BolRegistro = objCita.CreacionCita(opcion, objCita);
+                BolRegistro = objCitas.CreacionCita(opcion, objCita);
                 if (BolRegistro == true)
                     ViewCitas.Mensaje("Reservación registrada!", 1);
                 else
