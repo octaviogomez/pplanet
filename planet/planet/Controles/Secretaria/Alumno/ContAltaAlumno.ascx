@@ -25,7 +25,7 @@
                     <br />
                     <div class="alert-warning">
                         <strong>Nota:</strong>
-                        <li>En el campo de <strong>id</strong> podria agregar una matrícula propia del plantel.</li>
+                        En el campo de <strong>id</strong> podria agregar una matrícula propia del plantel.
                     </div>
                 </div>
             </div>
