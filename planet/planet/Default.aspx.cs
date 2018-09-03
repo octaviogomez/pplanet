@@ -191,22 +191,32 @@ namespace planet
             switch (DropDownListRol.SelectedValue)
             {
                 case "1":
-
-                    WAlumnoVista.ValidarAlumno(1, UsuarioLogeado);
-
-                    if (objLoggerinfAlumno != null)
+                    if (UsuarioLogeado!=null)
                     {
-                        Session.Add("AlumnoSesion", objLoggerinfAlumno);//Creamos la variable de sesion en donde la podremos utlizar cuando nos mande a la master
-                        Response.Redirect("/Paginas/Alumno/Default.aspx", true);// no direcciona a la pagina default de la master
+
+                        WAlumnoVista.ValidarAlumno(1, UsuarioLogeado);
+
+                        if (objLoggerinfAlumno != null)
+                        {
+                            Session.Add("AlumnoSesion", objLoggerinfAlumno);//Creamos la variable de sesion en donde la podremos utlizar cuando nos mande a la master
+                            Response.Redirect("/Paginas/Alumno/Default.aspx", true);// no direcciona a la pagina default de la master
+                        }
                     }
+
                     break;
 
                 case "3":
-                    WSecreatriaVista.ValidarSecretaria(1, ObjSecretaria);
-                    if (objLoggerinfSecretaria != null)
+                    if (ObjSecretaria != null)
                     {
-                        Session.Add("SecretariaSesion", objLoggerinfSecretaria);//Creamos la variable de sesion en donde la podremos utlizar cuando nos mande a la master
-                        Response.Redirect("/Paginas/Secretaria/Default.aspx", true);// no direcciona a la pagina default de la master
+                        WSecreatriaVista.ValidarSecretaria(1, ObjSecretaria);
+                        if (objLoggerinfSecretaria != null)
+                        {
+                            Session.Add("SecretariaSesion", objLoggerinfSecretaria);//Creamos la variable de sesion en donde la podremos utlizar cuando nos mande a la master
+                            Response.Redirect("/Paginas/Secretaria/Default.aspx", true);// no direcciona a la pagina default de la master
+                        }
+                    }
+                    else {
+                        //via jquey mensaje
                     }
                     break;
 

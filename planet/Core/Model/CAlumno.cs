@@ -97,15 +97,25 @@ namespace Core.Model
         public bool AutentificarAlumno(int opcion, ref DataSet objDatos, CAlumno objAlumno)
         {
             bool ExisteDatos = false;
-            List<SqlParameter> lstParametros = new List<SqlParameter>();
-            lstParametros.Add(new SqlParameter("@Op", SqlDbType.Int) { Value = opcion });
-            lstParametros.Add(new SqlParameter("@rol", SqlDbType.Int) { Value = objAlumno.rol });
-            lstParametros.Add(new SqlParameter("@clave", SqlDbType.VarChar) { Value = objAlumno.clave });
-            lstParametros.Add(new SqlParameter("@pk_alumno", SqlDbType.Int) { Value = objAlumno.pk_alumno });
-            objDatos = objManagerBD.GetData(ProcedimientoGeneral, lstParametros.ToArray());
-            objManagerBD = null;
-            if (objDatos.Tables.Count > 0)
-                ExisteDatos = true;
+            try
+            {
+                List<SqlParameter> lstParametros = new List<SqlParameter>();
+                lstParametros.Add(new SqlParameter("@Op", SqlDbType.Int) { Value = opcion });
+                lstParametros.Add(new SqlParameter("@rol", SqlDbType.Int) { Value = objAlumno.rol });
+                lstParametros.Add(new SqlParameter("@clave", SqlDbType.VarChar) { Value = objAlumno.clave });
+                lstParametros.Add(new SqlParameter("@pk_alumno", SqlDbType.Int) { Value = objAlumno.pk_alumno });
+                objDatos = objManagerBD.GetData(ProcedimientoGeneral, lstParametros.ToArray());
+                objManagerBD = null;
+                if (objDatos.Tables.Count > 0)
+                    ExisteDatos = true;
+
+            }
+            catch (Exception e)
+            {
+
+              
+            }
+           
 
             return ExisteDatos;
         }

@@ -12,9 +12,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/app.css" rel="stylesheet" />
-     <link href="Iconos/icon/font/css/open-iconic-bootstrap.css" rel="stylesheet" />
+    <link href="Iconos/icon/font/css/open-iconic-bootstrap.css" rel="stylesheet" />
 
-      
+
 
     <title>Inicio</title>
 </head>
@@ -50,32 +50,36 @@
                                     <div class="card-body">
 
                                         <div class="form-group">
-                                            <label for="TextBoxNumeroDeControl"><span class="oi oi-person" />Matrícula</label>
+                                            <label for="TextBoxNumeroDeControl">
+                                                <span class="oi oi-person" ></span>
+                                                Matrícula</label>
                                             <asp:TextBox PlaceHolder="Escriba su matrícula" ID="TextBoxNumeroDeControl" runat="server" required="Ingrese su matrícula" CssClass="form-control input-lg" value="" pattern="[0-9]{1,7}" title="Solo números. Tamaño :7 digitos" autofocus=""></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RTextBoxNumeroDeControl" runat="server" ControlToValidate="TextBoxNumeroDeControl"  ValidationGroup="inicio" ErrorMessage="Campo vacio" CssClass=" alert-warning form-control" />
                                         </div>
                                         <div class="form-group">
                                             <label for="password">
                                                 <span class="oi oi-key"></span>Contraseña
                                             </label>
-                                            <asp:TextBox PlaceHolder="Escriba su contraseña" ID="TextBoxContrasena" runat="server" required="" CssClass="form-control input-lg " TextMode="Password" pattern="[A-Za-z0-9]{1,25}" title="Letras y números. Tamaño mínimo: 5. Tamaño máximo: 25"></asp:TextBox>
+                                            <asp:TextBox PlaceHolder="Escriba su contraseña" ID="TextBoxContrasena" runat="server" required="" CssClass="form-control input-lg " TextMode="Password"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RTextBoxContrasena" runat="server" ControlToValidate="TextBoxContrasena" ValidationGroup="inicio" ErrorMessage="Campo vacio" CssClass=" alert-warning form-control" />
 
                                         </div>
                                         <div class="row center-align">
 
                                             <div class="col m10 s10">
-                                                <br />
+                                               
                                                 <asp:DropDownList ID="DropDownListRol" runat="server" CssClass="form-control"></asp:DropDownList>
                                                 <br />
                                             </div>
 
                                         </div>
                                         <div class="form-group my-2">
+                                           
 
-
-                                            <asp:LinkButton ID="ButtonSesion" runat="server" CssClass="btn  btn-block  botonBase " OnClick="Buttoniniciar_Click"><span class="oi oi-action-redo"></span>   Entrar</asp:LinkButton>
+                                            <asp:LinkButton ID="ButtonSesion" runat="server" CssClass="btn  btn-block  botonBase " OnClick="Buttoniniciar_Click" ValidationGroup="inicio"><span class="oi oi-action-redo"></span>   Entrar</asp:LinkButton>
                                             <br />
 
-                                            <button type="button" class="btn btn-block  botonModal" data-toggle="modal" data-target="#exampleModal"><span class="oi oi-brush"></span>   Registro</button>
+                                            <button type="button" class="btn btn-block  botonModal" data-toggle="modal" data-target="#exampleModal"><span class="oi oi-brush"></span>Registro</button>
 
 
 

@@ -31,6 +31,15 @@ namespace planet {
         protected global::System.Web.UI.WebControls.TextBox TextBoxNumeroDeControl;
         
         /// <summary>
+        /// RTextBoxNumeroDeControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RTextBoxNumeroDeControl;
+        
+        /// <summary>
         /// TextBoxContrasena control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace planet {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxContrasena;
+        
+        /// <summary>
+        /// RTextBoxContrasena control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RTextBoxContrasena;
         
         /// <summary>
         /// DropDownListRol control.
