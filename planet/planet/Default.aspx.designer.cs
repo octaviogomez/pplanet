@@ -55,6 +55,15 @@ namespace planet {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSesion;
+        protected global::System.Web.UI.WebControls.LinkButton ButtonSesion;
+        
+        /// <summary>
+        /// RegistroUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::planet.Controles.Sesion.RegistroUsuario RegistroUsuario;
     }
 }

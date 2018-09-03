@@ -169,6 +169,7 @@
     <Content Include="Controles\Secretaria\Reservaciones\ControlConsultaCancelacion.ascx" />
     <Content Include="Controles\Secretaria\Reservaciones\ControlCrearCita.ascx" />
     <Content Include="Controles\Sesion\login.ascx" />
+    <Content Include="Controles\Sesion\RegistroUsuario.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -3322,6 +3323,13 @@
     </Compile>
     <Compile Include="Controles\Sesion\login.ascx.designer.cs">
       <DependentUpon>login.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Sesion\RegistroUsuario.ascx.cs">
+      <DependentUpon>RegistroUsuario.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\Sesion\RegistroUsuario.ascx.designer.cs">
+      <DependentUpon>RegistroUsuario.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

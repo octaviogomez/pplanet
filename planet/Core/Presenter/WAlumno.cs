@@ -89,7 +89,11 @@ namespace Core.Presenter
         #endregion
 
         #region Crud alumno
-
+        /// <summary>
+        /// De de alta a un alumno
+        /// </summary>
+        /// <param name="objAlum"></param>
+        /// <param name="opcion"></param>
         public void AltaAlumno(CAlumno objAlum, int opcion)
         {
             bool BolRegistro = false;
@@ -98,14 +102,15 @@ namespace Core.Presenter
             if (ExisteConexion())
             {
                 BolRegistro = objAlumno.CreateAlumno(opcion, objAlum);
+
                 if (BolRegistro == true)
                 {
-                    ViewAlumno.MensajeAlumno("Registo exitoso", 4);
+                    ViewAlumno.MensajeAlumno("Registo exitoso", 3);
                 }
                 else
                 {
 
-                    ViewAlumno.MensajeAlumno("No se pudo registrar el usuario, revise bien sus datos.", 4);
+                    ViewAlumno.MensajeAlumno("No se pudo registrar el usuario, revise bien sus datos.", 2);
                 }
             }
             else {
@@ -113,7 +118,11 @@ namespace Core.Presenter
             }
         }
         #endregion
-
+        /// <summary>
+        /// Listado generico del alumno, respecto a la opcion del procedimiento
+        /// </summary>
+        /// <param name="objCita"></param>
+        /// <param name="opcion"></param>
         public void ListadoAlumno(CAlumno objCita, int opcion)
         {
             DataSet dtsDatos = new DataSet();

@@ -1,0 +1,45 @@
+
+Agregar notas personales para cada alumno(mensaje si debe o si ha faltado a clase por ejemplo)
+
+Registrar quien hace las reservaciones(registrar al usuario logueado)
+
+Hacer un reporte (Faltas, cancelaciones por alumno)
+
+Tipos de actividades: Oral, escrita, review, asesoría
+
+Historial de reservaciones(Horario con fechas próximas a las que ha resrvado)
+
+Reservaciones
+
+De 8 a 1
+
+8: 1 profesor
+9: 2 o 3 profesores
+
+Agregar una lista de espera para ver si se abriran más lugares
+
+Reportes:
+
+Reservaciones, faltas
+
+Reportes alumno:
+-Asistencias
+-Cancelaciones
+-Retardos
+-Faltas
+
+Reportes generales:
+-Cuantos pasaron de nivel
+-Número de alumnos por nivel
+-Número de alumnos activos
+-Asistencias
+-Asistencias clubs
+-Asistencias Practicas
+-Asistencias sesiones especiales
+-Faltas
+-Cancelaciones
+-Retardos
+*Hacer comparativas por año de los reportes.
+
+Buzón de quejas, sugerencias y recomendaciones
+
