@@ -72,14 +72,14 @@ namespace planet.Controles.Secretaria.Alumno
 
             set
             {
-                if (value!=null)
+                if (value != null)
                 {
                     try
                     {
-                        TextBoxId.Text = value.Tables[0].Rows[0][0].ToString(); 
-                        TextBoxPassword.Text= value.Tables[0].Rows[0][3].ToString();
-                        TextBoxCorreo.Text= value.Tables[0].Rows[0][5].ToString();
-                        TextBoxNombre.Text= value.Tables[0].Rows[0][6].ToString();
+                        TextBoxId.Text = value.Tables[0].Rows[0][0].ToString();
+                        TextBoxPassword.Text = value.Tables[0].Rows[0][3].ToString();
+                        TextBoxCorreo.Text = value.Tables[0].Rows[0][5].ToString();
+                        TextBoxNombre.Text = value.Tables[0].Rows[0][6].ToString();
                         TextBoxApellidos.Text = value.Tables[0].Rows[0][7].ToString();
                         TextBoxAnioIngreso.Text = value.Tables[0].Rows[0][8].ToString();
                         TextBoxAnioEgreso.Text = value.Tables[0].Rows[0][9].ToString();
@@ -90,7 +90,7 @@ namespace planet.Controles.Secretaria.Alumno
                         RadioButtonListSexo.SelectedValue = value.Tables[0].Rows[0][14].ToString();
                         DropDownListNivel.SelectedValue = value.Tables[0].Rows[0][16].ToString();
 
-                        DropDownListNivel.SelectedValue= value.Tables[0].Rows[0][16].ToString();
+                        DropDownListNivel.SelectedValue = value.Tables[0].Rows[0][16].ToString();
 
                         TextBoxDireccion.Text = value.Tables[0].Rows[0][17].ToString();
                         TextBoxClubs.Text = value.Tables[0].Rows[0][18].ToString();
@@ -101,15 +101,23 @@ namespace planet.Controles.Secretaria.Alumno
                     catch (Exception)
                     {
 
-                        
+
                     }
+                }
+                else {
+
                 }
             }
         }
 
         public void MensajeAlumno(string Mensaje, int tipo)
         {
-            
+            switch (tipo)
+            {
+                default:
+                    break;
+            }
+
         }
         #endregion
 
@@ -136,15 +144,12 @@ namespace planet.Controles.Secretaria.Alumno
             TextBoxDireccion.Enabled = true;
             TextBoxCumple.Enabled = true;
 
-            ButtonGuardaModificar.Visible = true;
-
             TextBoxidBuscar.Enabled = false;
             ButtonBusca.Enabled = false;
+
+         //   Response.Redirect("Perfil.aspx?id=" + TextBoxidBuscar.Text, true);//
         }
 
-        protected void ButtonGuardaModificar_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -19,9 +19,14 @@ namespace planet.Controles.Secretaria.Alumno
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ObjAlumno = new CAlumno();
-            WAlumno = new WAlumno(this);
+
+            
+                ObjAlumno = new CAlumno();
+                WAlumno = new WAlumno(this);
+
+              
          
+
         }
 
       
@@ -108,7 +113,34 @@ namespace planet.Controles.Secretaria.Alumno
         }
         public void MensajeAlumno(string Mensaje, int tipo)
         {
-            //activacion de elemenos via jquery 
+            PanelError.Visible = false;
+            PanelExito.Visible = false;
+            /*
+             1 error de red
+             2 no se puedo registrar el usuario
+             3 registro exitosp
+             4  error desde la obtencion de datos, interfaz
+             */
+            switch (tipo)
+            {
+                case 1:
+                    PanelError.Visible = true;
+                    break;
+                case 2:
+                    PanelError.Visible = true;
+                    break;
+
+                case 3:
+                    PanelExito.Visible = true;
+                    break;
+                case 4:
+                    PanelError.Visible = true; break;
+
+                default:
+
+                    break;
+            }
+            UsuarioActulizar = null;
         }
         #endregion
 
@@ -116,7 +148,14 @@ namespace planet.Controles.Secretaria.Alumno
 
         protected void ButtonAgrega_Click(object sender, EventArgs e)
         {
-            WAlumno.AltaAlumno(UsuarioActulizar, 2);
+            if (UsuarioActulizar != null)
+            {
+                WAlumno.AltaAlumno(UsuarioActulizar, 2);
+            }
+            else {
+                PanelError.Visible = Visible;
+            }
+         
         }
     }
 }

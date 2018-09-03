@@ -4,10 +4,10 @@
 
 
     <div class="card">
-        <h5 class="card-header"><span class="oi oi-person"></span>   Registrar Alumno</h5>
+        <h5 class="card-header"><span class="oi oi-person"></span>Registrar Alumno</h5>
         <div class="card-body">
             <div id="headingOne" class="linkAyuda" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <h5 class="card-title"><span class="oi oi-info"></span>   Instrucciones</h5>
+                <h5 class="card-title"><span class="oi oi-info"></span>Instrucciones</h5>
             </div>
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
@@ -115,7 +115,22 @@
                 </div>
             </div>
 
-            <asp:Panel ID="PanelCorrecto" runat="server"></asp:Panel>
+            <asp:Panel ID="PanelExito" runat="server" Visible="false">
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Registro exitoso!</h4>
+                    <p>Para consultar el registro dirigase a la sección de <a href="ConsultaAlumno.aspx">Consulta</a> </p>
+                    <hr>
+                    <p class="mb-0">.</p>
+                </div>
+            </asp:Panel>
+              <asp:Panel ID="PanelError" runat="server" Visible="false">
+                <div class="alert alert-warning" role="alert">
+                    <h4 class="alert-heading">Error de registro !</h4>
+                    <p>Al parecer ocurrio un error, actualice la página, e intente de nuevo. <a href="AltaAlumno.aspx"><span class="oi oi-reload"></span></a>  </p>
+                    <hr>
+                    <p class="mb-0">Verifique bien sus datos.</p>
+                </div>
+            </asp:Panel>
         </div>
     </div>
 </div>

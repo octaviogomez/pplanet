@@ -148,12 +148,21 @@ namespace planet.Controles.Secretaria.Alumno {
         protected global::System.Web.UI.WebControls.LinkButton ButtonAgrega;
         
         /// <summary>
-        /// PanelCorrecto control.
+        /// PanelExito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelCorrecto;
+        protected global::System.Web.UI.WebControls.Panel PanelExito;
+        
+        /// <summary>
+        /// PanelError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelError;
     }
 }
