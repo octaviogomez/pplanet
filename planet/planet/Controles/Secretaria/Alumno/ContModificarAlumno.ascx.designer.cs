@@ -13,24 +13,6 @@ namespace planet.Controles.Secretaria.Alumno {
     public partial class ContModificarAlumno {
         
         /// <summary>
-        /// TextBoxidBuscar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxidBuscar;
-        
-        /// <summary>
-        /// ButtonBuscar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton ButtonBuscar;
-        
-        /// <summary>
         /// TextBoxId control.
         /// </summary>
         /// <remarks>
@@ -130,13 +112,13 @@ namespace planet.Controles.Secretaria.Alumno {
         protected global::System.Web.UI.WebControls.TextBox TextBoxCelular;
         
         /// <summary>
-        /// TextBoxNivel control.
+        /// DropDownListNivel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNivel;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListNivel;
         
         /// <summary>
         /// TextBoxClubs control.

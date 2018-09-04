@@ -135,15 +135,16 @@ namespace Core.Presenter
                 if (BolRegistro == true)
                 {
                      ViewAlumno.UsuariosDt = dtsDatos;
-                    ViewAlumno.MensajeAlumno("Listado correcto", 1);
+
+                    ViewAlumno.MensajeAlumno("Lisatado correcto", 3);
                 }
                 else
                 {
-                    ViewAlumno.MensajeAlumno("Error no se pudieron listar ", 2);
+                    ViewAlumno.MensajeAlumno("Sin resultados ", 2);
                 }
             }
             else {
-
+                ViewAlumno.MensajeAlumno("Error no se pudieron listar, error de conexión en la base de datos", 1);
             }
         }
 

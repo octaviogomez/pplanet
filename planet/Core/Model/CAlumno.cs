@@ -20,7 +20,12 @@ namespace Core.Model
         public  CAlumno(){
             objManagerBD = new ManagerBD();
         }
-
+        /// <summary>
+        /// Create student
+        /// </summary>
+        /// <param name="opcion"></param>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public bool CreateAlumno(int opcion, CAlumno obj)
         {
             bool registro = false;
@@ -62,7 +67,9 @@ namespace Core.Model
             lstParametros.Add(new SqlParameter("@pk_alumno", SqlDbType.Int) { Value = obj.pk_alumno });
 
             objDatos = objManagerBD.GetData(ProcedimientoGeneral, lstParametros.ToArray());
-            if (objDatos.Tables.Count > 0)
+            
+           
+            if (objDatos.Tables[0].Rows.Count > 0)
             {
                 ExisteDatos = true;
             }

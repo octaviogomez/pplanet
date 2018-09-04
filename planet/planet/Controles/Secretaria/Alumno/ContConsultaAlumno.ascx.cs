@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using Core.Model;
 using Core.Presenter;
 using Core.View;
+using Core.Encriptamiento;
 
 namespace planet.Controles.Secretaria.Alumno
 {
@@ -104,13 +105,13 @@ namespace planet.Controles.Secretaria.Alumno
             if (e.CommandName == "Consultar")
             {
           
-                Response.Redirect("Perfil.aspx?id=" + codigo, true);//
+                Response.Redirect("Perfil.aspx?id=" +codigo, true);//en la parte de key usar id de la secretaria
 
             }
             if (e.CommandName == "Modificar")
             {
 
-                Response.Redirect("Perfil.aspx?id=" + codigo+"&modificar="+codigo, true);//
+                Response.Redirect("Modificacion.aspx?id=" +  Cmd5.Encrypt(codigo, true )+ "&conf=true", true);//
 
             }
 

@@ -34,7 +34,7 @@
                         <asp:TextBox ID="TextBoxidBuscar" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
                         <asp:Panel ID="PanelAviso" runat="server" Visible="false">
                             <div class="alert alert-warning" role="alert">
-                               Sin resultados, intente con otro <strong>ID</strong>
+                                Sin resultados, intente con otro <strong>ID</strong>
                             </div>
                         </asp:Panel>
                     </div>
@@ -47,6 +47,11 @@
                     <div class="col-4">
                         <br />
                         <asp:LinkButton ID="ButtonModifica" runat="server" CssClass="btn btn-warning btn-lg btn-block" OnClick="ButtonModifica_Click"><span class="oi oi-pencil">Modificar</span></asp:LinkButton>
+                    <asp:Panel ID="PanelModificar" runat="server" Visible="false">
+                            <div class="alert alert-info" role="alert">
+                               Debe de buscar un usuario con su <strong>ID</strong>
+                            </div>
+                        </asp:Panel>
                     </div>
                 </div>
 
@@ -55,7 +60,10 @@
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="TextBoxId">id</label>
+                          <asp:TextBox ID="TextBoxPkUsuario"  runat="server" CssClass="form-control" min="1" Enabled="false" Visible="false"></asp:TextBox>
+              
                     <asp:TextBox ID="TextBoxId" TextMode="Number" runat="server" CssClass="form-control" min="1" Enabled="false"></asp:TextBox>
+                
                 </div>
                 <div class="form-group col-md-3">
                     <label for="TextBoxPasswordUno">Password</label>
@@ -116,7 +124,7 @@
 
             <div class="form-row">
                 <div class="form-group col-md-2">
-                    <label for="TextBoxCorreo">Nivel</label>
+                    <label for="DropDownListNivel">Nivel</label>
 
                     <asp:DropDownList ID="DropDownListNivel" runat="server" Enabled="false" CssClass="form-control">
                         <asp:ListItem Text="1" Value="1"> </asp:ListItem>
@@ -163,10 +171,25 @@
                 <small id="emailHelp" class="form-text text-muted">Los datos se guardados de manera confidencial</small>
             </div>
 
+
         </div>
     </div>
 </div>
 
+
+<script>
+
+    (function () {
+
+
+        $("#ContentPlaceHolder1_ContPerfil_TextBoxidBuscar").on("click", function () {
+            $('#ContentPlaceHolder1_ContPerfil_TextBoxidBuscar').val("");
+        });
+
+
+
+    })();
+</script>
 
 
 

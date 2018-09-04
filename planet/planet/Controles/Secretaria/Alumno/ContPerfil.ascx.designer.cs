@@ -49,6 +49,24 @@ namespace planet.Controles.Secretaria.Alumno {
         protected global::System.Web.UI.WebControls.LinkButton ButtonModifica;
         
         /// <summary>
+        /// PanelModificar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelModificar;
+        
+        /// <summary>
+        /// TextBoxPkUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPkUsuario;
+        
+        /// <summary>
         /// TextBoxId control.
         /// </summary>
         /// <remarks>

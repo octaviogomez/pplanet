@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Encriptamiento\Cmd5.cs" />
     <Compile Include="Model\CAvisoGenerales.cs" />
     <Compile Include="Model\CAlumno.cs" />
     <Compile Include="Model\CBuzonSugerencias.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="View\ISecretaria.cs" />
     <Compile Include="View\ITipoClub.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
