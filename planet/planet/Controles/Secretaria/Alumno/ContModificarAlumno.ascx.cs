@@ -21,14 +21,44 @@ namespace planet.Controles.Secretaria.Alumno
             ObjAlumno = new CAlumno();
             WAlumno = new WAlumno(this);
 
-            WAlumno.ListadoAlumno(UsuarioLogeado, 5);
+
+            if (!IsPostBack)
+            {
+                WAlumno.ListadoAlumno(UsuarioLogeado, 5);
+            }
+
         }
         #region IAlumno
         public CAlumno UsuarioActulizar
         {
             get
             {
-                return null;
+                CAlumno ObjAlumno = new CAlumno();
+                try
+                {
+                    ObjAlumno.pk_alumno = Convert.ToInt32(TextBoxPkUsuario.Text.Trim());
+                    ObjAlumno.id= Convert.ToInt32(TextBoxId.Text);
+                    ObjAlumno.clave = TextBoxPassword.Text;
+                    ObjAlumno.correo = TextBoxCorreo.Text;
+                    ObjAlumno.nombre= TextBoxNombre.Text ;
+                    ObjAlumno.apellidos= TextBoxApellidos.Text ;
+                    ObjAlumno.anioEgreso = TextBoxAnioEgreso.Text;
+                    ObjAlumno.estadoPago = (CheckBoxEstadoPago.Checked) ? 1 : 0;
+                    ObjAlumno.facebook= TextBoxFacebook.Text;
+                    ObjAlumno.telefono= TextBoxTelefono.Text;
+                    ObjAlumno.celular=TextBoxCelular.Text;
+                    ObjAlumno.sexo=RadioButtonListSexo.SelectedValue;//no se modifica
+                    ObjAlumno.nivel= Convert.ToInt32(DropDownListNivel.SelectedValue) ;
+                    ObjAlumno.direccion=TextBoxDireccion.Text ;
+                    ObjAlumno.FechaNacimiento=TextBoxCumple.Text;
+
+                }
+                catch (Exception)
+                {
+                    ObjAlumno = null;
+                }
+
+                return ObjAlumno;
             }
 
             set
@@ -46,7 +76,7 @@ namespace planet.Controles.Secretaria.Alumno
                 {
 
                     obj.pk_alumno = (Request.QueryString["id"].ToString() != null) ? Convert.ToInt32(Request.QueryString["id"].ToString()) : 0;
-                  
+                    
                 }
                 catch (Exception)
                 {
@@ -76,8 +106,8 @@ namespace planet.Controles.Secretaria.Alumno
                 {
                     try
                     {
-
-                        TextBoxId.Text = value.Tables[0].Rows[0][0].ToString();
+                        TextBoxPkUsuario.Text = value.Tables[0].Rows[0][0].ToString();//oculto
+                        TextBoxId.Text = value.Tables[0].Rows[0][2].ToString();
                         TextBoxPassword.Text = value.Tables[0].Rows[0][3].ToString();
                         TextBoxCorreo.Text = value.Tables[0].Rows[0][5].ToString();
                         TextBoxNombre.Text = value.Tables[0].Rows[0][6].ToString();
@@ -117,12 +147,13 @@ namespace planet.Controles.Secretaria.Alumno
         {
             switch (tipo)
             {
-                case 1: break;
-                case 2:
-                  
+                case 1:
                     break;
-                case 3:
-                  
+                case 5:
+                    PanelError.Visible = true;
+                    break;
+                case 6:
+                    PanelAviso.Visible = true;
                     break;
                 default:
                     break;
@@ -130,5 +161,12 @@ namespace planet.Controles.Secretaria.Alumno
 
         }
         #endregion
+        protected void ButtonGuardar_Click(object sender, EventArgs e)
+        {
+            if (UsuarioActulizar!=null)
+            {
+                WAlumno.ModificacionAlumno(UsuarioActulizar,6);
+            }
+        }
     }
 }

@@ -1,22 +1,30 @@
-﻿.negrita{
-    font-weight:bold;
+﻿body {
+    background-color: #e2e2e2;
 }
 
-label{
-    font-weight:bold;
-}
 
 #header-container {
     background-color:#080F53;
     color:white;
 }
 
-
 footer {
 background-color:#080F53;
 color:white;
 
 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+
+.fondoColor {
+   background-color:#080F53;
+    color:white;
+}
+
+.colorBase {
+     background-color:#E9E6E6;
 }
 
 .ocultar {
@@ -35,26 +43,36 @@ width:20px;
 width:70%;
 }
 
-body {
-    background-color: #e2e2e2;
-}
+
+
 .colorBlanco {
     background-color: white;
 }
-.fondoColor {
-    background-color:#00618d;
-    color:white;
+.negrita{
+    font-weight:bold;
 }
 
-.colorBase {
-     background-color:#E9E6E6;
+
+
+label{
+    font-weight:bold;
 }
-.letraBlanca{
-    color:white;
-}
+
+
 .linkAyuda {
 color:black;
 font-weight:bold;
 }
+.letraBlanca{
+    color:white;
+}
 
 
+.botonBase {
+   background-color:#080F53;
+   color: white !important;
+}
+.botonModal {
+   background-color:#1bb01a;
+   color: white !important;
+}

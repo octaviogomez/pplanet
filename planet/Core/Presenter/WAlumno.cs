@@ -117,7 +117,37 @@ namespace Core.Presenter
                 ViewAlumno.MensajeAlumno("No hay conexión en red", 1);
             }
         }
-        #endregion
+        /// <summary>
+        /// Modifuca de manera generica un usuario
+        /// </summary>
+        /// <param name="objAlum"></param>
+        /// <param name="opcion"></param>
+        public void ModificacionAlumno(CAlumno objAlum, int opcion)
+        {
+            bool BolRegistro = false;
+            CAlumno objAlumno = new CAlumno();
+
+            if (ExisteConexion())
+            {
+                BolRegistro = objAlumno.CRUD(opcion, objAlum);
+
+                if (BolRegistro == true)
+                {
+                    ViewAlumno.MensajeAlumno("Modificación exitosa", 6);
+                }
+                else
+                {
+
+                    ViewAlumno.MensajeAlumno("No se pudo modifcar el usuario, revise bien sus datos.", 5);
+                }
+            }
+            else
+            {
+                ViewAlumno.MensajeAlumno("No hay conexión en red", 1);
+            }
+        }
+
+
         /// <summary>
         /// Listado generico del alumno, respecto a la opcion del procedimiento
         /// </summary>
@@ -134,7 +164,7 @@ namespace Core.Presenter
 
                 if (BolRegistro == true)
                 {
-                     ViewAlumno.UsuariosDt = dtsDatos;
+                    ViewAlumno.UsuariosDt = dtsDatos;
 
                     ViewAlumno.MensajeAlumno("Lisatado correcto", 3);
                 }
@@ -143,10 +173,13 @@ namespace Core.Presenter
                     ViewAlumno.MensajeAlumno("Sin resultados ", 2);
                 }
             }
-            else {
+            else
+            {
                 ViewAlumno.MensajeAlumno("Error no se pudieron listar, error de conexión en la base de datos", 1);
             }
         }
+        #endregion
+
 
     }
 }

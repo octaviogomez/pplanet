@@ -7,12 +7,7 @@
 
 
 <div class="container">
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-5">Agendar reservación</h1>
-            <p class="lead">En el siguiente apartado podra agendar una reservacion,en la cual más adelante los alumnos podrán verla en su apartado.</p>
-        </div>
-    </div>
+
 
 
     <asp:Panel ID="PanelAvisoError" runat="server" Visible="false">
@@ -31,31 +26,61 @@
             <p>Se realizó de manera correcta la reservación.</p>
             <hr>
         </div>
-    </asp:Panel>
+    </asp:Panel>    
 
     <div class="card">
         <h5 class="card-header">Agendar reservación</h5>
         <div class="card-body">
-            <h5 class="card-title">Instrucciones</h5>
-            <p class="card-text">Realice cuidadosamente el llenado.</p>
+
+
+
+
+            <div id="headingOne" class="linkAyuda" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h5 class="card-title"><span class="oi oi-info"></span>Instrucciones</h5>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="alert-info">
+                        <p class="lead">En el siguiente apartado podra agendar una reservacion,en la cual más adelante los alumnos podrán verla en su apartado.</p>
+                    </div>
+                    <ul>
+                        <li>Para agendar una reservación, localize una reservación y de click en <strong><span class="oi oi-check"></span></strong>para eliminarla.</li>
+                    </ul>
+                    <br />
+                    <div class="alert-warning">
+                        <strong>Nota:</strong>
+                    </div>
+                </div>
+            </div>
 
             <div class="form-row ">
                 <div class="col-md-4 mb-3">
-                  <strong><label for="TextBoxFecha">Fecha</label></strong>  
+                    <strong>
+                        <label for="TextBoxFecha">Fecha</label></strong>
                     <asp:TextBox ID="TextBoxFecha" runat="server" TextMode="Date" placeholder="Fecha" CssClass="form-control" OnTextChanged="TextBoxFecha_TextChanged" AutoPostBack="true"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="vTextBoxFecha" runat="server" ControlToValidate="TextBoxFecha" ValidationGroup="buscar" ErrorMessage="Requerido" CssClass=" alert-warning " />
+
+
                 </div>
-                 <div class="col-md-4 mb-3">
-                       <strong> <label for="DropDownListHorarios">Horarios</label></strong>
-                    <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Horario" required="Se necesita un horario"></asp:DropDownList>
-                 </div>
                 <div class="col-md-4 mb-3">
-                    <strong> <label for="ButtonBuscarFecha"></label></strong>
-                    <asp:Button ID="ButtonBuscarFecha" runat="server" Text="Buscar" class="btn btn-info btn-lg btn-block " OnClick="ButtonBuscarFecha_Click" ValidateRequestMode="Disabled"/>
+                    <strong>
+                        <label for="DropDownListHorarios">Horarios</label></strong>
+                    <asp:DropDownList ID="DropDownListHorarios" runat="server" class="form-control" placeholder="Horario">
+                        <asp:ListItem Value="0" Text="Todos"></asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="vDropDownListHorarios" runat="server" ControlToValidate="DropDownListHorarios" ValidationGroup="buscar" ErrorMessage="Requerido" CssClass=" alert-warning " />
+
+                </div>
+                <div class="col-md-4 mb-3">
+                    <strong>
+                        <label for="ButtonBuscarFecha"></label>
+                    </strong>
+                    <asp:Button ID="ButtonBuscarFecha" runat="server" Text="Buscar" class="btn btn-info btn-lg btn-block " OnClick="ButtonBuscarFecha_Click" ValidationGroup="buscar" />
                 </div>
             </div>
 
             <br />
-            <asp:Panel ID="PanelListadoCitas" runat="server" Height="350px" ScrollBars="Vertical" CssClass="border border-primary">
+            <asp:Panel ID="PanelListadoCitas" runat="server" Height="500px" ScrollBars="Vertical" CssClass="border border-primary">
                 <div class="table-responsive">
                     <asp:GridView ID="GridViewCitas" runat="server" CssClass="table table-striped table-bordered table-hover" AutoGenerateColumns="false" OnRowCommand="GridView_RowCommand">
                         <Columns>
@@ -73,15 +98,15 @@
                             </asp:TemplateField>
 
 
-                            <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado"  />
+                            <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado" />
                             <asp:BoundField Visible="true" DataField="Fecha" HeaderText="Fecha" />
                             <asp:BoundField Visible="true" DataField="Horario" HeaderText="Horario" />
                             <asp:BoundField Visible="true" DataField="No. Profes" HeaderText="No. Profes" />
                             <asp:BoundField Visible="true" DataField="Indice" HeaderText="Indice" />
                             <asp:BoundField Visible="true" DataField="Espacios" HeaderText="Espacios" />
                             <asp:BoundField Visible="true" DataField="No. Alumnos" HeaderText="No. Alumnos" />
-                          
-                    
+
+
                         </Columns>
                     </asp:GridView>
                 </div>
@@ -94,25 +119,26 @@
             <div class="form-row">
 
 
-            
-                    <asp:TextBox ID="TextBoxIdCita" runat="server" CssClass="form-control" placeholder="Id cita" ValidationGroup="AceptarRegistro" Enabled="false" required="Se necesita una cita" Visible="false"></asp:TextBox>
 
-           
+                <asp:TextBox ID="TextBoxIdCita" runat="server" CssClass="form-control" placeholder="Id cita" ValidationGroup="AceptarRegistro" Enabled="false" Visible="false" required=""></asp:TextBox>
+
+
 
 
                 <div class="col-md-4 mb-3">
-                  <strong><label for="TextBoxNoProfesores">Alumno</label></strong> 
-                    <asp:TextBox ID="TextBoxIdAlumno" runat="server" class="form-control" placeholder="Credencial de alumno" ValidationGroup="AceptarRegistro" TextMode="Number" required="Se necesita matricula" title="Ingrese una matrícula de alumno"></asp:TextBox>
-
-                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Sólo números" ValidationGroup="AceptarRegistro" ControlToValidate="TextBoxIdAlumno" CssClass="alert alert-danger form-control" role="alter"></asp:RequiredFieldValidator>--%>
+                    <strong>
+                        <label for="TextBoxNoProfesores">Alumno</label></strong>
+                    <asp:TextBox ID="TextBoxIdAlumno" runat="server" class="form-control" placeholder="Credencial de alumno" ValidationGroup="AceptarRegistro"></asp:TextBox>
                 </div>
 
                 <div class="col-md-4 mb-3">
-                 <strong><label for="DropDownListTipoCita">Tipo de cita</label></strong>   
+                    <strong>
+                        <label for="DropDownListTipoCita">Tipo de cita</label></strong>
                     <asp:DropDownList ID="DropDownListTipoCita" runat="server" class="form-control" placeholder="Fecha" ValidationGroup="AceptarRegistro"></asp:DropDownList>
                 </div>
-                 <div class="col-md-4 mb-3">
-                    <strong><label for="DropDownListTipoLeccion">Lección</label></strong>
+                <div class="col-md-4 mb-3">
+                    <strong>
+                        <label for="DropDownListTipoLeccion">Lección</label></strong>
                     <asp:DropDownList ID="DropDownListTipoLeccion" runat="server" class="form-control" placeholder="Fecha" ValidationGroup="AceptarRegistro"></asp:DropDownList>
                 </div>
                 <div class="col-md-4 mb-3">
@@ -162,8 +188,8 @@
                 Registro exitoso
             </div>
             <div class="modal-footer">
-                <asp:Button ID="ButtonActualizarPagina" runat="server" Text="Ok!" CssClass="btn btn-success" OnClick="ButtonActualizarPagina_Click"/>
-         
+                <asp:Button ID="ButtonActualizarPagina" runat="server" Text="Ok!" CssClass="btn btn-success" OnClick="ButtonActualizarPagina_Click" />
+
             </div>
         </div>
     </div>
@@ -174,7 +200,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" ></h5>
+                <h5 class="modal-title"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

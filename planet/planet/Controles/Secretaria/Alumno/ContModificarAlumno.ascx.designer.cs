@@ -13,6 +13,15 @@ namespace planet.Controles.Secretaria.Alumno {
     public partial class ContModificarAlumno {
         
         /// <summary>
+        /// TextBoxPkUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPkUsuario;
+        
+        /// <summary>
         /// TextBoxId control.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,15 @@ namespace planet.Controles.Secretaria.Alumno {
         protected global::System.Web.UI.WebControls.TextBox TextBoxId;
         
         /// <summary>
+        /// RTextBoxId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RTextBoxId;
+        
+        /// <summary>
         /// TextBoxPassword control.
         /// </summary>
         /// <remarks>
@@ -29,6 +47,15 @@ namespace planet.Controles.Secretaria.Alumno {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxPassword;
+        
+        /// <summary>
+        /// RTextBoxPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RTextBoxPassword;
         
         /// <summary>
         /// TextBoxAnioIngreso control.
@@ -58,6 +85,15 @@ namespace planet.Controles.Secretaria.Alumno {
         protected global::System.Web.UI.WebControls.TextBox TextBoxCorreo;
         
         /// <summary>
+        /// RTextBoxCorreo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RTextBoxCorreo;
+        
+        /// <summary>
         /// TextBoxNombre control.
         /// </summary>
         /// <remarks>
@@ -67,6 +103,15 @@ namespace planet.Controles.Secretaria.Alumno {
         protected global::System.Web.UI.WebControls.TextBox TextBoxNombre;
         
         /// <summary>
+        /// RTextBoxNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RTextBoxNombre;
+        
+        /// <summary>
         /// TextBoxApellidos control.
         /// </summary>
         /// <remarks>
@@ -74,6 +119,15 @@ namespace planet.Controles.Secretaria.Alumno {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxApellidos;
+        
+        /// <summary>
+        /// RTextBoxApellidos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RTextBoxApellidos;
         
         /// <summary>
         /// CheckBoxEstadoPago control.
@@ -103,6 +157,15 @@ namespace planet.Controles.Secretaria.Alumno {
         protected global::System.Web.UI.WebControls.TextBox TextBoxTelefono;
         
         /// <summary>
+        /// RTextBoxTelefono control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RTextBoxTelefono;
+        
+        /// <summary>
         /// TextBoxCelular control.
         /// </summary>
         /// <remarks>
@@ -110,6 +173,15 @@ namespace planet.Controles.Secretaria.Alumno {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxCelular;
+        
+        /// <summary>
+        /// RTextBoxCelular control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RTextBoxCelular;
         
         /// <summary>
         /// DropDownListNivel control.
@@ -157,6 +229,15 @@ namespace planet.Controles.Secretaria.Alumno {
         protected global::System.Web.UI.WebControls.TextBox TextBoxDireccion;
         
         /// <summary>
+        /// RTextBoxDireccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RTextBoxDireccion;
+        
+        /// <summary>
         /// TextBoxCumple control.
         /// </summary>
         /// <remarks>
@@ -164,5 +245,41 @@ namespace planet.Controles.Secretaria.Alumno {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxCumple;
+        
+        /// <summary>
+        /// RTextBoxCumple control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RTextBoxCumple;
+        
+        /// <summary>
+        /// ButtonGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton ButtonGuardar;
+        
+        /// <summary>
+        /// PanelAviso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelAviso;
+        
+        /// <summary>
+        /// PanelError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelError;
     }
 }

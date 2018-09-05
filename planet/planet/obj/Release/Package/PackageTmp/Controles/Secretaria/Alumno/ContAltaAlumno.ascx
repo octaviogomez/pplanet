@@ -4,12 +4,33 @@
 
 
     <div class="card">
-        <h5 class="card-header">Nuevo alumno</h5>
+        <h5 class="card-header"><span class="oi oi-person"></span>Registrar Alumno</h5>
         <div class="card-body">
-            <h5 class="card-title">Instrucciones</h5>
-            <p class="card-text">Realice cuidadosamente el llenado.</p>
+            <div id="headingOne" class="linkAyuda" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h5 class="card-title"><span class="oi oi-info"></span>Instrucciones</h5>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="alert-info">
+                        <p class="lead">En el siguiente apartado podra registrar un alumno,tome encuenta que los siguientes campos no son obligatorios.</p>
+                    </div>
+                    <ul>
+                        <li><strong>Password</strong></li>
+                        <li><strong>E-mail</strong></li>
+                        <li><strong>Facebook</strong></li>
+                        <li><strong>Telefono</strong></li>
+                        <li><strong>Celular</strong></li>
+                        <li><strong>Dirección</strong></li>
+                    </ul>
+                    <br />
+                    <div class="alert-warning">
+                        <strong>Nota:</strong>
+                        En el campo de <strong>id</strong> podria agregar una matrícula propia del plantel.
+                    </div>
+                </div>
+            </div>
             <div class="form-row">
-               
+
                 <div class="form-group col-md-2">
                     <label for="TextBoxId">id</label>
                     <asp:TextBox ID="TextBoxId" TextMode="Number" runat="server" CssClass="form-control" min="1" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></asp:TextBox>
@@ -94,7 +115,22 @@
                 </div>
             </div>
 
-            <asp:Panel ID="PanelCorrecto" runat="server"></asp:Panel>
+            <asp:Panel ID="PanelExito" runat="server" Visible="false">
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Registro exitoso!</h4>
+                    <p>Para consultar el registro dirigase a la sección de <a href="ConsultaAlumno.aspx">Consulta</a> </p>
+                    <hr>
+                    <p class="mb-0">.</p>
+                </div>
+            </asp:Panel>
+              <asp:Panel ID="PanelError" runat="server" Visible="false">
+                <div class="alert alert-warning" role="alert">
+                    <h4 class="alert-heading">Error de registro !</h4>
+                    <p>Al parecer ocurrio un error, actualice la página, e intente de nuevo. <a href="AltaAlumno.aspx"><span class="oi oi-reload"></span></a>  </p>
+                    <hr>
+                    <p class="mb-0">Verifique bien sus datos.</p>
+                </div>
+            </asp:Panel>
         </div>
     </div>
 </div>

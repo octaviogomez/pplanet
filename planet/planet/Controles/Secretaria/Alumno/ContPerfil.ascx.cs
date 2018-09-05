@@ -48,7 +48,7 @@ namespace planet.Controles.Secretaria.Alumno
                 {
                     
                     obj.pk_alumno = (Request.QueryString["id"].ToString() != null) ? Convert.ToInt32(Request.QueryString["id"].ToString()) : 0;
-                    TextBoxPkUsuario.Text = obj.pk_alumno.ToString();
+              
                 }
                 catch (Exception)
                 {
@@ -78,8 +78,10 @@ namespace planet.Controles.Secretaria.Alumno
                 {
                     try
                     {
-                        
-                            TextBoxId.Text = value.Tables[0].Rows[0][0].ToString();
+
+
+                            TextBoxPkUsuario.Text = value.Tables[0].Rows[0][0].ToString();
+                            TextBoxId.Text = value.Tables[0].Rows[0][2].ToString();
                             TextBoxPassword.Text = value.Tables[0].Rows[0][3].ToString();
                             TextBoxCorreo.Text = value.Tables[0].Rows[0][5].ToString();
                             TextBoxNombre.Text = value.Tables[0].Rows[0][6].ToString();
@@ -142,7 +144,7 @@ namespace planet.Controles.Secretaria.Alumno
 
         protected void ButtonModifica_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(TextBoxPkUsuario.Text))
+            if (TextBoxPkUsuario.Text!="")
             {
                 Response.Redirect("Modificacion.aspx?id=" + TextBoxPkUsuario.Text.Trim() + "&modificar=true", true);
             }
