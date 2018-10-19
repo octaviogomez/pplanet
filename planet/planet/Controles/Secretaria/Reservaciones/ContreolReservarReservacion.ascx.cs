@@ -20,7 +20,7 @@ namespace planet.Controles.Secretaria.Reservaciones
          Tipos de mensajes para el metodo implementado
           del  
           5:
-                        Se hace un registro de la cita
+                Se hace un registro de la cita
                6 SE manda mensaje de error
              */
         WCombo Wcombo;
@@ -50,8 +50,11 @@ namespace planet.Controles.Secretaria.Reservaciones
                 LlenadoComboGenerico(DropDownListTipoCita, 3, "ListadoCatalogos");
                 LlenadoComboGenerico(DropDownListTipoLeccion, 4, "ListadoCatalogos");
                 LlenadoComboGenerico(DropDownListHorarios, 2, "ListadoCatalogos");
+
+
                 wRegistroCitas.ListadoDeCitas(cRegistroCitas, 1);
             }
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "ModalView", "<script> $('#NotificacionError').modal('show');</script>", false);
 
         }
         #region ICombo

@@ -1,14 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ContreolReservarReservacion.ascx.cs" Inherits="planet.Controles.Secretaria.Reservaciones.ContreolReservarReservacion" %>
 <!-- Modal -->
-
-
-
-
-
-
 <div class="container">
-
-
 
     <asp:Panel ID="PanelAvisoError" runat="server" Visible="false">
         <div class="alert alert-warning" role="alert">
@@ -26,7 +18,7 @@
             <p>Se realizó de manera correcta la reservación.</p>
             <hr>
         </div>
-    </asp:Panel>    
+    </asp:Panel>
 
     <div class="card">
         <h5 class="card-header">Agendar reservación</h5>
@@ -89,7 +81,7 @@
                                     <asp:Label ID="LabelId" Visible="false" runat="server" Text='<%# Eval("Id")%>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField ShowHeader="False" HeaderText="Selecionar">
+                            <asp:TemplateField ShowHeader="False" HeaderText="Ok">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="LinkButtonSeleccionar" runat="server" CommandName="seleccion" CssClass="btn btn-outline-info   btn-lg btn-block">
                                        <span class="oi oi-check"></span>
@@ -98,11 +90,11 @@
                             </asp:TemplateField>
 
 
-                            <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado" />
+                            <asp:BoundField Visible="true" DataField="Estado" HeaderText="Estado" ItemStyle-ForeColor="#009900" />
                             <asp:BoundField Visible="true" DataField="Fecha" HeaderText="Fecha" />
                             <asp:BoundField Visible="true" DataField="Horario" HeaderText="Horario" />
                             <asp:BoundField Visible="true" DataField="No. Profes" HeaderText="No. Profes" />
-                            <asp:BoundField Visible="true" DataField="Indice" HeaderText="Indice" />
+                            <asp:BoundField Visible="true" DataField="Indice" HeaderText="Indice" ItemStyle-Font-Bold="true" />
                             <asp:BoundField Visible="true" DataField="Espacios" HeaderText="Espacios" />
                             <asp:BoundField Visible="true" DataField="No. Alumnos" HeaderText="No. Alumnos" />
 
